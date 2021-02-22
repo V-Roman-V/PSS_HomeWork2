@@ -1,9 +1,9 @@
 #ifndef DIRECTORCABINET_H
 #define DIRECTORCABINET_H
 
-#include "universityroom.h"
+#include "cabinet.h"
 
-class DirectorCabinet : public UniversityRoom
+class DirectorCabinet : public Cabinet
 {
 public:
     DirectorCabinet();

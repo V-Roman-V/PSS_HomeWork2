@@ -7,6 +7,10 @@ class Admins : public UniversityPeople
 {
 public:
     Admins();
+
+    virtual Position getPosition() override;
+
+    void giveAcces();
 };
 
 #endif // ADMINS_H

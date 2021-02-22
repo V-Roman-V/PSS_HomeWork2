@@ -7,6 +7,7 @@ class Director : public UniversityPeople
 {
 public:
     Director();
+    virtual Position getPosition() override;
 };
 
 #endif // DIRECTOR_H

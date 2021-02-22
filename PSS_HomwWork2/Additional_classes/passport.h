@@ -6,6 +6,9 @@ class Passport
 {
 public:
     Passport();
+
+private:
+
 };
 
 #endif // PASSPORT_H

@@ -4,3 +4,8 @@ Admins::Admins()
 {
 
 }
+
+Position Admins::getPosition()
+{
+    return Position::admin;
+}
