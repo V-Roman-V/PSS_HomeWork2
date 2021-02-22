@@ -5,6 +5,8 @@
 #include <vector>
 #include <People_classes/people.h>
 
+using RoomType = Room::RoomType;
+
 class LivingRoom : public Room
 {
 public:

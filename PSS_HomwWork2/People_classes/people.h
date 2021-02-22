@@ -3,11 +3,12 @@
 #include <string>
 #include "Additional_classes/date.h"
 #include "Additional_classes/passport.h"
-#include "Enumerations/gender.h"
 
 class People
 {
 public:
+    enum class Gender{male,female};
+
     People();
     virtual ~People() = default;
 
@@ -30,12 +31,16 @@ public:
     std::string getNationality() const;
     void setNationality(const std::string &value);
 
+    std::string getPhoneNumber() const;
+    void setPhoneNumber(const std::string &value);
+
 private:
     std::string name;
     Date date_of_birth;
     Passport passport;
     Gender gender;
     std::string nationality;
+    std::string phone_number;
 
 };
 

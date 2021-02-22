@@ -5,7 +5,7 @@ Director::Director()
 
 }
 
-Position Director::getPosition()
+Position Director::getPosition() const
 {
     return Position::director;
 }

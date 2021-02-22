@@ -5,7 +5,7 @@ Professor::Professor()
 
 }
 
-Position Professor::getPosition()
+Position Professor::getPosition() const
 {
     return Position::professor;
 }

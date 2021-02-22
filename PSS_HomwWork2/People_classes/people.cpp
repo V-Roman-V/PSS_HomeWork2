@@ -7,7 +7,7 @@ People::People()
 
 std::string People::getInfo()
 {
-
+    return "";
 }
 
 std::string People::getName() const
@@ -46,7 +46,7 @@ unsigned short People::getAge() const
     return 0;
 }
 
-Gender People::getGender() const
+People::Gender People::getGender() const
 {
     return gender;
 }
@@ -64,4 +64,14 @@ std::string People::getNationality() const
 void People::setNationality(const std::string &value)
 {
     nationality = value;
+}
+
+std::string People::getPhoneNumber() const
+{
+    return phone_number;
+}
+
+void People::setPhoneNumber(const std::string &value)
+{
+    phone_number = value;
 }

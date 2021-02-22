@@ -1,11 +1,12 @@
 #ifndef ROOM_H
 #define ROOM_H
 
-#include "Enumerations/roomtype.h"
 #include "Additional_classes/roomlocation.h"
 class Room
 {
 public:
+    enum class RoomType{living_room,university_room};
+
     Room();
     virtual ~Room() = default;
     virtual RoomType getRoomType() = 0;

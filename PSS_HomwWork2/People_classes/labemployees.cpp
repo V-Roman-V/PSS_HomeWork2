@@ -5,7 +5,7 @@ LabEmployees::LabEmployees()
 
 }
 
-Position LabEmployees::getPosition()
+Position LabEmployees::getPosition() const
 {
     return Position::lab_employee;
 }

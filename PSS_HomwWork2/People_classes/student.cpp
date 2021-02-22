@@ -2,10 +2,10 @@
 
 Student::Student()
 {
-    card;
+    card->setAccessLevel(AccessLevel::green);
 }
 
-Position Student::getPosition()
+Position Student::getPosition() const
 {
     return Position::student;
 }

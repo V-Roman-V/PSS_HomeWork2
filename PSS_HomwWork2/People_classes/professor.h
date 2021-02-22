@@ -4,11 +4,13 @@
 #include "universitypeople.h"
 #include "Room_classes/cabinet.h"
 
+using Position = UniversityPeople::Position;
+
 class Professor : public UniversityPeople
 {
 public:
     Professor();
-    virtual Position getPosition() override;
+    virtual Position getPosition() const override;
 
 private:
     std::string teaching_course;

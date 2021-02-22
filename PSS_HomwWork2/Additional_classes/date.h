@@ -5,7 +5,11 @@
 class Date
 {
 public:
-    Date();
+    Date(unsigned short y = 0, unsigned short m = 0, unsigned short d = 0);
+
+    int getAgeDiff(const Date &right) const;
+
+    void setDate(unsigned short y, unsigned short m, unsigned short d);
 
 private:
     unsigned short year;

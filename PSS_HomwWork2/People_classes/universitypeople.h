@@ -3,18 +3,28 @@
 
 #include "people.h"
 #include "Additional_classes/personalcard.h"
-#include "Enumerations/position.h"
+#include <vector>
+#include "Room_classes/universityroom.h"
 
 class UniversityPeople : public People
 {
 public:
-    UniversityPeople();
-    virtual ~UniversityPeople() = default;
+    enum class Position{
+        student,
+        professor,
+        lab_employee,
+        director,
+        admin
+    };
 
-    virtual Position getPosition() = 0;
+    UniversityPeople();
+    virtual ~UniversityPeople() override = default;
+
+    virtual Position getPosition() const = 0;
 
 protected:
-    PersonalCard card;
+    PersonalCard* card;
+    std::vector<UniversityRoom*> special_access;
 
 };
 

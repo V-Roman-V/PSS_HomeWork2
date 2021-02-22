@@ -5,7 +5,7 @@ Admins::Admins()
 
 }
 
-Position Admins::getPosition()
+Position Admins::getPosition() const
 {
     return Position::admin;
 }

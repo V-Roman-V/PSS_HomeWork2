@@ -3,12 +3,14 @@
 
 #include "universitypeople.h"
 
+using Position = UniversityPeople::Position;
+
 class Admins : public UniversityPeople
 {
 public:
     Admins();
 
-    virtual Position getPosition() override;
+    virtual Position getPosition() const override;
 
     void giveAcces();
 };

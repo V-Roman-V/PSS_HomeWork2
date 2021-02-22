@@ -93,9 +93,6 @@ DIST          =  Additional_classes/date.h \
 		Additional_classes/personalcard.h \
 		Additional_classes/roomlocation.h \
 		Enumerations/accesslevels.h \
-		Enumerations/gender.h \
-		Enumerations/position.h \
-		Enumerations/roomtype.h \
 		People_classes/admins.h \
 		People_classes/director.h \
 		People_classes/labemployees.h \
@@ -184,7 +181,8 @@ debug/passport.o: ../PSS_HomwWork2/Additional_classes/passport.cpp ../PSS_HomwWo
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\passport.o ..\PSS_HomwWork2\Additional_classes\passport.cpp
 
 debug/personalcard.o: ../PSS_HomwWork2/Additional_classes/personalcard.cpp ../PSS_HomwWork2/Additional_classes/personalcard.h \
-		../PSS_HomwWork2/Enumerations/accesslevels.h
+		../PSS_HomwWork2/Enumerations/accesslevels.h \
+		../PSS_HomwWork2/Additional_classes/roomlocation.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\personalcard.o ..\PSS_HomwWork2\Additional_classes\personalcard.cpp
 
 debug/roomlocation.o: ../PSS_HomwWork2/Additional_classes/roomlocation.cpp ../PSS_HomwWork2/Additional_classes/roomlocation.h
@@ -195,10 +193,11 @@ debug/admins.o: ../PSS_HomwWork2/People_classes/admins.cpp ../PSS_HomwWork2/Peop
 		../PSS_HomwWork2/People_classes/people.h \
 		../PSS_HomwWork2/Additional_classes/date.h \
 		../PSS_HomwWork2/Additional_classes/passport.h \
-		../PSS_HomwWork2/Enumerations/gender.h \
 		../PSS_HomwWork2/Additional_classes/personalcard.h \
 		../PSS_HomwWork2/Enumerations/accesslevels.h \
-		../PSS_HomwWork2/Enumerations/position.h
+		../PSS_HomwWork2/Additional_classes/roomlocation.h \
+		../PSS_HomwWork2/Room_classes/universityroom.h \
+		../PSS_HomwWork2/Room_classes/room.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\admins.o ..\PSS_HomwWork2\People_classes\admins.cpp
 
 debug/director.o: ../PSS_HomwWork2/People_classes/director.cpp ../PSS_HomwWork2/People_classes/director.h \
@@ -206,10 +205,11 @@ debug/director.o: ../PSS_HomwWork2/People_classes/director.cpp ../PSS_HomwWork2/
 		../PSS_HomwWork2/People_classes/people.h \
 		../PSS_HomwWork2/Additional_classes/date.h \
 		../PSS_HomwWork2/Additional_classes/passport.h \
-		../PSS_HomwWork2/Enumerations/gender.h \
 		../PSS_HomwWork2/Additional_classes/personalcard.h \
 		../PSS_HomwWork2/Enumerations/accesslevels.h \
-		../PSS_HomwWork2/Enumerations/position.h
+		../PSS_HomwWork2/Additional_classes/roomlocation.h \
+		../PSS_HomwWork2/Room_classes/universityroom.h \
+		../PSS_HomwWork2/Room_classes/room.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\director.o ..\PSS_HomwWork2\People_classes\director.cpp
 
 debug/labemployees.o: ../PSS_HomwWork2/People_classes/labemployees.cpp ../PSS_HomwWork2/People_classes/labemployees.h \
@@ -217,16 +217,16 @@ debug/labemployees.o: ../PSS_HomwWork2/People_classes/labemployees.cpp ../PSS_Ho
 		../PSS_HomwWork2/People_classes/people.h \
 		../PSS_HomwWork2/Additional_classes/date.h \
 		../PSS_HomwWork2/Additional_classes/passport.h \
-		../PSS_HomwWork2/Enumerations/gender.h \
 		../PSS_HomwWork2/Additional_classes/personalcard.h \
 		../PSS_HomwWork2/Enumerations/accesslevels.h \
-		../PSS_HomwWork2/Enumerations/position.h
+		../PSS_HomwWork2/Additional_classes/roomlocation.h \
+		../PSS_HomwWork2/Room_classes/universityroom.h \
+		../PSS_HomwWork2/Room_classes/room.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\labemployees.o ..\PSS_HomwWork2\People_classes\labemployees.cpp
 
 debug/people.o: ../PSS_HomwWork2/People_classes/people.cpp ../PSS_HomwWork2/People_classes/people.h \
 		../PSS_HomwWork2/Additional_classes/date.h \
-		../PSS_HomwWork2/Additional_classes/passport.h \
-		../PSS_HomwWork2/Enumerations/gender.h
+		../PSS_HomwWork2/Additional_classes/passport.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\people.o ..\PSS_HomwWork2\People_classes\people.cpp
 
 debug/professor.o: ../PSS_HomwWork2/People_classes/professor.cpp ../PSS_HomwWork2/People_classes/professor.h \
@@ -234,15 +234,12 @@ debug/professor.o: ../PSS_HomwWork2/People_classes/professor.cpp ../PSS_HomwWork
 		../PSS_HomwWork2/People_classes/people.h \
 		../PSS_HomwWork2/Additional_classes/date.h \
 		../PSS_HomwWork2/Additional_classes/passport.h \
-		../PSS_HomwWork2/Enumerations/gender.h \
 		../PSS_HomwWork2/Additional_classes/personalcard.h \
 		../PSS_HomwWork2/Enumerations/accesslevels.h \
-		../PSS_HomwWork2/Enumerations/position.h \
-		../PSS_HomwWork2/Room_classes/cabinet.h \
+		../PSS_HomwWork2/Additional_classes/roomlocation.h \
 		../PSS_HomwWork2/Room_classes/universityroom.h \
 		../PSS_HomwWork2/Room_classes/room.h \
-		../PSS_HomwWork2/Enumerations/roomtype.h \
-		../PSS_HomwWork2/Additional_classes/roomlocation.h
+		../PSS_HomwWork2/Room_classes/cabinet.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\professor.o ..\PSS_HomwWork2\People_classes\professor.cpp
 
 debug/student.o: ../PSS_HomwWork2/People_classes/student.cpp ../PSS_HomwWork2/People_classes/student.h \
@@ -250,42 +247,38 @@ debug/student.o: ../PSS_HomwWork2/People_classes/student.cpp ../PSS_HomwWork2/Pe
 		../PSS_HomwWork2/People_classes/people.h \
 		../PSS_HomwWork2/Additional_classes/date.h \
 		../PSS_HomwWork2/Additional_classes/passport.h \
-		../PSS_HomwWork2/Enumerations/gender.h \
 		../PSS_HomwWork2/Additional_classes/personalcard.h \
 		../PSS_HomwWork2/Enumerations/accesslevels.h \
-		../PSS_HomwWork2/Enumerations/position.h \
-		../PSS_HomwWork2/Room_classes/livingroom.h \
+		../PSS_HomwWork2/Additional_classes/roomlocation.h \
+		../PSS_HomwWork2/Room_classes/universityroom.h \
 		../PSS_HomwWork2/Room_classes/room.h \
-		../PSS_HomwWork2/Enumerations/roomtype.h \
-		../PSS_HomwWork2/Additional_classes/roomlocation.h
+		../PSS_HomwWork2/Room_classes/livingroom.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\student.o ..\PSS_HomwWork2\People_classes\student.cpp
 
 debug/universitypeople.o: ../PSS_HomwWork2/People_classes/universitypeople.cpp ../PSS_HomwWork2/People_classes/universitypeople.h \
 		../PSS_HomwWork2/People_classes/people.h \
 		../PSS_HomwWork2/Additional_classes/date.h \
 		../PSS_HomwWork2/Additional_classes/passport.h \
-		../PSS_HomwWork2/Enumerations/gender.h \
 		../PSS_HomwWork2/Additional_classes/personalcard.h \
 		../PSS_HomwWork2/Enumerations/accesslevels.h \
-		../PSS_HomwWork2/Enumerations/position.h
+		../PSS_HomwWork2/Additional_classes/roomlocation.h \
+		../PSS_HomwWork2/Room_classes/universityroom.h \
+		../PSS_HomwWork2/Room_classes/room.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\universitypeople.o ..\PSS_HomwWork2\People_classes\universitypeople.cpp
 
 debug/cabinet.o: ../PSS_HomwWork2/Room_classes/cabinet.cpp ../PSS_HomwWork2/Room_classes/cabinet.h \
 		../PSS_HomwWork2/Room_classes/universityroom.h \
 		../PSS_HomwWork2/Room_classes/room.h \
-		../PSS_HomwWork2/Enumerations/roomtype.h \
 		../PSS_HomwWork2/Additional_classes/roomlocation.h \
 		../PSS_HomwWork2/Enumerations/accesslevels.h \
 		../PSS_HomwWork2/People_classes/people.h \
 		../PSS_HomwWork2/Additional_classes/date.h \
-		../PSS_HomwWork2/Additional_classes/passport.h \
-		../PSS_HomwWork2/Enumerations/gender.h
+		../PSS_HomwWork2/Additional_classes/passport.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\cabinet.o ..\PSS_HomwWork2\Room_classes\cabinet.cpp
 
 debug/conferenceroom.o: ../PSS_HomwWork2/Room_classes/conferenceroom.cpp ../PSS_HomwWork2/Room_classes/conferenceroom.h \
 		../PSS_HomwWork2/Room_classes/universityroom.h \
 		../PSS_HomwWork2/Room_classes/room.h \
-		../PSS_HomwWork2/Enumerations/roomtype.h \
 		../PSS_HomwWork2/Additional_classes/roomlocation.h \
 		../PSS_HomwWork2/Enumerations/accesslevels.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\conferenceroom.o ..\PSS_HomwWork2\Room_classes\conferenceroom.cpp
@@ -294,41 +287,34 @@ debug/directorcabinet.o: ../PSS_HomwWork2/Room_classes/directorcabinet.cpp ../PS
 		../PSS_HomwWork2/Room_classes/cabinet.h \
 		../PSS_HomwWork2/Room_classes/universityroom.h \
 		../PSS_HomwWork2/Room_classes/room.h \
-		../PSS_HomwWork2/Enumerations/roomtype.h \
 		../PSS_HomwWork2/Additional_classes/roomlocation.h \
 		../PSS_HomwWork2/Enumerations/accesslevels.h \
 		../PSS_HomwWork2/People_classes/people.h \
 		../PSS_HomwWork2/Additional_classes/date.h \
-		../PSS_HomwWork2/Additional_classes/passport.h \
-		../PSS_HomwWork2/Enumerations/gender.h
+		../PSS_HomwWork2/Additional_classes/passport.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\directorcabinet.o ..\PSS_HomwWork2\Room_classes\directorcabinet.cpp
 
 debug/lectureroom.o: ../PSS_HomwWork2/Room_classes/lectureroom.cpp ../PSS_HomwWork2/Room_classes/lectureroom.h \
 		../PSS_HomwWork2/Room_classes/universityroom.h \
 		../PSS_HomwWork2/Room_classes/room.h \
-		../PSS_HomwWork2/Enumerations/roomtype.h \
 		../PSS_HomwWork2/Additional_classes/roomlocation.h \
 		../PSS_HomwWork2/Enumerations/accesslevels.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\lectureroom.o ..\PSS_HomwWork2\Room_classes\lectureroom.cpp
 
 debug/livingroom.o: ../PSS_HomwWork2/Room_classes/livingroom.cpp ../PSS_HomwWork2/Room_classes/livingroom.h \
 		../PSS_HomwWork2/Room_classes/room.h \
-		../PSS_HomwWork2/Enumerations/roomtype.h \
 		../PSS_HomwWork2/Additional_classes/roomlocation.h \
 		../PSS_HomwWork2/People_classes/people.h \
 		../PSS_HomwWork2/Additional_classes/date.h \
-		../PSS_HomwWork2/Additional_classes/passport.h \
-		../PSS_HomwWork2/Enumerations/gender.h
+		../PSS_HomwWork2/Additional_classes/passport.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\livingroom.o ..\PSS_HomwWork2\Room_classes\livingroom.cpp
 
 debug/room.o: ../PSS_HomwWork2/Room_classes/room.cpp ../PSS_HomwWork2/Room_classes/room.h \
-		../PSS_HomwWork2/Enumerations/roomtype.h \
 		../PSS_HomwWork2/Additional_classes/roomlocation.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\room.o ..\PSS_HomwWork2\Room_classes\room.cpp
 
 debug/universityroom.o: ../PSS_HomwWork2/Room_classes/universityroom.cpp ../PSS_HomwWork2/Room_classes/universityroom.h \
 		../PSS_HomwWork2/Room_classes/room.h \
-		../PSS_HomwWork2/Enumerations/roomtype.h \
 		../PSS_HomwWork2/Additional_classes/roomlocation.h \
 		../PSS_HomwWork2/Enumerations/accesslevels.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\universityroom.o ..\PSS_HomwWork2\Room_classes\universityroom.cpp

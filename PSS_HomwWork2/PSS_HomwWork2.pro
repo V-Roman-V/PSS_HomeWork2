@@ -31,9 +31,6 @@ HEADERS += \
     Additional_classes/personalcard.h \
     Additional_classes/roomlocation.h \
     Enumerations/accesslevels.h \
-    Enumerations/gender.h \
-    Enumerations/position.h \
-    Enumerations/roomtype.h \
     People_classes/admins.h \
     People_classes/director.h \
     People_classes/labemployees.h \
