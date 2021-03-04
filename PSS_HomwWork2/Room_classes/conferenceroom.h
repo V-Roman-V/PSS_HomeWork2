@@ -7,6 +7,9 @@ class ConferenceRoom : public UniversityRoom
 {
 public:
     ConferenceRoom();
+
+private:
+    virtual AccessLevel neededAccessLevel() override;
 };
 
 #endif // CONFERENCEROOM_H

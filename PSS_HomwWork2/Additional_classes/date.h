@@ -5,6 +5,8 @@
 class Date
 {
 public:
+    static Date current_date;
+
     Date(unsigned short y = 0, unsigned short m = 0, unsigned short d = 0);
 
     int getAgeDiff(const Date &right) const;

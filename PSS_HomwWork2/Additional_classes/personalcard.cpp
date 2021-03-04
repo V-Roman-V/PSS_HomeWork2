@@ -1,9 +1,9 @@
 #include "personalcard.h"
 
-static unsigned int count_card = 0;
+unsigned int PersonalCard::count_card = 0;
 
 PersonalCard::PersonalCard()
-    :unique_code(count_card++)
+    :unique_code(PersonalCard::count_card++)
 {
 
 }

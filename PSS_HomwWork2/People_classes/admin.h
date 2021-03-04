@@ -1,18 +1,18 @@
-#ifndef ADMINS_H
-#define ADMINS_H
+#ifndef ADMIN_H
+#define ADMIN_H
 
 #include "universitypeople.h"
 
 using Position = UniversityPeople::Position;
 
-class Admins : public UniversityPeople
+class Admin : public UniversityPeople
 {
 public:
-    Admins();
+    Admin();
 
     virtual Position getPosition() const override;
 
     void giveAcces();
 };
 
-#endif // ADMINS_H
+#endif // ADMIN_H

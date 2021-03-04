@@ -13,7 +13,7 @@ public:
 
     virtual RoomType getRoomType() override;
 private:
-    AccessLevel needed_access_level;
+    virtual AccessLevel neededAccessLevel() = 0;
 
 };
 

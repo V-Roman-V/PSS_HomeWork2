@@ -1,9 +1,12 @@
 #include <iostream>
 
 using namespace std;
+#include "University_class/university.h"
 
 int main()
 {
-    cout << "Hello World!" << endl;
+    University Innopolis("Innopolis University");
+
+
     return 0;
 }

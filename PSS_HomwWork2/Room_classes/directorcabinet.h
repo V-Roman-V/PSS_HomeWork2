@@ -7,6 +7,9 @@ class DirectorCabinet : public Cabinet
 {
 public:
     DirectorCabinet();
+
+private:
+    virtual AccessLevel neededAccessLevel() override;
 };
 
 #endif // DIRECTORCABINET_H

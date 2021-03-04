@@ -1,15 +1,15 @@
-#ifndef LABEMPLOYEES_H
-#define LABEMPLOYEES_H
+#ifndef LABEMPLOYEE_H
+#define LABEMPLOYEE_H
 
 #include "universitypeople.h"
 
 using Position = UniversityPeople::Position;
 
-class LabEmployees : public UniversityPeople
+class LabEmployee : public UniversityPeople
 {
 public:
-    LabEmployees();
+    LabEmployee();
     virtual Position getPosition() const override;
 };
 
-#endif // LABEMPLOYEES_H
+#endif // LABEMPLOYEE_H

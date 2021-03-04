@@ -1,9 +1,21 @@
 #include "people.h"
 
-People::People()
+People::People(const std::string &_name, const People::Gender &_gender, const Date &_date_of_birth, const Passport &_passport, const std::string &_phone_number, const std::string &_nationality)
+    :name(_name), date_of_birth(_date_of_birth), passport(_passport), gender(_gender), phone_number(_phone_number), nationality(_nationality)
 {
 
 }
+
+void People::setPeople(const std::string &_name, const People::Gender &_gender, const Date &_date_of_birth, const Passport &_passport, const std::string &_phone_number, const std::string &_nationality)
+{
+    name          = _name;
+    date_of_birth = _date_of_birth;
+    passport      = _passport;
+    gender        = _gender;
+    phone_number  = _phone_number;
+    nationality   = _nationality;
+}
+
 
 std::string People::getInfo()
 {
@@ -42,8 +54,8 @@ void People::setPassport(const Passport &value)
 
 unsigned short People::getAge() const
 {
-//    return date_of_birth;
-    return 0;
+    Date cur_date(2021,02,23);
+    return date_of_birth.getAgeDiff(cur_date);
 }
 
 People::Gender People::getGender() const

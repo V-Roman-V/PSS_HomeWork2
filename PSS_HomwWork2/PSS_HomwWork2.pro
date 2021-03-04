@@ -8,14 +8,15 @@ SOURCES += \
         Additional_classes/passport.cpp \
         Additional_classes/personalcard.cpp \
         Additional_classes/roomlocation.cpp \
-        People_classes/admins.cpp \
+        People_classes/admin.cpp \
         People_classes/director.cpp \
-        People_classes/labemployees.cpp \
+        People_classes/labemployee.cpp \
         People_classes/people.cpp \
         People_classes/professor.cpp \
         People_classes/student.cpp \
         People_classes/universitypeople.cpp \
         Room_classes/cabinet.cpp \
+        Room_classes/classroom.cpp \
         Room_classes/conferenceroom.cpp \
         Room_classes/directorcabinet.cpp \
         Room_classes/lectureroom.cpp \
@@ -31,14 +32,15 @@ HEADERS += \
     Additional_classes/personalcard.h \
     Additional_classes/roomlocation.h \
     Enumerations/accesslevels.h \
-    People_classes/admins.h \
+    People_classes/admin.h \
     People_classes/director.h \
-    People_classes/labemployees.h \
+    People_classes/labemployee.h \
     People_classes/people.h \
     People_classes/professor.h \
     People_classes/student.h \
     People_classes/universitypeople.h \
     Room_classes/cabinet.h \
+    Room_classes/classroom.h \
     Room_classes/conferenceroom.h \
     Room_classes/directorcabinet.h \
     Room_classes/lectureroom.h \

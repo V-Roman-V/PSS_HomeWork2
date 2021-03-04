@@ -11,6 +11,7 @@ public:
 
 private:
     People* workers;
+    virtual AccessLevel neededAccessLevel() override;
 };
 
 #endif // CABINET_H

@@ -22,6 +22,8 @@ public:
 
     virtual Position getPosition() const = 0;
 
+    bool tryToEnter(const Room* room);
+
 protected:
     PersonalCard* card;
     std::vector<UniversityRoom*> special_access;

@@ -319,10 +319,26 @@ debug/universityroom.o: ../PSS_HomwWork2/Room_classes/universityroom.cpp ../PSS_
 		../PSS_HomwWork2/Enumerations/accesslevels.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\universityroom.o ..\PSS_HomwWork2\Room_classes\universityroom.cpp
 
-debug/university.o: ../PSS_HomwWork2/University_class/university.cpp ../PSS_HomwWork2/University_class/university.h
+debug/university.o: ../PSS_HomwWork2/University_class/university.cpp ../PSS_HomwWork2/University_class/university.h \
+		../PSS_HomwWork2/Room_classes/room.h \
+		../PSS_HomwWork2/Additional_classes/roomlocation.h \
+		../PSS_HomwWork2/Room_classes/livingroom.h \
+		../PSS_HomwWork2/People_classes/people.h \
+		../PSS_HomwWork2/Additional_classes/date.h \
+		../PSS_HomwWork2/Additional_classes/passport.h \
+		../PSS_HomwWork2/Room_classes/universityroom.h \
+		../PSS_HomwWork2/Enumerations/accesslevels.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\university.o ..\PSS_HomwWork2\University_class\university.cpp
 
-debug/main.o: ../PSS_HomwWork2/main.cpp 
+debug/main.o: ../PSS_HomwWork2/main.cpp ../PSS_HomwWork2/University_class/university.h \
+		../PSS_HomwWork2/Room_classes/room.h \
+		../PSS_HomwWork2/Additional_classes/roomlocation.h \
+		../PSS_HomwWork2/Room_classes/livingroom.h \
+		../PSS_HomwWork2/People_classes/people.h \
+		../PSS_HomwWork2/Additional_classes/date.h \
+		../PSS_HomwWork2/Additional_classes/passport.h \
+		../PSS_HomwWork2/Room_classes/universityroom.h \
+		../PSS_HomwWork2/Enumerations/accesslevels.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\main.o ..\PSS_HomwWork2\main.cpp
 
 ####### Install

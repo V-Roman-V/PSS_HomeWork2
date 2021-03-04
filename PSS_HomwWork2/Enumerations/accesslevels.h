@@ -4,7 +4,8 @@ enum class AccessLevel {
     no_level,
     green,
     yellow,
-    red
+    red,
+    black // only for director
 };
 
 #endif // ACCESSLEVELS_H
