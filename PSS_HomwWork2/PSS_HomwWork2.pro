@@ -6,6 +6,7 @@ CONFIG -= qt
 SOURCES += \
         Additional_classes/date.cpp \
         Additional_classes/passport.cpp \
+        Additional_classes/peoplegenerator.cpp \
         Additional_classes/personalcard.cpp \
         Additional_classes/roomlocation.cpp \
         People_classes/admin.cpp \
@@ -29,6 +30,7 @@ SOURCES += \
 HEADERS += \
     Additional_classes/date.h \
     Additional_classes/passport.h \
+    Additional_classes/peoplegenerator.h \
     Additional_classes/personalcard.h \
     Additional_classes/roomlocation.h \
     Enumerations/accesslevels.h \

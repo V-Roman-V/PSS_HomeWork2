@@ -1,6 +1,6 @@
 #include "date.h"
 
-Date::Date(unsigned short y, unsigned short m, unsigned short d)
+Date::Date(unsigned short d, unsigned short m, unsigned short y)
     :year(y), month(m), day(d)
 {}
 

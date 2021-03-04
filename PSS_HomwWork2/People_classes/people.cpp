@@ -1,21 +1,21 @@
 #include "people.h"
 
-People::People(const std::string &_name, const People::Gender &_gender, const Date &_date_of_birth, const Passport &_passport, const std::string &_phone_number, const std::string &_nationality)
-    :name(_name), date_of_birth(_date_of_birth), passport(_passport), gender(_gender), phone_number(_phone_number), nationality(_nationality)
+People::People(const std::string &_name, const std::string& _surname, const People::Gender &_gender, const Date &_date_of_birth, const Passport &_passport, const std::string &_phone_number, const std::string &_nationality)
+    :name(_name),surname(_surname), date_of_birth(_date_of_birth), passport(_passport), gender(_gender), phone_number(_phone_number), nationality(_nationality)
 {
 
 }
 
-void People::setPeople(const std::string &_name, const People::Gender &_gender, const Date &_date_of_birth, const Passport &_passport, const std::string &_phone_number, const std::string &_nationality)
+void People::setPeople(const std::string &_name,const std::string& _surname, const People::Gender &_gender, const Date &_date_of_birth, const Passport &_passport, const std::string &_phone_number, const std::string &_nationality)
 {
     name          = _name;
+    surname       = _surname;
     date_of_birth = _date_of_birth;
     passport      = _passport;
     gender        = _gender;
     phone_number  = _phone_number;
     nationality   = _nationality;
 }
-
 
 std::string People::getInfo()
 {
@@ -25,11 +25,6 @@ std::string People::getInfo()
 std::string People::getName() const
 {
     return name;
-}
-
-void People::setName(const std::string &value)
-{
-    name = value;
 }
 
 Date People::getDateOfBirth() const

@@ -10,6 +10,9 @@ class Director : public UniversityPeople
 public:
     Director();
     virtual Position getPosition() const override;
+
+private:
+
 };
 
 #endif // DIRECTOR_H

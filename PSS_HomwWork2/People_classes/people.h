@@ -8,8 +8,10 @@ class People
 {
 public:
     enum class Gender{unknown, male, female};
+    People() = default;
 
-    People(const std::string& _name = "",
+    People(const std::string& _name,
+           const std::string& _surname,
            const Gender& _gender = Gender::unknown,
            const Date& _date_of_birth = Date(),
            const Passport& _passport = Passport(),
@@ -17,7 +19,8 @@ public:
            const std::string& _nationality = ""
           );
 
-    void setPeople(const std::string& _name = "",
+    void setPeople(const std::string& _name,
+                   const std::string& _surname,
                    const Gender& _gender = Gender::unknown,
                    const Date& _date_of_birth = Date(),
                    const Passport& _passport = Passport(),
@@ -27,11 +30,9 @@ public:
 
     virtual ~People() = default;
 
-
     virtual std::string getInfo();
 
     std::string getName() const;
-    void setName(const std::string &value);
 
     Date getDateOfBirth() const;
     void setDateOfBirth(const Date &value);
@@ -52,6 +53,7 @@ public:
 
 private:
     std::string name;
+    std::string surname;
     Date date_of_birth;
     Passport passport;
     Gender gender;

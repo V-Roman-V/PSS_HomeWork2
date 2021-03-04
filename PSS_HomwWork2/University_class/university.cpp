@@ -17,7 +17,7 @@ Student &University::newStudent(const Student &student)
     students.push_back( new Student(student));
 }
 
-void University::setDirector(Director *value)
+void University::setDirector(const People &people)
 {
-    director = value;
+//    director = value;
 }

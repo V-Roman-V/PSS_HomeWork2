@@ -16,11 +16,11 @@ class University
 public:
     University(const std::string& name = "University");
 
-    UniversityPeople& newEmployess(const UniversityPeople& employee);
+    UniversityPeople& newEmployess(const UniversityPeople& people);
 
     Student& newStudent(const Student& student);
 
-    void setDirector(Director *value);
+    void setDirector(const People& people );
 
 private:
     std::string name;
