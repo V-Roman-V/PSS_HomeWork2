@@ -5,6 +5,7 @@
 #include "Additional_classes/personalcard.h"
 #include <vector>
 #include "Room_classes/universityroom.h"
+#include "Enumerations/accesslevels.h"
 
 class UniversityPeople : public People
 {
@@ -30,6 +31,7 @@ public:
 
 protected:
     PersonalCard card;
+    std::string getPozitionName(Position p);
 
 };
 

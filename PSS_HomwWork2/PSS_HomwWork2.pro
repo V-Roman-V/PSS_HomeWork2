@@ -12,6 +12,7 @@ SOURCES += \
         Additional_classes/peoplegenerator.cpp \
         Additional_classes/personalcard.cpp \
         Additional_classes/roomlocation.cpp \
+        Enumerations/accesslevels.cpp \
         People_classes/admin.cpp \
         People_classes/director.cpp \
         People_classes/labemployee.cpp \

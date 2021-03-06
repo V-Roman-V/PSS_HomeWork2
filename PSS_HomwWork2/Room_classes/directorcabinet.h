@@ -3,11 +3,14 @@
 
 #include "cabinet.h"
 
+using RoomType = UniversityRoom::RoomType;
+
 class DirectorCabinet : public Cabinet
 {
 public:
-    DirectorCabinet();
+    DirectorCabinet(const RoomLocation& l = RoomLocation());
 
+    virtual RoomType getRoomType() const override;
 private:
     virtual AccessLevel neededAccessLevel() override;
 };

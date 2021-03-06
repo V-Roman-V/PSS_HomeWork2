@@ -1,8 +1,14 @@
 #include "directorcabinet.h"
 
-DirectorCabinet::DirectorCabinet()
+DirectorCabinet::DirectorCabinet(const RoomLocation &l)
+    : Cabinet(l)
 {
 
+}
+
+UniversityRoom::RoomType DirectorCabinet::getRoomType() const
+{
+    return RoomType::director_cabinet;
 }
 
 AccessLevel DirectorCabinet::neededAccessLevel()

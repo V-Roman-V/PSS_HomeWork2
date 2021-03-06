@@ -2,16 +2,17 @@
 #define ROOM_H
 
 #include "Additional_classes/roomlocation.h"
+#include <string>
+
 class Room
 {
 public:
-    enum class RoomType{living_room,university_room};
 
-    Room();
+    Room(const RoomLocation& l = RoomLocation());
     virtual ~Room() = default;
-    virtual RoomType getRoomType() = 0;
+    virtual std::string getInfo();
 
-private:
+protected:
     RoomLocation room_location;
     unsigned short max_number_of_people;
 };

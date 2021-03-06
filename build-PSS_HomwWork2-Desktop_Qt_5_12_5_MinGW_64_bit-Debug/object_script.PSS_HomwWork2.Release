@@ -3,6 +3,7 @@ release/passport.o
 release/peoplegenerator.o
 release/personalcard.o
 release/roomlocation.o
+release/accesslevels.o
 release/admin.o
 release/director.o
 release/labemployee.o

@@ -1,6 +1,6 @@
 #ifndef ROOMLOCATION_H
 #define ROOMLOCATION_H
-
+#include <ostream>
 
 class RoomLocation
 {
@@ -10,20 +10,16 @@ public:
         campuse
     };
 
-    RoomLocation(Place building = Place::university, short floor = 0, short room_number = 0);
+    RoomLocation(Place building = Place::university, short floor = 0, short room_number = 0,short campuse_num = 0);
 
-    void setRoomLocation(Place building = Place::university, short floor = 0, short room_number = 0);
+    void setRoomLocation(Place building = Place::university, short floor = 0, short room_number = 0,short campuse_num = 0);
 
-    Place getBuilding() const;
-
-    short getFloor() const;
-
-    short getRoom_number() const;
-
+    friend std::ostream& operator<<(std::ostream& os, const RoomLocation& l);
 private:
     Place building;
     short floor;
     short room_number;
+    short campuse_number;
 
 };
 

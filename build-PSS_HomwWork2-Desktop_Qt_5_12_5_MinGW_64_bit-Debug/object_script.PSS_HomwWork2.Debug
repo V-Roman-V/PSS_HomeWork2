@@ -3,6 +3,7 @@ debug/passport.o
 debug/peoplegenerator.o
 debug/personalcard.o
 debug/roomlocation.o
+debug/accesslevels.o
 debug/admin.o
 debug/director.o
 debug/labemployee.o

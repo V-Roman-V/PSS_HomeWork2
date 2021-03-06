@@ -3,11 +3,14 @@
 
 #include "universityroom.h"
 
+using RoomType = UniversityRoom::RoomType;
+
 class ClassRoom : public UniversityRoom
 {
 public:
-    ClassRoom();
+    ClassRoom(const RoomLocation& l = RoomLocation());
 
+    virtual RoomType getRoomType() const override;
 private:
     virtual AccessLevel neededAccessLevel() override;
 };

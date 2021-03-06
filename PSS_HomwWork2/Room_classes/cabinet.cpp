@@ -1,8 +1,14 @@
 #include "cabinet.h"
 
-Cabinet::Cabinet()
+Cabinet::Cabinet(const RoomLocation &l)
+    :UniversityRoom(l), worker(nullptr)
 {
 
+}
+
+UniversityRoom::RoomType Cabinet::getRoomType() const
+{
+    return RoomType::cabinet;
 }
 
 AccessLevel Cabinet::neededAccessLevel()
