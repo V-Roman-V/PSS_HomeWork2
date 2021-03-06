@@ -8,11 +8,9 @@ using Position = UniversityPeople::Position;
 class Director : public UniversityPeople
 {
 public:
-    Director();
+    Director(const People& p = People());
+
     virtual Position getPosition() const override;
-
-private:
-
 };
 
 #endif // DIRECTOR_H

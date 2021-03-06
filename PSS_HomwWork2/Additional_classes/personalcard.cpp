@@ -18,9 +18,16 @@ const std::vector<RoomLocation> &PersonalCard::getMovementHistory() const
     return movement_history;
 }
 
-AccessLevel PersonalCard::getAccessLevel() const
+int PersonalCard::getAccessLevel() const
 {
-    return access_level;
+    switch(access_level){
+        case AccessLevel::no_level:return 0;
+        case AccessLevel::green:   return 1;
+        case AccessLevel::yellow:  return 2;
+        case AccessLevel::red:     return 3;
+        case AccessLevel::black:   return 4;
+    }
+    return 0;
 }
 
 unsigned int PersonalCard::getUniqueCode() const

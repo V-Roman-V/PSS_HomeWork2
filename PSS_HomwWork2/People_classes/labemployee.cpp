@@ -1,8 +1,9 @@
 #include "labemployee.h"
 
-LabEmployee::LabEmployee()
+LabEmployee::LabEmployee(const People &p)
+    :UniversityPeople(p)
 {
-
+    card.setAccessLevel(AccessLevel::yellow);
 }
 
 Position LabEmployee::getPosition() const

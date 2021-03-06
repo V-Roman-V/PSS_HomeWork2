@@ -24,3 +24,7 @@ bool Passport::isCorrect()
 {
     return series!=0;
 }
+
+std::ostream& operator<<(std::ostream& os, const Passport& p){
+    return os<<p.getSeries()<<" "<<p.getNumber();
+}

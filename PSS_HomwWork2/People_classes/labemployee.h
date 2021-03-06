@@ -8,7 +8,8 @@ using Position = UniversityPeople::Position;
 class LabEmployee : public UniversityPeople
 {
 public:
-    LabEmployee();
+    LabEmployee(const People& p = People());
+
     virtual Position getPosition() const override;
 };
 

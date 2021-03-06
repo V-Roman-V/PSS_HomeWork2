@@ -15,13 +15,18 @@ class University
 {
 public:
     University(const std::string& name = "University");
+    University(const University&) = delete;
+    void operator=(const University&) = delete;
 
-    UniversityPeople& newEmployess(const UniversityPeople& people);
-
-    Student& newStudent(const Student& student);
+    ~University();
+    void addStudent(const People &people, LivingRoom* lroom, unsigned short course);
+    void addEmployess(const People& people);
+    void addProfessor(const People& people, Cabinet* cabinet, const std::string& course);
+    void addAdmin(const People& people);
 
     void setDirector(const People& people );
 
+    std::string getListPeoples();
 private:
     std::string name;
     std::vector<LivingRoom*> campuse;

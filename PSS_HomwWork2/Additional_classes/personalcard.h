@@ -14,7 +14,7 @@ public:
 
     const std::vector<RoomLocation>& getMovementHistory() const;
 
-    AccessLevel getAccessLevel() const;
+    int getAccessLevel() const;
 
     unsigned int getUniqueCode() const;
 

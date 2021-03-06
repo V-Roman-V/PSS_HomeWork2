@@ -1,7 +1,7 @@
 #include "peoplegenerator.h"
 
-unsigned int PeopleGenerator::count = std::rand();
 PeopleGenerator::Initializer PeopleGenerator::init;
+unsigned int PeopleGenerator::count = std::rand();
 
 std::vector<PeopleGenerator::data> PeopleGenerator::names =
     {{"James", "Powers", People::Gender::male},      {"Leroy", "Clark", People::Gender::male},      {"Robert", "Shaw", People::Gender::male},      {"Harry", "Marshall", People::Gender::male},     {"David", "Bradley", People::Gender::male},

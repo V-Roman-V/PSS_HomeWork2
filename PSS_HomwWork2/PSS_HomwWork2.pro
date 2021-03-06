@@ -3,6 +3,9 @@ CONFIG += console c++11
 CONFIG -= app_bundle
 CONFIG -= qt
 
+#QMAKE_CXXFLAGS += -std=c++0x
+QMAKE_CXXFLAGS += -Wall
+
 SOURCES += \
         Additional_classes/date.cpp \
         Additional_classes/passport.cpp \

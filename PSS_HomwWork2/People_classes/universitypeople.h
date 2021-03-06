@@ -17,16 +17,19 @@ public:
         admin
     };
 
-    UniversityPeople();
+    UniversityPeople(const People& p = People());
+
     virtual ~UniversityPeople() override = default;
 
     virtual Position getPosition() const = 0;
 
+    virtual std::string getCommonInfo() override;
+    virtual std::string getFullInfo() override;
+
     bool tryToEnter(const Room* room);
 
 protected:
-    PersonalCard* card;
-    std::vector<UniversityRoom*> special_access;
+    PersonalCard card;
 
 };
 

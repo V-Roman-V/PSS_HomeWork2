@@ -8,11 +8,11 @@ using Position = UniversityPeople::Position;
 class Admin : public UniversityPeople
 {
 public:
-    Admin();
+    Admin(const People& p = People());
 
     virtual Position getPosition() const override;
 
-    void giveAcces();
+    void giveAcces(UniversityPeople* people, Room* room);
 };
 
 #endif // ADMIN_H

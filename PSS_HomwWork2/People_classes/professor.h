@@ -10,11 +10,15 @@ class Professor : public UniversityPeople
 {
 public:
     Professor();
+    Professor(const People& p, Cabinet* _cabinet, std::string t_course);
+
     virtual Position getPosition() const override;
 
 private:
-    std::string teaching_course;
     Cabinet* cabinet;
+    std::string teaching_course;
+
+    void init();
 
 };
 

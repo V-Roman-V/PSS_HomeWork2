@@ -9,7 +9,7 @@ public:
 
     Date(unsigned short d = 0, unsigned short m = 0, unsigned short y = 0);
 
-    int getAgeDiff(const Date &right) const;
+    unsigned short getAgeDiff(const Date &right) const;
 
     void setDate(unsigned short y, unsigned short m, unsigned short d);
 
