@@ -6,6 +6,7 @@
 #include <vector>
 #include "Room_classes/universityroom.h"
 #include "Enumerations/accesslevels.h"
+//#include "People_classes/admin.h"
 
 class UniversityRoom;
 
@@ -31,13 +32,13 @@ public:
 
     bool tryToEnter(UniversityRoom* room);
 
-    void changeAccesLevel(AccessLevel level);
-
     void addSpecialAccessRoom(UniversityRoom* room);
 
     int getPersonalId() const;
 
     std::string getMovementHistory() const;
+
+    void changeAccessLevel(AccessLevel level);
 protected:
     std::vector<UniversityRoom*> special_access;
     PersonalCard card;

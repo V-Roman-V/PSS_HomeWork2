@@ -6,6 +6,8 @@
 #include "University_class/university.h"
 #include "Additional_classes/peoplegenerator.h"
 #include "Additional_classes/roomlocation.h"
+
+#include <cstdlib>
 using namespace std;
 
 template<class T>
@@ -141,10 +143,15 @@ int main()
     out<<Innopolis.getListRooms();
     out<<"___________________________________"<<endl;
 // ----------------------------------------------------------
-    const string LINE = "-------------------------------------------------------";
+    const string LINE = "---------------------------------------------------------";
     string input;
-    cout<<"Welcome to "<<Innopolis.getName()<<endl;
     while(true){ // position selection
+        // ------------------------------
+        //  где-то добавить комнаты
+        // ------------------------------
+
+        system("cls");
+        cout<<"Welcome to "<<Innopolis.getName()<<endl;
         cout<<LINE<<endl;
         cout<<"Our university has:"<<endl;
         cout<<"\t"<<1<<" director"<<endl;
@@ -152,7 +159,7 @@ int main()
         cout<<"\t"<<Innopolis.getLabEmployees().size()<<" lab employees"<<endl;
         cout<<"\t"<<Innopolis.getProfessors().size()<<" professors"<<endl;
         cout<<"\t"<<Innopolis.getStudents().size()<<" students"<<endl<<endl;
-        cout<<"You can read the list in detail. \n\tPlease enter the position name {(0)director;(1)admin;(2)labEmployee;(3)professor;(4)student}"<<endl;
+        cout<<"You can read the list in detail. \n\tPlease enter the position name {(0)director; (1)admin; (2)labEmployee; (3)professor; (4)student}"<<endl;
         cout<<'>';cin>>input;
         int position = -1;
         int command = -1;
@@ -168,47 +175,76 @@ int main()
         if(input == "student" or command == 4)
             position = 4;
         if(position == -1) continue;
-        vector<const UniversityPeople*> peoples;
+        vector<UniversityPeople*> peoples;
         switch(position){
             case 0:peoples.push_back(Innopolis.getDirector());break;
-            case 1:peoples = vector<const UniversityPeople*>(Innopolis.getAdmins().begin(),Innopolis.getAdmins().end());break;
-            case 2:peoples = vector<const UniversityPeople*>(Innopolis.getLabEmployees().begin(),Innopolis.getLabEmployees().end());break;
-            case 3:peoples = vector<const UniversityPeople*>(Innopolis.getProfessors().begin(),Innopolis.getProfessors().end());break;
-            case 4:peoples = vector<const UniversityPeople*>(Innopolis.getStudents().begin(),Innopolis.getStudents().end());break;
+            case 1:peoples = vector<UniversityPeople*>(Innopolis.getAdmins().begin(),Innopolis.getAdmins().end());break;
+            case 2:peoples = vector<UniversityPeople*>(Innopolis.getLabEmployees().begin(),Innopolis.getLabEmployees().end());break;
+            case 3:peoples = vector<UniversityPeople*>(Innopolis.getProfessors().begin(),Innopolis.getProfessors().end());break;
+            case 4:peoples = vector<UniversityPeople*>(Innopolis.getStudents().begin(),Innopolis.getStudents().end());break;
         }
-        while(true){ // person chosen
+
+        bool incorrect_pass = false;
+        int chosen_person = 0;
+        while(true){ // Person selection
+            system("cls");
+            switch(position){
+                case 0:cout<<"Director ";break;
+                case 1:cout<<"Admins ";break;
+                case 2:cout<<"Lab employees ";break;
+                case 3:cout<<"Professors ";break;
+                case 4:cout<<"Students ";break;
+            }
+            cout<<"in "<<Innopolis.getName()<<":"<<endl<<endl;
             int i=1;
             for(auto p: peoples)
                 cout<<" "<<i++<<") "<<p->getCommonInfo()<<endl;
             cout<<LINE<<endl;
-            cout<<"You can go into detail about a particular person or go back.\n\tPlease enter the person's personal id or enter \"(-)back\""<<endl;
-            cout<<'>';cin>>input;
-            if(input == "back" or input == "-"){break;}
-            if((input.find_first_not_of( "0123456789" ) != std::string::npos)) continue;
+            cout<<"You can go into detail about a particular person or go back.\n\tPlease enter the person's number in this list; To go back enter \"back\" or \"-\""<<endl;
+            if(!incorrect_pass){
+                cout<<'>';cin>>input;
+                if(input == "back" or input == "-"){break;}
+                if((input.find_first_not_of( "0123456789" ) != std::string::npos)) continue;
 
-            int personal_id= stoi(input);
-            const UniversityPeople* person = nullptr;
-            for(auto p: peoples)
-                if(p->getPersonalId() == personal_id)
-                    person = p;
-            if(person == nullptr) continue;
+                int personal_num= stoi(input);
+                if(personal_num <=0 || personal_num > peoples.size()) continue;
+                chosen_person = personal_num;
+            } else
+                cout<<">"<<chosen_person<<endl;
+
+            UniversityPeople* person = peoples[chosen_person-1];
 
             cout<<" "<<person->getFullInfo()<<endl;
 
             cout<<LINE<<endl;
-            cout<<"Would you like to log in to this account?  \n\tPlease enter the {Yes;No(default)}"<<endl;
-            cout<<'>';cin >>input;
-            if(input != "Yes") continue;
+            cout<<"Would you like to log in to this account?  \n\tPlease enter the {(y)Yes; No - default}";
+            if(incorrect_pass)
+                cout<<"  (Entered password was incorrect)";
+            cout<<endl;
+            cout<<'>';cin>>input;
+            if(input != "Yes" && input != "y"){
+                incorrect_pass = false;
+                continue;
+            }
 
-            // ------
-            // Спросить пароль у админа
-            // ------
+            if(position == 1){
+                cout<<LINE<<endl;
+                cout<<"Since you are trying to log in as an administrator, you need to enter your password."<<endl;
+                cout<<"\tPlease enter the password."<<endl;
+                cout<<'>';cin >>input;
+                Admin* admin = static_cast<Admin *>(person);
+                if(!admin->checkPassword(input)){
+                    incorrect_pass= true;
+                    continue;
+                }
+            }
+            incorrect_pass = false;
 
             while(true){
-                cout<<LINE<<endl;
+                system("cls");
                 cout<<"You are login to the system as "<<person->getName()<<endl;
                 cout<<"You can log out, display information about yourself, see the history of your movements, and try to enter the room."<<endl;
-                cout<<"\tPlease enter the command  {(0)logOut;(1)myInfo;(2)myMovementsHistory;(3)tryOpenRoom}"<<endl;
+                cout<<"\tPlease enter the command  {(0)logOut; (1)myInfo; (2)myMovementsHistory; (3)tryOpenRoom}"<<endl;
                 cout<<'>';cin>>input;
                 int command = -1;
                 if((input.find_first_not_of( "0123456789" ) == std::string::npos)) command = stoi(input);
@@ -221,7 +257,6 @@ int main()
                 if(input == "tryOpenRoom")
                     command = 3;
                 if(command < 0 or 3 < command) continue;
-                cout<<command;
                 if(command == 0) break;
                 if(command == 1) {
                     cout<<" "<<person->getFullInfo()<<endl;
@@ -232,11 +267,9 @@ int main()
                     cout<<" "<<person->getMovementHistory()<<endl;
                     continue;
                 }
-                if(command == 3) {
-                    cout<<" tryOpenRoom"<<endl;
-                    continue;
-                }
-                cout<<'>';cin>>input;
+                if(command != 3) continue;
+                cout<<" tryOpenRoom"<<endl;
+
             }
         }
     }

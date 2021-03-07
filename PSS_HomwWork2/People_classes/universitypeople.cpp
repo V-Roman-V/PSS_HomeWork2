@@ -38,7 +38,7 @@ bool UniversityPeople::tryToEnter(UniversityRoom* room)
     return true;
 }
 
-void UniversityPeople::changeAccesLevel(AccessLevel level)
+void UniversityPeople::changeAccessLevel(AccessLevel level)
 {
     card.setAccessLevel(level);
 }

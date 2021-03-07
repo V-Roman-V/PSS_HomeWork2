@@ -169,47 +169,47 @@ std::string University::getListRooms()
     return info.str();
 }
 
-const Director *University::getDirector() const
+Director *University::getDirector()
 {
     return director;
 }
 
-const std::vector<Admin *>& University::getAdmins() const
+std::vector<Admin *>& University::getAdmins()
 {
     return admins;
 }
 
-const std::vector<LabEmployee *>& University::getLabEmployees() const
+std::vector<LabEmployee *>& University::getLabEmployees()
 {
     return lab_employees;
 }
 
-const std::vector<Professor *>& University::getProfessors() const
+std::vector<Professor *>& University::getProfessors()
 {
     return professors;
 }
 
-const std::vector<Student *>& University::getStudents() const
+std::vector<Student *>& University::getStudents()
 {
     return students;
 }
 
-const DirectorCabinet *University::getDirectorCabinet() const
+DirectorCabinet *University::getDirectorCabinet()
 {
     return director_cabinet;
 }
 
-const std::vector<UniversityRoom *>& University::getUniversityRoom() const
+std::vector<UniversityRoom *>& University::getUniversityRoom()
 {
     return university_room;
 }
 
-const std::vector<Cabinet *>& University::getCabinetRoom() const
+std::vector<Cabinet *>& University::getCabinetRoom()
 {
     return cabinet_room;
 }
 
-const std::vector<LivingRoom *>& University::getLivingRoom() const
+std::vector<LivingRoom *>& University::getLivingRoom()
 {
     return living_room;
 }

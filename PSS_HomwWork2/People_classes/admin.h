@@ -12,8 +12,8 @@ public:
 
     virtual Position getPosition() const override;
 
-    void giveAcces(UniversityPeople* people, UniversityRoom* room);
-    void giveAcces(UniversityPeople* people, AccessLevel level);
+    void giveAccess(UniversityPeople* people, UniversityRoom* room);
+    void giveAccess(UniversityPeople* people, AccessLevel level);
 
     bool checkPassword(const std::string& pass);
 private:

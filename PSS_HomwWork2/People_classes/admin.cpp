@@ -11,14 +11,14 @@ Position Admin::getPosition() const
     return Position::admin;
 }
 
-void Admin::giveAcces(UniversityPeople *people, UniversityRoom *room)
+void Admin::giveAccess(UniversityPeople *people, UniversityRoom *room)
 {
     people->addSpecialAccessRoom(room);
 }
 
-void Admin::giveAcces(UniversityPeople *people, AccessLevel level)
+void Admin::giveAccess(UniversityPeople *people, AccessLevel level)
 {
-    people->changeAccesLevel(level);
+    people->changeAccessLevel(level);
 }
 
 bool Admin::checkPassword(const std::string &pass)

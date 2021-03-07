@@ -45,16 +45,16 @@ public:
     void setDirectorCabinet(const RoomLocation& location);
     std::string getListRooms();
 
-    const Director *getDirector() const;
-    const std::vector<Admin *>& getAdmins() const;
-    const std::vector<LabEmployee *>& getLabEmployees() const;
-    const std::vector<Professor *>& getProfessors() const;
-    const std::vector<Student *>& getStudents() const;
+    Director *getDirector();
+    std::vector<Admin *>& getAdmins();
+    std::vector<LabEmployee *>& getLabEmployees();
+    std::vector<Professor *>& getProfessors();
+    std::vector<Student *>& getStudents();
 
-    const DirectorCabinet *getDirectorCabinet() const;
-    const std::vector<UniversityRoom *>& getUniversityRoom() const;
-    const std::vector<Cabinet *>& getCabinetRoom() const;
-    const std::vector<LivingRoom *>& getLivingRoom() const;
+    DirectorCabinet *getDirectorCabinet();
+    std::vector<UniversityRoom *>& getUniversityRoom();
+    std::vector<Cabinet *>& getCabinetRoom();
+    std::vector<LivingRoom *>& getLivingRoom();
 
     std::string getName() const;
 
