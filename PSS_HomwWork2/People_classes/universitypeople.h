@@ -26,8 +26,8 @@ public:
 
     virtual Position getPosition() const = 0;
 
-    virtual std::string getCommonInfo() override;
-    virtual std::string getFullInfo() override;
+    virtual std::string getCommonInfo() const override;
+    virtual std::string getFullInfo() const override;
 
     bool tryToEnter(UniversityRoom* room);
 
@@ -35,10 +35,11 @@ public:
 
     void addSpecialAccessRoom(UniversityRoom* room);
 
+    int getPersonalId() const;
 protected:
     std::vector<UniversityRoom*> special_access;
     PersonalCard card;
-    std::string getPozitionName(Position p);
+    std::string getPozitionName(Position p)const;
 
 };
 

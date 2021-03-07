@@ -14,7 +14,7 @@ public:
     unsigned int getNumber() const;
     unsigned int getSeries() const;
 
-    bool isCorrect();
+    bool isCorrect()const;
 private:
     unsigned int number;
     unsigned int series;

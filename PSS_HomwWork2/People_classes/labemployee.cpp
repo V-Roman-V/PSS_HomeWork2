@@ -17,7 +17,7 @@ void LabEmployee::setCabinet(Cabinet *value)
     cabinet = value;
 }
 
-std::string LabEmployee::getFullInfo()
+std::string LabEmployee::getFullInfo()const
 {
     std::stringstream info;
     info<<UniversityPeople::getCommonInfo();

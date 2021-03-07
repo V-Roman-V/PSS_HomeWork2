@@ -7,7 +7,7 @@ UniversityPeople::UniversityPeople(const People &p)
     card.setAccessLevel(AccessLevel::no_level);
 }
 
-std::string UniversityPeople::getCommonInfo()
+std::string UniversityPeople::getCommonInfo()const
 {
     std::stringstream info;
     info<<"\tPersonal id: "<<card.getUniqueCode()<<std::endl;
@@ -15,7 +15,7 @@ std::string UniversityPeople::getCommonInfo()
     return info.str();
 }
 
-std::string UniversityPeople::getFullInfo()
+std::string UniversityPeople::getFullInfo()const
 {
     std::stringstream info;
     info<<"\tPosition: "<<getPozitionName(getPosition())<<std::endl;
@@ -43,10 +43,15 @@ void UniversityPeople::addSpecialAccessRoom(UniversityRoom* room)
     special_access.push_back(room);
 }
 
-std::string UniversityPeople::getPozitionName(UniversityPeople::Position p)
+int UniversityPeople::getPersonalId() const
+{
+    return card.getUniqueCode();
+}
+
+std::string UniversityPeople::getPozitionName(UniversityPeople::Position p) const
 {
     switch (p) {
-    case UniversityPeople::Position::student      :return"student";
+        case UniversityPeople::Position::student      :return"student";
         case UniversityPeople::Position::professor    :return"professor";
         case UniversityPeople::Position::lab_employee :return"lab employee";
         case UniversityPeople::Position::admin        :return"admin";

@@ -5,7 +5,7 @@ People::People(const std::string &_name, const std::string& _surname, const Peop
     :name(_name),surname(_surname), date_of_birth(_date_of_birth), passport(_passport), gender(_gender), nationality(_nationality), phone_number(_phone_number)
 {}
 
-std::string People::getCommonInfo()
+std::string People::getCommonInfo()const
 {
     std::stringstream info;
     info <<"\tname: "<<name<<" "<<surname<<std::endl;
@@ -13,7 +13,7 @@ std::string People::getCommonInfo()
     return info.str();
 }
 
-std::string People::getFullInfo()
+std::string People::getFullInfo()const
 {
     std::stringstream info;
     info <<"\tname: "<<name<<" "<<surname<<std::endl;

@@ -20,7 +20,7 @@ unsigned int Passport::getSeries() const
     return series;
 }
 
-bool Passport::isCorrect()
+bool Passport::isCorrect()const
 {
     return series!=0;
 }

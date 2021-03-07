@@ -30,7 +30,7 @@ public:
     void addStudent(const People &people, LivingRoom* lroom, unsigned short course);
     void addEmployess(const People& people);
     void addProfessor(const People& people, Cabinet* cabinet, const std::string& course);
-    void addAdmin(const People& people);
+    void addAdmin(const People& people, std::string pass);
 
     void setDirector(const People& people );
     std::string getFullListPeoples();
@@ -55,6 +55,8 @@ public:
     const std::vector<UniversityRoom *>& getUniversityRoom() const;
     const std::vector<Cabinet *>& getCabinetRoom() const;
     const std::vector<LivingRoom *>& getLivingRoom() const;
+
+    std::string getName() const;
 
 private:
     std::string name;

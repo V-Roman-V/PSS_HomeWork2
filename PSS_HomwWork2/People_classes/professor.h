@@ -18,7 +18,7 @@ public:
 
     void setCabinet(Cabinet *value);
 
-    virtual std::string getFullInfo() override;
+    virtual std::string getFullInfo()const override;
 
 private:
     Cabinet* cabinet;

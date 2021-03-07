@@ -61,9 +61,9 @@ void University::addProfessor(const People &people, Cabinet* cabinet, const std:
     professors.push_back(new Professor(people, cabinet, course));
 }
 
-void University::addAdmin(const People &people)
+void University::addAdmin(const People &people, std::string pass)
 {
-    admins.push_back(new Admin(people));
+    admins.push_back(new Admin(people,pass));
 }
 
 void University::setDirector(const People &people)
@@ -212,6 +212,11 @@ const std::vector<Cabinet *>& University::getCabinetRoom() const
 const std::vector<LivingRoom *>& University::getLivingRoom() const
 {
     return living_room;
+}
+
+std::string University::getName() const
+{
+    return name;
 }
 
 

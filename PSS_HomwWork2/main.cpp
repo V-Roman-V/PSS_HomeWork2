@@ -16,7 +16,7 @@ struct myQueue : public queue<T>{
 int main()
 {
     ofstream out("out.txt");
-    cout<<(out.is_open()?"opened out.txt file":"output file doesn't open")<<endl;
+//    cout<<(out.is_open()?"opened out.txt file":"output file doesn't open")<<endl;
 
     University Innopolis("Innopolis University");
     // ---------------------------------------------------------- Declare people
@@ -43,8 +43,8 @@ int main()
 // ---------------------------------------------------------- Add peoples
     Innopolis.setDirector(peoples.pickLast());
 
-    for(int i=0;i<2;i++)
-        Innopolis.addAdmin(peoples.pickLast());
+    Innopolis.addAdmin(peoples.pickLast(),"password");
+    Innopolis.addAdmin(peoples.pickLast(),"12345");
 
     for(int i=0;i<4;i++)
         Innopolis.addEmployess(peoples.pickLast());
@@ -117,7 +117,7 @@ int main()
         }
     }
 }
-// ---------------------------------------------------------- Make link between livingRoom and students
+// ----------------------------------------------------------  Make link between livingRoom and students
 {
     auto students = Innopolis.getStudents();
     auto living = Innopolis.getLivingRoom();
@@ -137,9 +137,62 @@ int main()
     out<<Innopolis.getFullListPeoples();
     out<<"___________________________________"<<endl;
     out<<Innopolis.getCommonListPeoples();
+    out<<"___________________________________"<<endl;
     out<<Innopolis.getListRooms();
     out<<"___________________________________"<<endl;
-
 // ----------------------------------------------------------
+
+    string input;
+    cout<<"Welcome to "<<Innopolis.getName()<<endl;
+    while(true){ // position selection
+        cout<<"Our university has:"<<endl;
+        cout<<"\t"<<1<<" director"<<endl;
+        cout<<"\t"<<Innopolis.getAdmins().size()<<" admins"<<endl;
+        cout<<"\t"<<Innopolis.getLabEmployees().size()<<" lab employees"<<endl;
+        cout<<"\t"<<Innopolis.getProfessors().size()<<" professors"<<endl;
+        cout<<"\t"<<Innopolis.getStudents().size()<<" students"<<endl<<endl;
+        cout<<"You can read the list in detail. \n\tPlease enter the position name {director;admin;labEmployee;professor;student}"<<endl;
+        cin>>input;
+        int position = -1;
+        if(input == "director")
+            position = 0;
+        if(input == "admin")
+            position = 1;
+        if(input == "labEmployee")
+            position = 2;
+        if(input == "professor")
+            position = 3;
+        if(input == "student")
+            position = 4;
+        if(position == -1) continue;
+        vector<const UniversityPeople*> peoples;
+        switch(position){
+            case 0:peoples.push_back(Innopolis.getDirector());break;
+            case 1:peoples = vector<const UniversityPeople*>(Innopolis.getAdmins().begin(),Innopolis.getAdmins().end());break;
+            case 2:peoples = vector<const UniversityPeople*>(Innopolis.getLabEmployees().begin(),Innopolis.getLabEmployees().end());break;
+            case 3:peoples = vector<const UniversityPeople*>(Innopolis.getProfessors().begin(),Innopolis.getProfessors().end());break;
+            case 4:peoples = vector<const UniversityPeople*>(Innopolis.getStudents().begin(),Innopolis.getStudents().end());break;
+        }
+        int i=1;
+        for(auto p: peoples)
+            cout<<" "<<i++<<") "<<p->getCommonInfo()<<endl;
+        while(true){ // person chosen
+            cout<<"You can go into detail about a particular person or go back.\n\tPlease enter the person's personal id or enter \"back\""<<endl;
+            cin>>input;
+            if(input == "back"){cout<<"-------------------------------------------------------"<<endl;break;}
+            if((input.find_first_not_of( "0123456789" ) != std::string::npos)) continue;
+
+            int personal_id= stoi(input);
+            const UniversityPeople* person = nullptr;
+            for(auto p: peoples)
+                if(p->getPersonalId() == personal_id)
+                    person = p;
+            if(person == nullptr) continue;
+
+            cout<<" "<<person->getFullInfo()<<endl;
+
+
+        }
+    }
     return 0;
 }

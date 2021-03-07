@@ -21,8 +21,8 @@ public:
           );
     virtual ~People() = default;
 
-    virtual std::string getCommonInfo();
-    virtual std::string getFullInfo();
+    virtual std::string getCommonInfo()const;
+    virtual std::string getFullInfo()const;
 
     std::string getName() const;
     unsigned short getAge() const;

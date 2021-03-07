@@ -28,7 +28,7 @@ void Student::init()
     card.setAccessLevel(AccessLevel::green);
 }
 
-std::string Student::getFullInfo()
+std::string Student::getFullInfo()const
 {
     std::stringstream info;
     info<<UniversityPeople::getCommonInfo();

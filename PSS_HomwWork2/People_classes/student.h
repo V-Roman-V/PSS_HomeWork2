@@ -18,7 +18,7 @@ public:
 
     void setRoom(LivingRoom *value);
 
-    virtual std::string getFullInfo() override;
+    virtual std::string getFullInfo()const override;
 
 private:
     LivingRoom* room;

@@ -1,7 +1,7 @@
 #include "admin.h"
 
-Admin::Admin(const People & p)
-    :UniversityPeople(p)
+Admin::Admin(const People & p, std::string password)
+    :UniversityPeople(p), password(password)
 {
     card.setAccessLevel(AccessLevel::red);
 }
@@ -19,4 +19,9 @@ void Admin::giveAcces(UniversityPeople *people, UniversityRoom *room)
 void Admin::giveAcces(UniversityPeople *people, AccessLevel level)
 {
     people->changeAccesLevel(level);
+}
+
+bool Admin::checkPassword(const std::string &pass)
+{
+    return (password.compare(pass) == 0);
 }
