@@ -26,8 +26,8 @@ void Professor::setCabinet(Cabinet *value)
 std::string Professor::getFullInfo()const
 {
     std::stringstream info;
-    info<<UniversityPeople::getCommonInfo();
-    info<<"\t Teaching course: "<<teaching_course<<std::endl;
+    info<<UniversityPeople::getFullInfo();
+    info<<"\tTeaching course: "<<teaching_course<<std::endl;
     if(cabinet)
         info<<"\tCabinet: "<<cabinet->getLocation()<<std::endl;
     return info.str();

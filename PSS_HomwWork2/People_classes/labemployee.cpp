@@ -20,7 +20,7 @@ void LabEmployee::setCabinet(Cabinet *value)
 std::string LabEmployee::getFullInfo()const
 {
     std::stringstream info;
-    info<<UniversityPeople::getCommonInfo();
+    info<<UniversityPeople::getFullInfo();
     if(cabinet)
         info<<"\tCabinet: "<<cabinet->getLocation()<<std::endl;
     return info.str();

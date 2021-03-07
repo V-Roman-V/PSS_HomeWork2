@@ -21,7 +21,12 @@ std::string UniversityPeople::getFullInfo()const
     info<<"\tPosition: "<<getPozitionName(getPosition())<<std::endl;
     info<<"\tAcces level: "<<getAccesLevelName(card.getAccessLevel())<<std::endl;
     info<<"\tPersonal id: "<<card.getUniqueCode()<<std::endl;
-    info<<People::getCommonInfo();
+    info<<People::getFullInfo();
+    info<<"\tSpecial room access ("<<special_access.size()<<"):"<<std::endl;
+    for(auto r: special_access)
+        info<<"\t\t"<<r->getLocation()<<std::endl;
+
+
     return info.str();
 }
 
@@ -46,6 +51,16 @@ void UniversityPeople::addSpecialAccessRoom(UniversityRoom* room)
 int UniversityPeople::getPersonalId() const
 {
     return card.getUniqueCode();
+}
+
+std::string UniversityPeople::getMovementHistory() const
+{
+    auto history = card.getMovementHistory();
+    std::stringstream text;
+    int i=0;
+    for(const auto& l:history)
+        text<<"\t"<<i++<<") "<<l<<std::endl;
+    return text.str();
 }
 
 std::string UniversityPeople::getPozitionName(UniversityPeople::Position p) const

@@ -31,8 +31,8 @@ void Student::init()
 std::string Student::getFullInfo()const
 {
     std::stringstream info;
-    info<<UniversityPeople::getCommonInfo();
+    info<<UniversityPeople::getFullInfo();
     if(room)
-        info<<"\tRoom: "<<room->getLocation()<<std::endl;
+        info<<"\tLiving room: "<<room->getLocation()<<std::endl;
     return info.str();
 }

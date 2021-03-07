@@ -8,7 +8,7 @@ People::People(const std::string &_name, const std::string& _surname, const Peop
 std::string People::getCommonInfo()const
 {
     std::stringstream info;
-    info <<"\tname: "<<name<<" "<<surname<<std::endl;
+    info <<"\tname: "<<getName()<<std::endl;
     info <<"\tage: "<<getAge()<<std::endl;
     return info.str();
 }
@@ -37,7 +37,7 @@ std::string People::getFullInfo()const
 
 std::string People::getName() const
 {
-    return name + surname;
+    return name +" "+ surname;
 }
 
 unsigned short People::getAge() const

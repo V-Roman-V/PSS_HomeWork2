@@ -36,6 +36,8 @@ public:
     void addSpecialAccessRoom(UniversityRoom* room);
 
     int getPersonalId() const;
+
+    std::string getMovementHistory() const;
 protected:
     std::vector<UniversityRoom*> special_access;
     PersonalCard card;
