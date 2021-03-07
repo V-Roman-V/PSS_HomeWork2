@@ -13,9 +13,14 @@ void PersonalCard::setAccessLevel(const AccessLevel &value)
     access_level = value;
 }
 
-const std::vector<RoomLocation> &PersonalCard::getMovementHistory() const
+const std::vector<std::string> &PersonalCard::getMovementHistory() const
 {
     return movement_history;
+}
+
+void PersonalCard::addMovemontHistory(UniversityRoom *room)
+{
+    movement_history.push_back(room->getLocation());
 }
 
 AccessLevel PersonalCard::getAccessLevel() const

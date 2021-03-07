@@ -28,7 +28,7 @@ std::string UniversityRoom::getRoomTypeName(UniversityRoom::RoomType t)
     return "";
 }
 
-AccessLevel UniversityRoom::neededAccessLevel()
+AccessLevel UniversityRoom::neededAccessLevel() const
 {
     return AccessLevel::no_level;
 }

@@ -38,7 +38,7 @@ int Cabinet::getCountWorkers()
     return workers.size();
 }
 
-AccessLevel Cabinet::neededAccessLevel()
+AccessLevel Cabinet::neededAccessLevel()const
 {
     return AccessLevel::red;
 }

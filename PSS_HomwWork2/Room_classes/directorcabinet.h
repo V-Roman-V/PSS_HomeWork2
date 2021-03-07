@@ -11,8 +11,7 @@ public:
     DirectorCabinet(const RoomLocation& l = RoomLocation());
 
     virtual RoomType getRoomType() const override;
-private:
-    virtual AccessLevel neededAccessLevel() override;
+    virtual AccessLevel neededAccessLevel() const override;
 };
 
 #endif // DIRECTORCABINET_H

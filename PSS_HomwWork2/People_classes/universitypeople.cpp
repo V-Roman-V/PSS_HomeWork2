@@ -25,15 +25,28 @@ std::string UniversityPeople::getFullInfo()
     return info.str();
 }
 
-bool UniversityPeople::tryToEnter(const Room* room)
+bool UniversityPeople::tryToEnter(UniversityRoom* room)
 {
-    //    return false;
+    if(card.getAccessLevel() < room->neededAccessLevel())
+        return false;
+    card.addMovemontHistory(room);
+    return true;
+}
+
+void UniversityPeople::changeAccesLevel(AccessLevel level)
+{
+    card.setAccessLevel(level);
+}
+
+void UniversityPeople::addSpecialAccessRoom(UniversityRoom* room)
+{
+    special_access.push_back(room);
 }
 
 std::string UniversityPeople::getPozitionName(UniversityPeople::Position p)
 {
     switch (p) {
-        case UniversityPeople::Position::student      :return"student";
+    case UniversityPeople::Position::student      :return"student";
         case UniversityPeople::Position::professor    :return"professor";
         case UniversityPeople::Position::lab_employee :return"lab employee";
         case UniversityPeople::Position::admin        :return"admin";

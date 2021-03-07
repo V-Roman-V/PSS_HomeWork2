@@ -11,7 +11,7 @@ UniversityRoom::RoomType LectureRoom::getRoomType() const
     return RoomType::lecture_room;
 }
 
-AccessLevel LectureRoom::neededAccessLevel()
+AccessLevel LectureRoom::neededAccessLevel() const
 {
     return AccessLevel::yellow;
 }

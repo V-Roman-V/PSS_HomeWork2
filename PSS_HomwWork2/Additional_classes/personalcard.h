@@ -2,8 +2,10 @@
 #define PERSONALCARD_H
 
 #include "Enumerations/accesslevels.h"
-#include "Additional_classes/roomlocation.h"
+#include "Room_classes/universityroom.h"
 #include <vector>
+
+class UniversityRoom;
 
 class PersonalCard
 {
@@ -12,7 +14,9 @@ public:
 
     void setAccessLevel(const AccessLevel &value);
 
-    const std::vector<RoomLocation>& getMovementHistory() const;
+    const std::vector<std::string>& getMovementHistory() const;
+
+    void addMovemontHistory(UniversityRoom* room);
 
     AccessLevel getAccessLevel() const;
 
@@ -23,7 +27,7 @@ private:
     AccessLevel access_level;
     unsigned int unique_code;
 
-    std::vector<RoomLocation> movement_history;
+    std::vector<std::string> movement_history;
 };
 
 #endif // PERSONALCARD_H

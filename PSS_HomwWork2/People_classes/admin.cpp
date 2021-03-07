@@ -11,7 +11,12 @@ Position Admin::getPosition() const
     return Position::admin;
 }
 
-void Admin::giveAcces(UniversityPeople *people, Room *room)
+void Admin::giveAcces(UniversityPeople *people, UniversityRoom *room)
 {
-//    people->
+    people->addSpecialAccessRoom(room);
+}
+
+void Admin::giveAcces(UniversityPeople *people, AccessLevel level)
+{
+    people->changeAccesLevel(level);
 }

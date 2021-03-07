@@ -20,8 +20,8 @@ public:
     virtual std::string getInfo() override;
 
     virtual RoomType getRoomType() const = 0;
-private:
-    virtual AccessLevel neededAccessLevel() = 0;
+
+    virtual AccessLevel neededAccessLevel() const = 0;
 protected:
     std::string getRoomTypeName(RoomType t);
 

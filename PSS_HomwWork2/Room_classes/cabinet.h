@@ -23,9 +23,10 @@ public:
     void addWorker(LabEmployee* p);
     void addWorker(Professor* p);
     int getCountWorkers();
+
+    virtual AccessLevel neededAccessLevel()const override;
 private:
     std::vector<UniversityPeople*> workers;
-    virtual AccessLevel neededAccessLevel() override;
 };
 
 #endif // CABINET_H

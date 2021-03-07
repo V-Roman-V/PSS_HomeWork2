@@ -33,6 +33,6 @@ std::string Student::getFullInfo()
     std::stringstream info;
     info<<UniversityPeople::getCommonInfo();
     if(room)
-        info<<"\tCabinet: "<<room->getLocation()<<std::endl;
+        info<<"\tRoom: "<<room->getLocation()<<std::endl;
     return info.str();
 }

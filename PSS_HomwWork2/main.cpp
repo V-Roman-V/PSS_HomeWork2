@@ -1,6 +1,8 @@
 #include <iostream>
 #include <queue>
 #include <vector>
+#include <fstream>
+
 #include "University_class/university.h"
 #include "Additional_classes/peoplegenerator.h"
 #include "Additional_classes/roomlocation.h"
@@ -13,6 +15,9 @@ struct myQueue : public queue<T>{
 
 int main()
 {
+    ofstream out("out.txt");
+    cout<<(out.is_open()?"opened out.txt file":"output file doesn't open")<<endl;
+
     University Innopolis("Innopolis University");
     // ---------------------------------------------------------- Declare people
     myQueue<People> peoples;
@@ -129,11 +134,11 @@ int main()
 }
 // ----------------------------------------------------------
 
-    cout<<Innopolis.getFullListPeoples();
-    cout<<"___________________________________"<<endl;
-    cout<<Innopolis.getCommonListPeoples();
-//    cout<<Innopolis.getListRooms();
-    cout<<"___________________________________"<<endl;
+    out<<Innopolis.getFullListPeoples();
+    out<<"___________________________________"<<endl;
+    out<<Innopolis.getCommonListPeoples();
+    out<<Innopolis.getListRooms();
+    out<<"___________________________________"<<endl;
 
 // ----------------------------------------------------------
     return 0;

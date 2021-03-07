@@ -11,7 +11,7 @@ UniversityRoom::RoomType ConferenceRoom::getRoomType() const
     return RoomType::conference_room;
 }
 
-AccessLevel ConferenceRoom::neededAccessLevel()
+AccessLevel ConferenceRoom::neededAccessLevel()const
 {
     return AccessLevel::red;
 }

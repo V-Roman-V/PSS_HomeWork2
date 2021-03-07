@@ -11,8 +11,7 @@ public:
     ConferenceRoom(const RoomLocation& l = RoomLocation(), unsigned short max_people = 5);
 
     virtual RoomType getRoomType() const override;
-private:
-    virtual AccessLevel neededAccessLevel() override;
+    virtual AccessLevel neededAccessLevel()const  override;
 };
 
 #endif // CONFERENCEROOM_H

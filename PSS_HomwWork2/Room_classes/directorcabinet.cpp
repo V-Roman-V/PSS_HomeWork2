@@ -11,7 +11,7 @@ UniversityRoom::RoomType DirectorCabinet::getRoomType() const
     return RoomType::director_cabinet;
 }
 
-AccessLevel DirectorCabinet::neededAccessLevel()
+AccessLevel DirectorCabinet::neededAccessLevel()const
 {
     return AccessLevel::black;
 }

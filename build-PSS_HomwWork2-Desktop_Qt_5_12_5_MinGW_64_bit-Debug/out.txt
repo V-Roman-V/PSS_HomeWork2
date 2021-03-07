@@ -1,0 +1,545 @@
+Director:
+	Position: director
+	Acces level: black
+	Personal id: 0
+	name: Donald Park
+	age: 32
+Admins(2):
+	Position: admin
+	Acces level: red
+	Personal id: 1
+	name: Anna Tobolenko
+	age: 28
+
+	Position: admin
+	Acces level: red
+	Personal id: 2
+	name: Ellen Williams
+	age: 39
+
+Lab employess(4):
+	Personal id: 3
+	name: Joseph Anderson
+	age: 37
+	Cabinet: University, 2 floor, n:201
+
+	Personal id: 4
+	name: Ernest Parsons
+	age: 26
+	Cabinet: University, 2 floor, n:201
+
+	Personal id: 5
+	name: Nancy Craig
+	age: 18
+	Cabinet: University, 2 floor, n:201
+
+	Personal id: 6
+	name: Maxine Harris
+	age: 25
+	Cabinet: University, 2 floor, n:202
+
+Professors(8):
+	Personal id: 7
+	name: Kim Hicks
+	age: 22
+	Cabinet: University, 1 floor, n:107
+
+	Personal id: 8
+	name: Jason Hall
+	age: 24
+	Cabinet: University, 1 floor, n:107
+
+	Personal id: 9
+	name: Jeffrey Harper
+	age: 26
+	Cabinet: University, 1 floor, n:107
+
+	Personal id: 10
+	name: Deborah Campbell
+	age: 19
+	Cabinet: University, 1 floor, n:107
+
+	Personal id: 11
+	name: Barbara Campbell
+	age: 38
+	Cabinet: University, 1 floor, n:107
+
+	Personal id: 12
+	name: Julie Ellis
+	age: 44
+	Cabinet: University, 2 floor, n:200
+
+	Personal id: 13
+	name: Bonnie Campbell
+	age: 34
+	Cabinet: University, 2 floor, n:200
+
+	Personal id: 14
+	name: Barbara Potter
+	age: 22
+	Cabinet: University, 2 floor, n:200
+
+Students(20):
+	Personal id: 15
+	name: Lori Doyle
+	age: 20
+	Room: Campuse 1, 1 floor, n:0
+
+	Personal id: 16
+	name: Lillian Cobb
+	age: 22
+	Room: Campuse 1, 1 floor, n:0
+
+	Personal id: 17
+	name: Jim Curry
+	age: 30
+	Room: Campuse 1, 1 floor, n:0
+
+	Personal id: 18
+	name: Hector Wright
+	age: 25
+	Room: Campuse 1, 1 floor, n:1
+
+	Personal id: 19
+	name: Anthony Keller
+	age: 18
+	Room: Campuse 1, 1 floor, n:1
+
+	Personal id: 20
+	name: Harry Carson
+	age: 27
+	Room: Campuse 1, 1 floor, n:2
+
+	Personal id: 21
+	name: Ron Carter
+	age: 36
+	Room: Campuse 1, 1 floor, n:2
+
+	Personal id: 22
+	name: James Powers
+	age: 44
+	Room: Campuse 1, 1 floor, n:3
+
+	Personal id: 23
+	name: Leroy Clark
+	age: 42
+	Room: Campuse 1, 1 floor, n:3
+
+	Personal id: 24
+	name: Robert Shaw
+	age: 33
+	Room: Campuse 1, 1 floor, n:3
+
+	Personal id: 25
+	name: Harry Marshall
+	age: 35
+	Room: Campuse 1, 1 floor, n:4
+
+	Personal id: 26
+	name: David Bradley
+	age: 35
+	Room: Campuse 1, 1 floor, n:4
+
+	Personal id: 27
+	name: Valerie Matthews
+	age: 23
+	Room: Campuse 1, 1 floor, n:5
+
+	Personal id: 28
+	name: Rebecca Rogers
+	age: 37
+	Room: Campuse 1, 1 floor, n:5
+
+	Personal id: 29
+	name: Steven McDonald
+	age: 35
+	Room: Campuse 1, 1 floor, n:5
+
+	Personal id: 30
+	name: Bobbie Thompson
+	age: 17
+	Room: Campuse 1, 1 floor, n:5
+
+	Personal id: 31
+	name: Steven Becker
+	age: 31
+	Room: Campuse 2, 1 floor, n:0
+
+	Personal id: 32
+	name: Alice Wright
+	age: 22
+	Room: Campuse 2, 1 floor, n:0
+
+	Personal id: 33
+	name: Marie Gardner
+	age: 45
+	Room: Campuse 2, 1 floor, n:0
+
+	Personal id: 34
+	name: Robert Morrison
+	age: 24
+	Room: Campuse 2, 1 floor, n:1
+
+___________________________________
+Director:
+	Personal id: 0
+	name: Donald Park
+	age: 32
+Admins(2):
+	Personal id: 1
+	name: Anna Tobolenko
+	age: 28
+
+	Personal id: 2
+	name: Ellen Williams
+	age: 39
+
+Lab employess(4):
+	Personal id: 3
+	name: Joseph Anderson
+	age: 37
+
+	Personal id: 4
+	name: Ernest Parsons
+	age: 26
+
+	Personal id: 5
+	name: Nancy Craig
+	age: 18
+
+	Personal id: 6
+	name: Maxine Harris
+	age: 25
+
+Professors(8):
+	Personal id: 7
+	name: Kim Hicks
+	age: 22
+
+	Personal id: 8
+	name: Jason Hall
+	age: 24
+
+	Personal id: 9
+	name: Jeffrey Harper
+	age: 26
+
+	Personal id: 10
+	name: Deborah Campbell
+	age: 19
+
+	Personal id: 11
+	name: Barbara Campbell
+	age: 38
+
+	Personal id: 12
+	name: Julie Ellis
+	age: 44
+
+	Personal id: 13
+	name: Bonnie Campbell
+	age: 34
+
+	Personal id: 14
+	name: Barbara Potter
+	age: 22
+
+Students(20):
+	Personal id: 15
+	name: Lori Doyle
+	age: 20
+
+	Personal id: 16
+	name: Lillian Cobb
+	age: 22
+
+	Personal id: 17
+	name: Jim Curry
+	age: 30
+
+	Personal id: 18
+	name: Hector Wright
+	age: 25
+
+	Personal id: 19
+	name: Anthony Keller
+	age: 18
+
+	Personal id: 20
+	name: Harry Carson
+	age: 27
+
+	Personal id: 21
+	name: Ron Carter
+	age: 36
+
+	Personal id: 22
+	name: James Powers
+	age: 44
+
+	Personal id: 23
+	name: Leroy Clark
+	age: 42
+
+	Personal id: 24
+	name: Robert Shaw
+	age: 33
+
+	Personal id: 25
+	name: Harry Marshall
+	age: 35
+
+	Personal id: 26
+	name: David Bradley
+	age: 35
+
+	Personal id: 27
+	name: Valerie Matthews
+	age: 23
+
+	Personal id: 28
+	name: Rebecca Rogers
+	age: 37
+
+	Personal id: 29
+	name: Steven McDonald
+	age: 35
+
+	Personal id: 30
+	name: Bobbie Thompson
+	age: 17
+
+	Personal id: 31
+	name: Steven Becker
+	age: 31
+
+	Personal id: 32
+	name: Alice Wright
+	age: 22
+
+	Personal id: 33
+	name: Marie Gardner
+	age: 45
+
+	Personal id: 34
+	name: Robert Morrison
+	age: 24
+
+Director cabinet:
+	Room location: University, 1 floor, n:100
+	Room capacity: 5
+	Workers(0): 
+
+University rooms(21):
+	Room type: lecture room
+	Needed acces level: yellow
+	Room location: University, 1 floor, n:101
+	Room capacity: 120
+
+	Room type: lecture room
+	Needed acces level: yellow
+	Room location: University, 1 floor, n:102
+	Room capacity: 180
+
+	Room type: lecture room
+	Needed acces level: yellow
+	Room location: University, 1 floor, n:103
+	Room capacity: 120
+
+	Room type: lecture room
+	Needed acces level: yellow
+	Room location: University, 1 floor, n:104
+	Room capacity: 120
+
+	Room type: lecture room
+	Needed acces level: yellow
+	Room location: University, 1 floor, n:105
+	Room capacity: 180
+
+	Room type: lecture room
+	Needed acces level: yellow
+	Room location: University, 1 floor, n:106
+	Room capacity: 180
+
+	Room type: conference room
+	Needed acces level: red
+	Room location: University, 2 floor, n:205
+	Room capacity: 12
+
+	Room type: conference room
+	Needed acces level: red
+	Room location: University, 2 floor, n:206
+	Room capacity: 12
+
+	Room type: conference room
+	Needed acces level: red
+	Room location: University, 2 floor, n:207
+	Room capacity: 12
+
+	Room type: conference room
+	Needed acces level: red
+	Room location: University, 2 floor, n:208
+	Room capacity: 12
+
+	Room type: conference room
+	Needed acces level: red
+	Room location: University, 2 floor, n:209
+	Room capacity: 12
+
+	Room type: conference room
+	Needed acces level: red
+	Room location: University, 3 floor, n:300
+	Room capacity: 12
+
+	Room type: class room
+	Needed acces level: green
+	Room location: University, 3 floor, n:301
+	Room capacity: 25
+
+	Room type: class room
+	Needed acces level: green
+	Room location: University, 3 floor, n:302
+	Room capacity: 25
+
+	Room type: class room
+	Needed acces level: green
+	Room location: University, 3 floor, n:303
+	Room capacity: 25
+
+	Room type: class room
+	Needed acces level: green
+	Room location: University, 3 floor, n:304
+	Room capacity: 25
+
+	Room type: class room
+	Needed acces level: green
+	Room location: University, 3 floor, n:305
+	Room capacity: 25
+
+	Room type: class room
+	Needed acces level: green
+	Room location: University, 3 floor, n:306
+	Room capacity: 25
+
+	Room type: class room
+	Needed acces level: green
+	Room location: University, 3 floor, n:307
+	Room capacity: 25
+
+	Room type: class room
+	Needed acces level: green
+	Room location: University, 3 floor, n:308
+	Room capacity: 25
+
+	Room type: class room
+	Needed acces level: green
+	Room location: University, 3 floor, n:309
+	Room capacity: 25
+
+Cabinets (6):
+	Room location: University, 1 floor, n:107
+	Room capacity: 5
+	Workers(5): 
+		KimHicks
+		JasonHall
+		JeffreyHarper
+		DeborahCampbell
+		BarbaraCampbell
+
+	Room location: University, 2 floor, n:200
+	Room capacity: 3
+	Workers(3): 
+		JulieEllis
+		BonnieCampbell
+		BarbaraPotter
+
+	Room location: University, 2 floor, n:201
+	Room capacity: 3
+	Workers(3): 
+		JosephAnderson
+		ErnestParsons
+		NancyCraig
+
+	Room location: University, 2 floor, n:202
+	Room capacity: 5
+	Workers(1): 
+		MaxineHarris
+
+	Room location: University, 2 floor, n:203
+	Room capacity: 5
+	Workers(0): 
+
+	Room location: University, 2 floor, n:204
+	Room capacity: 4
+	Workers(0): 
+
+Living rooms(12):
+	Room location: Campuse 1, 1 floor, n:0
+	Room capacity: 3
+	Workers(3): 
+		LoriDoyle
+		LillianCobb
+		JimCurry
+
+	Room location: Campuse 1, 1 floor, n:1
+	Room capacity: 2
+	Workers(2): 
+		HectorWright
+		AnthonyKeller
+
+	Room location: Campuse 1, 1 floor, n:2
+	Room capacity: 2
+	Workers(2): 
+		HarryCarson
+		RonCarter
+
+	Room location: Campuse 1, 1 floor, n:3
+	Room capacity: 3
+	Workers(3): 
+		JamesPowers
+		LeroyClark
+		RobertShaw
+
+	Room location: Campuse 1, 1 floor, n:4
+	Room capacity: 2
+	Workers(2): 
+		HarryMarshall
+		DavidBradley
+
+	Room location: Campuse 1, 1 floor, n:5
+	Room capacity: 4
+	Workers(4): 
+		ValerieMatthews
+		RebeccaRogers
+		StevenMcDonald
+		BobbieThompson
+
+	Room location: Campuse 2, 1 floor, n:0
+	Room capacity: 3
+	Workers(3): 
+		StevenBecker
+		AliceWright
+		MarieGardner
+
+	Room location: Campuse 2, 1 floor, n:1
+	Room capacity: 4
+	Workers(1): 
+		RobertMorrison
+
+	Room location: Campuse 2, 1 floor, n:2
+	Room capacity: 2
+	Workers(0): 
+
+	Room location: Campuse 2, 1 floor, n:3
+	Room capacity: 3
+	Workers(0): 
+
+	Room location: Campuse 2, 1 floor, n:4
+	Room capacity: 2
+	Workers(0): 
+
+	Room location: Campuse 2, 1 floor, n:5
+	Room capacity: 2
+	Workers(0): 
+
+___________________________________
