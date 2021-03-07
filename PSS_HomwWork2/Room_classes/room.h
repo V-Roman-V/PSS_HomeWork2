@@ -11,6 +11,8 @@ public:
     Room(const RoomLocation& l = RoomLocation());
     virtual ~Room() = default;
     virtual std::string getInfo();
+    int getMaxPeople();
+    std::string getLocation() const;
 
 protected:
     RoomLocation room_location;

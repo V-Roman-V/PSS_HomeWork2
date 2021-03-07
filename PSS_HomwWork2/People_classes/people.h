@@ -24,6 +24,7 @@ public:
     virtual std::string getCommonInfo();
     virtual std::string getFullInfo();
 
+    std::string getName() const;
     unsigned short getAge() const;
 private:
     std::string name;

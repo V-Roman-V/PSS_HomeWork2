@@ -34,6 +34,10 @@ University::~University()
         delete r;
     university_room.clear();
 
+    for(auto c: cabinet_room)
+        delete c;
+    cabinet_room.clear();
+
     for(auto l: living_room)
         delete l;
     living_room.clear();
@@ -69,12 +73,34 @@ void University::setDirector(const People &people)
     director = new Director(people);
 }
 
-std::string University::getListPeoples()
+std::string University::getCommonListPeoples()
 {
     std::stringstream info;
     if(director){
         info<<"Director:"<<std::endl;
-        info<<director->getFullInfo(); // getCommonInfo;
+        info<<director->getCommonInfo();
+    }
+    info<<"Admins("<<admins.size()<<"):"<<std::endl;
+    for(auto a:admins)
+        info<<a->getCommonInfo()<<std::endl;
+    info<<"Lab employess("<<lab_employees.size()<<"):"<<std::endl;
+    for(auto le:lab_employees)
+        info<<le->getCommonInfo()<<std::endl;
+    info<<"Professors("<<professors.size()<<"):"<<std::endl;
+    for(auto pr:professors)
+        info<<pr->getCommonInfo()<<std::endl;
+    info<<"Students("<<students.size()<<"):"<<std::endl;
+    for(auto s:students)
+        info<<s->getCommonInfo()<<std::endl;
+    return info.str();
+}
+
+std::string University::getFullListPeoples()
+{
+    std::stringstream info;
+    if(director){
+        info<<"Director:"<<std::endl;
+        info<<director->getFullInfo();
     }
     info<<"Admins("<<admins.size()<<"):"<<std::endl;
     for(auto a:admins)
@@ -92,9 +118,9 @@ std::string University::getListPeoples()
 }
 
 
-void University::addCabinet(const RoomLocation &location)
+void University::addCabinet(const RoomLocation &location, unsigned short max_people)
 {
-    university_room.push_back(new Cabinet(location));
+    cabinet_room.push_back(new Cabinet(location, max_people));
 }
 
 void University::addClassRoom(const RoomLocation &location)
@@ -102,19 +128,19 @@ void University::addClassRoom(const RoomLocation &location)
     university_room.push_back(new ClassRoom(location));
 }
 
-void University::addConferenceRoom(const RoomLocation &location)
+void University::addConferenceRoom(const RoomLocation &location, unsigned short max_people)
 {
-    university_room.push_back(new ConferenceRoom(location));
+    university_room.push_back(new ConferenceRoom(location, max_people));
 }
 
-void University::addLectureRoom(const RoomLocation &location)
+void University::addLectureRoom(const RoomLocation &location, unsigned short max_people)
 {
-    university_room.push_back(new LectureRoom(location));
+    university_room.push_back(new LectureRoom(location, max_people));
 }
 
-void University::addLivingRoom(const RoomLocation &location)
+void University::addLivingRoom(const RoomLocation &location, unsigned short max_people)
 {
-    living_room.push_back(new LivingRoom(location));
+    living_room.push_back(new LivingRoom(location, max_people));
 }
 
 void University::setDirectorCabinet(const RoomLocation& location)
@@ -134,10 +160,58 @@ std::string University::getListRooms()
     info<<"University rooms("<<university_room.size()<<"):"<<std::endl;
     for(auto u:university_room)
         info<<u->getInfo()<<std::endl;
+    info<<"Cabinets ("<<cabinet_room.size()<<"):"<<std::endl;
+    for(auto c:cabinet_room)
+        info<<c->getInfo()<<std::endl;
     info<<"Living rooms("<<living_room.size()<<"):"<<std::endl;
     for(auto l:living_room)
         info<<l->getInfo()<<std::endl;
     return info.str();
+}
+
+const Director *University::getDirector() const
+{
+    return director;
+}
+
+const std::vector<Admin *>& University::getAdmins() const
+{
+    return admins;
+}
+
+const std::vector<LabEmployee *>& University::getLabEmployees() const
+{
+    return lab_employees;
+}
+
+const std::vector<Professor *>& University::getProfessors() const
+{
+    return professors;
+}
+
+const std::vector<Student *>& University::getStudents() const
+{
+    return students;
+}
+
+const DirectorCabinet *University::getDirectorCabinet() const
+{
+    return director_cabinet;
+}
+
+const std::vector<UniversityRoom *>& University::getUniversityRoom() const
+{
+    return university_room;
+}
+
+const std::vector<Cabinet *>& University::getCabinetRoom() const
+{
+    return cabinet_room;
+}
+
+const std::vector<LivingRoom *>& University::getLivingRoom() const
+{
+    return living_room;
 }
 
 

@@ -33,16 +33,28 @@ public:
     void addAdmin(const People& people);
 
     void setDirector(const People& people );
-    std::string getListPeoples();
+    std::string getFullListPeoples();
+    std::string getCommonListPeoples();
 
-    void addCabinet(const RoomLocation& location);
+    void addCabinet(const RoomLocation& location, unsigned short max_people);
     void addClassRoom(const RoomLocation& location);
-    void addConferenceRoom(const RoomLocation& location);
-    void addLectureRoom(const RoomLocation& location);
-    void addLivingRoom(const RoomLocation& location);
+    void addConferenceRoom(const RoomLocation& location, unsigned short max_people);
+    void addLectureRoom(const RoomLocation& location, unsigned short max_people);
+    void addLivingRoom(const RoomLocation& location, unsigned short max_people);
 
     void setDirectorCabinet(const RoomLocation& location);
     std::string getListRooms();
+
+    const Director *getDirector() const;
+    const std::vector<Admin *>& getAdmins() const;
+    const std::vector<LabEmployee *>& getLabEmployees() const;
+    const std::vector<Professor *>& getProfessors() const;
+    const std::vector<Student *>& getStudents() const;
+
+    const DirectorCabinet *getDirectorCabinet() const;
+    const std::vector<UniversityRoom *>& getUniversityRoom() const;
+    const std::vector<Cabinet *>& getCabinetRoom() const;
+    const std::vector<LivingRoom *>& getLivingRoom() const;
 
 private:
     std::string name;
@@ -57,6 +69,7 @@ private:
 
     DirectorCabinet* director_cabinet;
     std::vector<UniversityRoom* > university_room;
+    std::vector<Cabinet* > cabinet_room;
     std::vector<LivingRoom* > living_room;
 
 };

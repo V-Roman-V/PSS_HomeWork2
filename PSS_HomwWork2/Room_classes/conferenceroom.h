@@ -8,7 +8,7 @@ using RoomType = UniversityRoom::RoomType;
 class ConferenceRoom : public UniversityRoom
 {
 public:
-    ConferenceRoom(const RoomLocation& l = RoomLocation());
+    ConferenceRoom(const RoomLocation& l = RoomLocation(), unsigned short max_people = 5);
 
     virtual RoomType getRoomType() const override;
 private:

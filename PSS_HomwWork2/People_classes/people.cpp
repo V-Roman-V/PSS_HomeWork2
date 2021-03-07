@@ -35,6 +35,11 @@ std::string People::getFullInfo()
     return info.str();
 }
 
+std::string People::getName() const
+{
+    return name + surname;
+}
+
 unsigned short People::getAge() const
 {
     std::time_t t = std::time(nullptr);   // get time now

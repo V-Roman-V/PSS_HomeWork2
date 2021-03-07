@@ -14,3 +14,15 @@ std::string Room::getInfo()
     info<<"\tRoom capacity: "<<max_number_of_people<<std::endl;
     return info.str();
 }
+
+int Room::getMaxPeople()
+{
+    return max_number_of_people;
+}
+
+std::string Room::getLocation() const
+{
+    std::stringstream info;
+    info<<room_location;
+    return info.str();
+}

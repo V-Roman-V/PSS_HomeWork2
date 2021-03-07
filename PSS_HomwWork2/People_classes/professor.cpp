@@ -1,4 +1,5 @@
 #include "professor.h"
+#include <sstream>
 
 Professor::Professor()
     :cabinet(nullptr)
@@ -16,6 +17,21 @@ Position Professor::getPosition() const
 {
     return Position::professor;
 }
+
+void Professor::setCabinet(Cabinet *value)
+{
+    cabinet = value;
+}
+
+std::string Professor::getFullInfo()
+{
+    std::stringstream info;
+    info<<UniversityPeople::getCommonInfo();
+    if(cabinet)
+        info<<"\tCabinet: "<<cabinet->getLocation()<<std::endl;
+    return info.str();
+}
+
 
 void Professor::init()
 {

@@ -6,6 +6,8 @@
 
 using Position = UniversityPeople::Position;
 
+class LivingRoom;
+
 class Student : public UniversityPeople
 {
 public:
@@ -13,6 +15,10 @@ public:
     Student(const People& p, LivingRoom* lroom, unsigned short c_number = 1);
 
     virtual Position getPosition() const override;
+
+    void setRoom(LivingRoom *value);
+
+    virtual std::string getFullInfo() override;
 
 private:
     LivingRoom* room;

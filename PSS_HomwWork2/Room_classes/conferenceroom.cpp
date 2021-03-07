@@ -1,9 +1,9 @@
 #include "conferenceroom.h"
 
-ConferenceRoom::ConferenceRoom(const RoomLocation &l)
+ConferenceRoom::ConferenceRoom(const RoomLocation &l, unsigned short max_people)
     :UniversityRoom(l)
 {
-
+    max_number_of_people = max_people;
 }
 
 UniversityRoom::RoomType ConferenceRoom::getRoomType() const

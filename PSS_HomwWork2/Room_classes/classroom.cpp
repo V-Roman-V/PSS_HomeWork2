@@ -3,7 +3,7 @@
 ClassRoom::ClassRoom(const RoomLocation &l)
     :UniversityRoom(l)
 {
-
+    max_number_of_people = 25;
 }
 
 UniversityRoom::RoomType ClassRoom::getRoomType() const

@@ -19,8 +19,8 @@ std::string UniversityPeople::getFullInfo()
 {
     std::stringstream info;
     info<<"\tPosition: "<<getPozitionName(getPosition())<<std::endl;
-    info<<"\tPersonal id: "<<card.getUniqueCode()<<std::endl;
     info<<"\tAcces level: "<<getAccesLevelName(card.getAccessLevel())<<std::endl;
+    info<<"\tPersonal id: "<<card.getUniqueCode()<<std::endl;
     info<<People::getCommonInfo();
     return info.str();
 }

@@ -1,4 +1,5 @@
 #include "student.h"
+#include <sstream>
 
 Student::Student()
     :room(nullptr)
@@ -17,7 +18,21 @@ Position Student::getPosition() const
     return Position::student;
 }
 
+void Student::setRoom(LivingRoom *value)
+{
+    room = value;
+}
+
 void Student::init()
 {
     card.setAccessLevel(AccessLevel::green);
+}
+
+std::string Student::getFullInfo()
+{
+    std::stringstream info;
+    info<<UniversityPeople::getCommonInfo();
+    if(room)
+        info<<"\tCabinet: "<<room->getLocation()<<std::endl;
+    return info.str();
 }

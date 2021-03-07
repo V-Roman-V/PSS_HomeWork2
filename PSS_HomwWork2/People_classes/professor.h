@@ -6,6 +6,8 @@
 
 using Position = UniversityPeople::Position;
 
+class Cabinet;
+
 class Professor : public UniversityPeople
 {
 public:
@@ -13,6 +15,10 @@ public:
     Professor(const People& p, Cabinet* _cabinet, std::string t_course);
 
     virtual Position getPosition() const override;
+
+    void setCabinet(Cabinet *value);
+
+    virtual std::string getFullInfo() override;
 
 private:
     Cabinet* cabinet;
