@@ -9,6 +9,7 @@ Director:
 	phone number: 89534210987
 	nationality: American
 	Special room access (0):
+	Director cabinet: University, 1 floor, n:100
 Admins(2):
 	Position: admin
 	Acces level: red
@@ -24,67 +25,67 @@ Admins(2):
 	Position: admin
 	Acces level: red
 	Personal id: 2
-	name: Sandra Jackson
+	name: Dorothy Martin
 	gender: female
-	age: 28
-	passport: 3400 508325
-	phone number: 89726450736
+	age: 29
+	passport: 3832 427785
+	phone number: 89464866337
 	Special room access (0):
 
 Lab employess(4):
 	Position: lab employee
 	Acces level: yellow
 	Personal id: 3
-	name: Elsie Martin
+	name: Sandra Jackson
 	gender: female
-	age: 44
-	passport: 9592 661955
-	phone number: 89878149704
+	age: 19
+	passport: 1365 823886
+	phone number: 89998258221
 	Special room access (0):
-	Cabinet: University, 2 floor, n:202
+	Cabinet: University, 2 floor, n:201
 
 	Position: lab employee
 	Acces level: yellow
 	Personal id: 4
-	name: Mark Walker
-	gender: male
-	age: 40
-	passport: 4761 391276
-	phone number: 89756505497
+	name: Elsie Martin
+	gender: female
+	age: 43
+	passport: 4994 895984
+	phone number: 89925238791
 	Special room access (0):
-	Cabinet: University, 2 floor, n:202
+	Cabinet: University, 2 floor, n:201
 
 	Position: lab employee
 	Acces level: yellow
 	Personal id: 5
-	name: Christina Phelps
-	gender: female
-	age: 22
-	passport: 1957 725509
-	phone number: 89696996748
+	name: Mark Walker
+	gender: male
+	age: 23
+	passport: 8125 741775
+	phone number: 89920740681
 	Special room access (0):
-	Cabinet: University, 2 floor, n:202
+	Cabinet: University, 2 floor, n:201
 
 	Position: lab employee
 	Acces level: yellow
 	Personal id: 6
-	name: Nathan Matthews
-	gender: male
-	age: 27
-	passport: 4242 529019
-	phone number: 89133996950
+	name: Christina Phelps
+	gender: female
+	age: 28
+	passport: 1362 553031
+	phone number: 89716465899
 	Special room access (0):
-	Cabinet: University, 2 floor, n:203
+	Cabinet: University, 2 floor, n:201
 
 Professors(8):
 	Position: professor
 	Acces level: red
 	Personal id: 7
-	name: Mary Simon
-	gender: female
-	age: 40
-	passport: 1452 948063
-	phone number: 89668249881
+	name: Nathan Matthews
+	gender: male
+	age: 38
+	passport: 9805 671983
+	phone number: 89461267004
 	Special room access (0):
 	Teaching course:  Introduction to Programming
 	Cabinet: University, 1 floor, n:107
@@ -92,11 +93,11 @@ Professors(8):
 	Position: professor
 	Acces level: red
 	Personal id: 8
-	name: Roger Gomez
-	gender: male
-	age: 40
-	passport: 4361 322105
-	phone number: 89378697216
+	name: Mary Simon
+	gender: female
+	age: 36
+	passport: 6808 640693
+	phone number: 89849679485
 	Special room access (0):
 	Teaching course: Analytical Geometry and Linear Algebra
 	Cabinet: University, 1 floor, n:107
@@ -104,11 +105,11 @@ Professors(8):
 	Position: professor
 	Acces level: red
 	Personal id: 9
-	name: Sean Scott
-	gender: female
-	age: 32
-	passport: 7450 452801
-	phone number: 89251004106
+	name: Roger Gomez
+	gender: male
+	age: 38
+	passport: 8592 820361
+	phone number: 89456004500
 	Special room access (0):
 	Teaching course: Data Structures and Algorithm
 	Cabinet: University, 1 floor, n:107
@@ -116,23 +117,23 @@ Professors(8):
 	Position: professor
 	Acces level: red
 	Personal id: 10
-	name: Fred Carpenter
-	gender: male
-	age: 28
-	passport: 1703 498177
-	phone number: 89600571510
+	name: Sean Scott
+	gender: female
+	age: 35
+	passport: 4445 273143
+	phone number: 89390406393
 	Special room access (0):
 	Teaching course: Foreign Language
-	Cabinet: University, 2 floor, n:200
+	Cabinet: University, 1 floor, n:107
 
 	Position: professor
 	Acces level: red
 	Personal id: 11
-	name: Ellen Williams
+	name: Fred Carpenter
 	gender: male
-	age: 32
-	passport: 9160 565193
-	phone number: 89675424902
+	age: 24
+	passport: 6048 838440
+	phone number: 89109707754
 	Special room access (0):
 	Teaching course: Mathematical Analysis
 	Cabinet: University, 2 floor, n:200
@@ -140,11 +141,11 @@ Professors(8):
 	Position: professor
 	Acces level: red
 	Personal id: 12
-	name: Joseph Anderson
+	name: Ellen Williams
 	gender: male
-	age: 33
-	passport: 7048 843892
-	phone number: 89400660428
+	age: 18
+	passport: 6352 528807
+	phone number: 89992812283
 	Special room access (0):
 	Teaching course: Theoretical Computer Science
 	Cabinet: University, 2 floor, n:200
@@ -152,11 +153,11 @@ Professors(8):
 	Position: professor
 	Acces level: red
 	Personal id: 13
-	name: Ernest Parsons
+	name: Joseph Anderson
 	gender: male
-	age: 43
-	passport: 1700 248043
-	phone number: 89983041872
+	age: 42
+	passport: 5288 900365
+	phone number: 89385382194
 	Special room access (0):
 	Teaching course: Operating Systems
 	Cabinet: University, 2 floor, n:200
@@ -164,233 +165,233 @@ Professors(8):
 	Position: professor
 	Acces level: red
 	Personal id: 14
-	name: Nancy Craig
-	gender: female
-	age: 39
-	passport: 2891 243498
-	phone number: 89270053108
+	name: Ernest Parsons
+	gender: male
+	age: 30
+	passport: 6851 587614
+	phone number: 89308904771
 	Special room access (0):
 	Teaching course:  Introduction to Programming
-	Cabinet: University, 2 floor, n:201
+	Cabinet: University, 2 floor, n:200
 
 Students(20):
 	Position: student
 	Acces level: green
 	Personal id: 15
-	name: Maxine Harris
+	name: Nancy Craig
 	gender: female
-	age: 28
-	passport: 3523 187626
-	phone number: 89475634721
+	age: 25
+	passport: 8969 489184
+	phone number: 89442933053
 	Special room access (0):
 	Living room: Campuse 1, 1 floor, n:0
 
 	Position: student
 	Acces level: green
 	Personal id: 16
-	name: Kim Hicks
-	gender: male
-	age: 38
-	passport: 4846 643001
-	phone number: 89318623178
+	name: Maxine Harris
+	gender: female
+	age: 24
+	passport: 8002 210153
+	phone number: 89132902843
 	Special room access (0):
 	Living room: Campuse 1, 1 floor, n:0
 
 	Position: student
 	Acces level: green
 	Personal id: 17
-	name: Jason Hall
+	name: Kim Hicks
 	gender: male
-	age: 28
-	passport: 4102 264487
-	phone number: 89583884607
+	age: 21
+	passport: 1977 568048
+	phone number: 89695373049
 	Special room access (0):
-	Living room: Campuse 1, 1 floor, n:0
+	Living room: Campuse 1, 1 floor, n:1
 
 	Position: student
 	Acces level: green
 	Personal id: 18
-	name: Jeffrey Harper
+	name: Jason Hall
 	gender: male
-	age: 23
-	passport: 3214 820300
-	phone number: 89982271222
+	age: 43
+	passport: 1853 756658
+	phone number: 89342920283
 	Special room access (0):
 	Living room: Campuse 1, 1 floor, n:1
 
 	Position: student
 	Acces level: green
 	Personal id: 19
-	name: Deborah Campbell
-	gender: female
-	age: 28
-	passport: 6368 507018
-	phone number: 89284896788
+	name: Jeffrey Harper
+	gender: male
+	age: 36
+	passport: 6370 741959
+	phone number: 89577460951
 	Special room access (0):
 	Living room: Campuse 1, 1 floor, n:1
 
 	Position: student
 	Acces level: green
 	Personal id: 20
-	name: Barbara Campbell
+	name: Deborah Campbell
 	gender: female
-	age: 25
-	passport: 9683 699535
-	phone number: 89721503763
+	age: 19
+	passport: 8531 746958
+	phone number: 89742681983
 	Special room access (0):
 	Living room: Campuse 1, 1 floor, n:1
 
 	Position: student
 	Acces level: green
 	Personal id: 21
-	name: Julie Ellis
+	name: Barbara Campbell
 	gender: female
-	age: 24
-	passport: 7792 715384
-	phone number: 89756382742
+	age: 28
+	passport: 9999 759931
+	phone number: 89195207610
 	Special room access (0):
 	Living room: Campuse 1, 1 floor, n:1
 
 	Position: student
 	Acces level: green
 	Personal id: 22
-	name: Bonnie Campbell
-	gender: male
+	name: Julie Ellis
+	gender: female
 	age: 20
-	passport: 1671 351714
-	phone number: 89898604821
+	passport: 4236 910736
+	phone number: 89375962736
 	Special room access (0):
 	Living room: Campuse 1, 1 floor, n:2
 
 	Position: student
 	Acces level: green
 	Personal id: 23
-	name: Barbara Potter
-	gender: female
-	age: 39
-	passport: 3339 268921
-	phone number: 89434762689
+	name: Bonnie Campbell
+	gender: male
+	age: 29
+	passport: 5201 117406
+	phone number: 89728514523
 	Special room access (0):
 	Living room: Campuse 1, 1 floor, n:2
 
 	Position: student
 	Acces level: green
 	Personal id: 24
-	name: Lori Doyle
+	name: Barbara Potter
 	gender: female
 	age: 31
-	passport: 6468 448394
-	phone number: 89405049729
+	passport: 1053 924241
+	phone number: 89506267484
 	Special room access (0):
 	Living room: Campuse 1, 1 floor, n:2
 
 	Position: student
 	Acces level: green
 	Personal id: 25
-	name: Lillian Cobb
+	name: Lori Doyle
 	gender: female
-	age: 41
-	passport: 2841 200796
-	phone number: 89402579077
+	age: 36
+	passport: 8547 993845
+	phone number: 89859504054
 	Special room access (0):
-	Living room: Campuse 1, 1 floor, n:2
+	Living room: Campuse 1, 1 floor, n:3
 
 	Position: student
 	Acces level: green
 	Personal id: 26
-	name: Jim Curry
-	gender: male
-	age: 31
-	passport: 1125 121490
-	phone number: 89382806834
+	name: Lillian Cobb
+	gender: female
+	age: 40
+	passport: 1074 112884
+	phone number: 89917571144
 	Special room access (0):
-	Living room: Campuse 1, 1 floor, n:2
+	Living room: Campuse 1, 1 floor, n:3
 
 	Position: student
 	Acces level: green
 	Personal id: 27
-	name: Hector Wright
+	name: Jim Curry
 	gender: male
-	age: 40
-	passport: 1343 947990
-	phone number: 89727701945
+	age: 38
+	passport: 7271 502072
+	phone number: 89576901241
 	Special room access (0):
 	Living room: Campuse 1, 1 floor, n:3
 
 	Position: student
 	Acces level: green
 	Personal id: 28
-	name: Anthony Keller
+	name: Hector Wright
 	gender: male
-	age: 41
-	passport: 4367 736351
-	phone number: 89104924780
+	age: 28
+	passport: 7268 247674
+	phone number: 89115126169
 	Special room access (0):
 	Living room: Campuse 1, 1 floor, n:3
 
 	Position: student
 	Acces level: green
 	Personal id: 29
-	name: Harry Carson
+	name: Anthony Keller
 	gender: male
-	age: 39
-	passport: 3919 151924
-	phone number: 89974791626
+	age: 18
+	passport: 7358 729013
+	phone number: 89452732065
 	Special room access (0):
 	Living room: Campuse 1, 1 floor, n:4
 
 	Position: student
 	Acces level: green
 	Personal id: 30
-	name: Ron Carter
+	name: Harry Carson
 	gender: male
-	age: 27
-	passport: 1213 601048
-	phone number: 89130758913
+	age: 22
+	passport: 7876 682846
+	phone number: 89136416009
 	Special room access (0):
 	Living room: Campuse 1, 1 floor, n:4
 
 	Position: student
 	Acces level: green
 	Personal id: 31
-	name: James Powers
+	name: Ron Carter
 	gender: male
 	age: 43
-	passport: 7964 968958
-	phone number: 89567690909
+	passport: 6345 881461
+	phone number: 89282977376
 	Special room access (0):
 	Living room: Campuse 1, 1 floor, n:4
 
 	Position: student
 	Acces level: green
 	Personal id: 32
-	name: Leroy Clark
+	name: James Powers
 	gender: male
-	age: 34
-	passport: 2102 695263
-	phone number: 89986214203
+	age: 17
+	passport: 6874 233498
+	phone number: 89870923299
 	Special room access (0):
-	Living room: Campuse 1, 1 floor, n:4
+	Living room: Campuse 1, 1 floor, n:5
 
 	Position: student
 	Acces level: green
 	Personal id: 33
-	name: Robert Shaw
+	name: Leroy Clark
 	gender: male
-	age: 20
-	passport: 1018 312698
-	phone number: 89587601104
+	age: 30
+	passport: 5637 379897
+	phone number: 89966399621
 	Special room access (0):
-	Living room: Campuse 1, 1 floor, n:4
+	Living room: Campuse 1, 1 floor, n:5
 
 	Position: student
 	Acces level: green
 	Personal id: 34
-	name: Harry Marshall
+	name: Robert Shaw
 	gender: male
-	age: 35
-	passport: 1851 986496
-	phone number: 89485654050
+	age: 37
+	passport: 8186 710082
+	phone number: 89840033986
 	Special room access (0):
 	Living room: Campuse 1, 1 floor, n:5
 
@@ -405,207 +406,150 @@ Admins(2):
 	age: 28
 
 	Personal id: 2
-	name: Sandra Jackson
-	age: 28
+	name: Dorothy Martin
+	age: 29
 
 Lab employess(4):
 	Personal id: 3
-	name: Elsie Martin
-	age: 44
+	name: Sandra Jackson
+	age: 19
 
 	Personal id: 4
-	name: Mark Walker
-	age: 40
+	name: Elsie Martin
+	age: 43
 
 	Personal id: 5
-	name: Christina Phelps
-	age: 22
+	name: Mark Walker
+	age: 23
 
 	Personal id: 6
-	name: Nathan Matthews
-	age: 27
+	name: Christina Phelps
+	age: 28
 
 Professors(8):
 	Personal id: 7
-	name: Mary Simon
-	age: 40
+	name: Nathan Matthews
+	age: 38
 
 	Personal id: 8
-	name: Roger Gomez
-	age: 40
+	name: Mary Simon
+	age: 36
 
 	Personal id: 9
-	name: Sean Scott
-	age: 32
+	name: Roger Gomez
+	age: 38
 
 	Personal id: 10
-	name: Fred Carpenter
-	age: 28
+	name: Sean Scott
+	age: 35
 
 	Personal id: 11
-	name: Ellen Williams
-	age: 32
+	name: Fred Carpenter
+	age: 24
 
 	Personal id: 12
-	name: Joseph Anderson
-	age: 33
+	name: Ellen Williams
+	age: 18
 
 	Personal id: 13
-	name: Ernest Parsons
-	age: 43
+	name: Joseph Anderson
+	age: 42
 
 	Personal id: 14
-	name: Nancy Craig
-	age: 39
+	name: Ernest Parsons
+	age: 30
 
 Students(20):
 	Personal id: 15
-	name: Maxine Harris
-	age: 28
-
-	Personal id: 16
-	name: Kim Hicks
-	age: 38
-
-	Personal id: 17
-	name: Jason Hall
-	age: 28
-
-	Personal id: 18
-	name: Jeffrey Harper
-	age: 23
-
-	Personal id: 19
-	name: Deborah Campbell
-	age: 28
-
-	Personal id: 20
-	name: Barbara Campbell
+	name: Nancy Craig
 	age: 25
 
-	Personal id: 21
-	name: Julie Ellis
+	Personal id: 16
+	name: Maxine Harris
 	age: 24
 
+	Personal id: 17
+	name: Kim Hicks
+	age: 21
+
+	Personal id: 18
+	name: Jason Hall
+	age: 43
+
+	Personal id: 19
+	name: Jeffrey Harper
+	age: 36
+
+	Personal id: 20
+	name: Deborah Campbell
+	age: 19
+
+	Personal id: 21
+	name: Barbara Campbell
+	age: 28
+
 	Personal id: 22
-	name: Bonnie Campbell
+	name: Julie Ellis
 	age: 20
 
 	Personal id: 23
-	name: Barbara Potter
-	age: 39
+	name: Bonnie Campbell
+	age: 29
 
 	Personal id: 24
-	name: Lori Doyle
+	name: Barbara Potter
 	age: 31
 
 	Personal id: 25
-	name: Lillian Cobb
-	age: 41
+	name: Lori Doyle
+	age: 36
 
 	Personal id: 26
-	name: Jim Curry
-	age: 31
-
-	Personal id: 27
-	name: Hector Wright
+	name: Lillian Cobb
 	age: 40
 
+	Personal id: 27
+	name: Jim Curry
+	age: 38
+
 	Personal id: 28
-	name: Anthony Keller
-	age: 41
+	name: Hector Wright
+	age: 28
 
 	Personal id: 29
-	name: Harry Carson
-	age: 39
+	name: Anthony Keller
+	age: 18
 
 	Personal id: 30
-	name: Ron Carter
-	age: 27
+	name: Harry Carson
+	age: 22
 
 	Personal id: 31
-	name: James Powers
+	name: Ron Carter
 	age: 43
 
 	Personal id: 32
-	name: Leroy Clark
-	age: 34
+	name: James Powers
+	age: 17
 
 	Personal id: 33
-	name: Robert Shaw
-	age: 20
+	name: Leroy Clark
+	age: 30
 
 	Personal id: 34
-	name: Harry Marshall
-	age: 35
+	name: Robert Shaw
+	age: 37
 
 ___________________________________
 Director cabinet:
+	Room type: director cabinet
+	Needed acces level: black
 	Room location: University, 1 floor, n:100
-	Room capacity: 5
-	Workers(0): 
+	Room capacity: 1
+	Workers(1): 
+		Donald Park
 
-University rooms(21):
-	Room type: lecture room
-	Needed acces level: yellow
-	Room location: University, 1 floor, n:101
-	Room capacity: 120
-
-	Room type: lecture room
-	Needed acces level: yellow
-	Room location: University, 1 floor, n:102
-	Room capacity: 180
-
-	Room type: lecture room
-	Needed acces level: yellow
-	Room location: University, 1 floor, n:103
-	Room capacity: 120
-
-	Room type: lecture room
-	Needed acces level: yellow
-	Room location: University, 1 floor, n:104
-	Room capacity: 180
-
-	Room type: lecture room
-	Needed acces level: yellow
-	Room location: University, 1 floor, n:105
-	Room capacity: 180
-
-	Room type: lecture room
-	Needed acces level: yellow
-	Room location: University, 1 floor, n:106
-	Room capacity: 120
-
-	Room type: conference room
-	Needed acces level: red
-	Room location: University, 2 floor, n:205
-	Room capacity: 12
-
-	Room type: conference room
-	Needed acces level: red
-	Room location: University, 2 floor, n:206
-	Room capacity: 12
-
-	Room type: conference room
-	Needed acces level: red
-	Room location: University, 2 floor, n:207
-	Room capacity: 12
-
-	Room type: conference room
-	Needed acces level: red
-	Room location: University, 2 floor, n:208
-	Room capacity: 12
-
-	Room type: conference room
-	Needed acces level: red
-	Room location: University, 2 floor, n:209
-	Room capacity: 12
-
-	Room type: conference room
-	Needed acces level: red
-	Room location: University, 3 floor, n:300
-	Room capacity: 12
-
+Class rooms (9):
 	Room type: class room
 	Needed acces level: green
 	Room location: University, 3 floor, n:301
@@ -651,14 +595,81 @@ University rooms(21):
 	Room location: University, 3 floor, n:309
 	Room capacity: 25
 
+Conference rooms (6):
+	Room type: conference room
+	Needed acces level: red
+	Room location: University, 2 floor, n:205
+	Room capacity: 12
+
+	Room type: conference room
+	Needed acces level: red
+	Room location: University, 2 floor, n:206
+	Room capacity: 12
+
+	Room type: conference room
+	Needed acces level: red
+	Room location: University, 2 floor, n:207
+	Room capacity: 12
+
+	Room type: conference room
+	Needed acces level: red
+	Room location: University, 2 floor, n:208
+	Room capacity: 12
+
+	Room type: conference room
+	Needed acces level: red
+	Room location: University, 2 floor, n:209
+	Room capacity: 12
+
+	Room type: conference room
+	Needed acces level: red
+	Room location: University, 3 floor, n:300
+	Room capacity: 12
+
+Lecture rooms (6):
+	Room type: lecture room
+	Needed acces level: yellow
+	Room location: University, 1 floor, n:101
+	Room capacity: 180
+
+	Room type: lecture room
+	Needed acces level: yellow
+	Room location: University, 1 floor, n:102
+	Room capacity: 120
+
+	Room type: lecture room
+	Needed acces level: yellow
+	Room location: University, 1 floor, n:103
+	Room capacity: 180
+
+	Room type: lecture room
+	Needed acces level: yellow
+	Room location: University, 1 floor, n:104
+	Room capacity: 180
+
+	Room type: lecture room
+	Needed acces level: yellow
+	Room location: University, 1 floor, n:105
+	Room capacity: 180
+
+	Room type: lecture room
+	Needed acces level: yellow
+	Room location: University, 1 floor, n:106
+	Room capacity: 180
+
 Cabinets (6):
+	Room type: cabinet
+	Needed acces level: red
 	Room location: University, 1 floor, n:107
-	Room capacity: 3
-	Workers(3): 
+	Room capacity: 4
+	Workers(4): 
+		Nathan Matthews
 		Mary Simon
 		Roger Gomez
 		Sean Scott
 
+	Room type: cabinet
+	Needed acces level: red
 	Room location: University, 2 floor, n:200
 	Room capacity: 4
 	Workers(4): 
@@ -667,78 +678,85 @@ Cabinets (6):
 		Joseph Anderson
 		Ernest Parsons
 
+	Room type: cabinet
+	Needed acces level: red
 	Room location: University, 2 floor, n:201
-	Room capacity: 4
-	Workers(1): 
-		Nancy Craig
-
-	Room location: University, 2 floor, n:202
-	Room capacity: 3
-	Workers(3): 
+	Room capacity: 5
+	Workers(4): 
+		Sandra Jackson
 		Elsie Martin
 		Mark Walker
 		Christina Phelps
 
-	Room location: University, 2 floor, n:203
-	Room capacity: 5
-	Workers(1): 
-		Nathan Matthews
-
-	Room location: University, 2 floor, n:204
+	Room type: cabinet
+	Needed acces level: red
+	Room location: University, 2 floor, n:202
 	Room capacity: 4
+	Workers(0): 
+
+	Room type: cabinet
+	Needed acces level: red
+	Room location: University, 2 floor, n:203
+	Room capacity: 3
+	Workers(0): 
+
+	Room type: cabinet
+	Needed acces level: red
+	Room location: University, 2 floor, n:204
+	Room capacity: 5
 	Workers(0): 
 
 Living rooms(12):
 	Room location: Campuse 1, 1 floor, n:0
-	Room capacity: 3
-	Workers(3): 
+	Room capacity: 2
+	Workers(2): 
+		Nancy Craig
 		Maxine Harris
-		Kim Hicks
-		Jason Hall
 
 	Room location: Campuse 1, 1 floor, n:1
-	Room capacity: 4
-	Workers(4): 
+	Room capacity: 5
+	Workers(5): 
+		Kim Hicks
+		Jason Hall
 		Jeffrey Harper
 		Deborah Campbell
 		Barbara Campbell
-		Julie Ellis
 
 	Room location: Campuse 1, 1 floor, n:2
-	Room capacity: 5
-	Workers(5): 
+	Room capacity: 3
+	Workers(3): 
+		Julie Ellis
 		Bonnie Campbell
 		Barbara Potter
+
+	Room location: Campuse 1, 1 floor, n:3
+	Room capacity: 4
+	Workers(4): 
 		Lori Doyle
 		Lillian Cobb
 		Jim Curry
-
-	Room location: Campuse 1, 1 floor, n:3
-	Room capacity: 2
-	Workers(2): 
 		Hector Wright
-		Anthony Keller
 
 	Room location: Campuse 1, 1 floor, n:4
-	Room capacity: 5
-	Workers(5): 
+	Room capacity: 3
+	Workers(3): 
+		Anthony Keller
 		Harry Carson
 		Ron Carter
+
+	Room location: Campuse 1, 1 floor, n:5
+	Room capacity: 5
+	Workers(3): 
 		James Powers
 		Leroy Clark
 		Robert Shaw
 
-	Room location: Campuse 1, 1 floor, n:5
-	Room capacity: 5
-	Workers(1): 
-		Harry Marshall
-
 	Room location: Campuse 2, 1 floor, n:0
-	Room capacity: 2
+	Room capacity: 5
 	Workers(0): 
 
 	Room location: Campuse 2, 1 floor, n:1
-	Room capacity: 3
+	Room capacity: 2
 	Workers(0): 
 
 	Room location: Campuse 2, 1 floor, n:2
@@ -746,11 +764,11 @@ Living rooms(12):
 	Workers(0): 
 
 	Room location: Campuse 2, 1 floor, n:3
-	Room capacity: 5
+	Room capacity: 4
 	Workers(0): 
 
 	Room location: Campuse 2, 1 floor, n:4
-	Room capacity: 4
+	Room capacity: 3
 	Workers(0): 
 
 	Room location: Campuse 2, 1 floor, n:5

@@ -11,9 +11,14 @@ std::string UniversityRoom::getInfo()
 {
     std::stringstream info;
     info<<"\tRoom type: "<<getRoomTypeName(getRoomType())<<std::endl;
-    info<<"\tNeeded acces level: "<<getAccesLevelName(neededAccessLevel())<<std::endl;
+    info<<"\tNeeded acces level: "<<getAccessLevelName(neededAccessLevel())<<std::endl;
     info<<Room::getInfo();
     return info.str();
+}
+
+std::string UniversityRoom::getNeededLevel()
+{
+    return getAccessLevelName(AccessLevel::no_level);
 }
 
 std::string UniversityRoom::getRoomTypeName(UniversityRoom::RoomType t)

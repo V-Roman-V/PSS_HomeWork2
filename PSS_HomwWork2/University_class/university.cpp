@@ -30,9 +30,17 @@ University::~University()
     director = nullptr;
 
     // delete rooms
-    for(auto r: university_room)
-        delete r;
-    university_room.clear();
+    for(auto clr: class_room)
+        delete clr;
+    class_room.clear();
+
+    for(auto cor: conference_room)
+        delete cor;
+    conference_room.clear();
+
+    for(auto lr: lecture_room)
+        delete lr;
+    lecture_room.clear();
 
     for(auto c: cabinet_room)
         delete c;
@@ -125,17 +133,17 @@ void University::addCabinet(const RoomLocation &location, unsigned short max_peo
 
 void University::addClassRoom(const RoomLocation &location)
 {
-    university_room.push_back(new ClassRoom(location));
+    class_room.push_back(new ClassRoom(location));
 }
 
 void University::addConferenceRoom(const RoomLocation &location, unsigned short max_people)
 {
-    university_room.push_back(new ConferenceRoom(location, max_people));
+    conference_room.push_back(new ConferenceRoom(location, max_people));
 }
 
 void University::addLectureRoom(const RoomLocation &location, unsigned short max_people)
 {
-    university_room.push_back(new LectureRoom(location, max_people));
+    lecture_room.push_back(new LectureRoom(location, max_people));
 }
 
 void University::addLivingRoom(const RoomLocation &location, unsigned short max_people)
@@ -157,9 +165,15 @@ std::string University::getListRooms()
         info<<"Director cabinet:"<<std::endl;
         info<<director_cabinet->getInfo()<<std::endl;
     }
-    info<<"University rooms("<<university_room.size()<<"):"<<std::endl;
-    for(auto u:university_room)
-        info<<u->getInfo()<<std::endl;
+    info<<"Class rooms ("<<class_room.size()<<"):"<<std::endl;
+    for(auto c:class_room)
+        info<<c->getInfo()<<std::endl;
+    info<<"Conference rooms ("<<conference_room.size()<<"):"<<std::endl;
+    for(auto c:conference_room)
+        info<<c->getInfo()<<std::endl;
+    info<<"Lecture rooms ("<<lecture_room.size()<<"):"<<std::endl;
+    for(auto c:lecture_room)
+        info<<c->getInfo()<<std::endl;
     info<<"Cabinets ("<<cabinet_room.size()<<"):"<<std::endl;
     for(auto c:cabinet_room)
         info<<c->getInfo()<<std::endl;
@@ -199,11 +213,6 @@ DirectorCabinet *University::getDirectorCabinet()
     return director_cabinet;
 }
 
-std::vector<UniversityRoom *>& University::getUniversityRoom()
-{
-    return university_room;
-}
-
 std::vector<Cabinet *>& University::getCabinetRoom()
 {
     return cabinet_room;
@@ -217,6 +226,21 @@ std::vector<LivingRoom *>& University::getLivingRoom()
 std::string University::getName() const
 {
     return name;
+}
+
+std::vector<ClassRoom *>& University::getClassRoom()
+{
+    return class_room;
+}
+
+std::vector<ConferenceRoom *>& University::getConferenceRoom()
+{
+    return conference_room;
+}
+
+std::vector<LectureRoom *>& University::getLectureRoom()
+{
+    return lecture_room;
 }
 
 

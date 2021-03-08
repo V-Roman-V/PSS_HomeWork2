@@ -22,6 +22,8 @@ public:
     virtual RoomType getRoomType() const = 0;
 
     virtual AccessLevel neededAccessLevel() const = 0;
+
+    static std::string getNeededLevel();
 protected:
     std::string getRoomTypeName(RoomType t);
 

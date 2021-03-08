@@ -15,3 +15,8 @@ AccessLevel ConferenceRoom::neededAccessLevel()const
 {
     return AccessLevel::red;
 }
+
+std::string ConferenceRoom::getNeededLevel()
+{
+    return getAccessLevelName(AccessLevel::red);
+}

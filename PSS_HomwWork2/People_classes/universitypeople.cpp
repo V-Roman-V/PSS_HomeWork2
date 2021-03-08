@@ -19,7 +19,7 @@ std::string UniversityPeople::getFullInfo()const
 {
     std::stringstream info;
     info<<"\tPosition: "<<getPozitionName(getPosition())<<std::endl;
-    info<<"\tAcces level: "<<getAccesLevelName(card.getAccessLevel())<<std::endl;
+    info<<"\tAcces level: "<<getAccessLevel()<<std::endl;
     info<<"\tPersonal id: "<<card.getUniqueCode()<<std::endl;
     info<<People::getFullInfo();
     info<<"\tSpecial room access ("<<special_access.size()<<"):"<<std::endl;
@@ -32,6 +32,9 @@ std::string UniversityPeople::getFullInfo()const
 
 bool UniversityPeople::tryToEnter(UniversityRoom* room)
 {
+    for(auto sa:special_access)
+        if(sa->getLocation() == room->getLocation())
+            return true;
     if(card.getAccessLevel() < room->neededAccessLevel())
         return false;
     card.addMovemontHistory(room);
@@ -61,6 +64,11 @@ std::string UniversityPeople::getMovementHistory() const
     for(const auto& l:history)
         text<<"\t"<<i++<<") "<<l<<std::endl;
     return text.str();
+}
+
+std::string UniversityPeople::getAccessLevel() const
+{
+    return getAccessLevelName(card.getAccessLevel());
 }
 
 std::string UniversityPeople::getPozitionName(UniversityPeople::Position p) const

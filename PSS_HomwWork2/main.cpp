@@ -8,6 +8,8 @@
 #include "Additional_classes/roomlocation.h"
 
 #include <cstdlib>
+#include <iomanip>
+
 using namespace std;
 
 template<class T>
@@ -94,6 +96,8 @@ int main()
 
 // ---------------------------------------------------------- Make link between cabinets and professors/lab_employess
 {
+    Innopolis.getDirectorCabinet()->addWorker(Innopolis.getDirector());
+
     auto professors = Innopolis.getProfessors();
     auto employess = Innopolis.getLabEmployees();
 
@@ -146,35 +150,76 @@ int main()
     const string LINE = "---------------------------------------------------------";
     string input;
     while(true){ // position selection
-        // ------------------------------
-        //  где-то добавить комнаты
-        // ------------------------------
-
         system("cls");
         cout<<"Welcome to "<<Innopolis.getName()<<endl;
         cout<<LINE<<endl;
         cout<<"Our university has:"<<endl;
-        cout<<"\t"<<1<<" director"<<endl;
-        cout<<"\t"<<Innopolis.getAdmins().size()<<" admins"<<endl;
-        cout<<"\t"<<Innopolis.getLabEmployees().size()<<" lab employees"<<endl;
-        cout<<"\t"<<Innopolis.getProfessors().size()<<" professors"<<endl;
-        cout<<"\t"<<Innopolis.getStudents().size()<<" students"<<endl<<endl;
+        cout<<"\t"<<left<<setw(20)<<"1 director"                                                   <<"|\t"<<Innopolis.getCabinetRoom().size()<<" cabinets and 1 director's cabinet"<<endl;
+        cout<<"\t"<<left<<setw(20)<<to_string(Innopolis.getAdmins().size())+" admins"              <<"|\t"<<Innopolis.getClassRoom().size()<<" class rooms"<<endl;
+        cout<<"\t"<<left<<setw(20)<<to_string(Innopolis.getLabEmployees().size())+" lab employees" <<"|\t"<<Innopolis.getLectureRoom().size()<<" lecture rooms"<<endl;
+        cout<<"\t"<<left<<setw(20)<<to_string(Innopolis.getProfessors().size())+" professors"      <<"|\t"<<Innopolis.getConferenceRoom().size()<<" conference rooms"<<endl;
+        cout<<"\t"<<left<<setw(20)<<to_string(Innopolis.getStudents().size())+" students"          <<"|\t"<<Innopolis.getLivingRoom().size()<<" living rooms"<<endl<<endl;
+        cout<<"Choose what you want to find out information about.\n\tPlease enter the {(0)People; (1)Room; (-)exit }"<<endl;
+        cout<<'>';cin>>input;
+        if(input == "-" or input == "exit") break;
+
+        int sphere = -1;
+        if((input.find_first_not_of( "0123456789" ) == std::string::npos)) sphere = stoi(input);
+        if(input == "People")
+            sphere = 0;
+        if(input == "Room")
+            sphere = 1;
+        if(sphere< 0 or sphere > 1) continue;
+        cout<<LINE<<endl;
+        if(sphere == 1){ //rooms
+            cout<<"You can read the list in detail. \n\tPlease enter the room type {(0)cabinet; (1)class; (2)lecture; (3)conference; (4)living}"<<endl;
+            cout<<'>';cin>>input;
+            int type = -1;
+            if((input.find_first_not_of( "0123456789" ) == std::string::npos)) type = stoi(input);
+            if(input == "cabinet")
+                type = 0;
+            if(input == "class")
+                type = 1;
+            if(input == "lecture")
+                type = 2;
+            if(input == "conference")
+                type = 3;
+            if(input == "living")
+                type = 4;
+            if(type< 0 or type > 4) continue;
+            vector<Room*> rooms;
+            switch(type){
+                case 0:rooms = vector<Room*>(Innopolis.getCabinetRoom().begin(),Innopolis.getCabinetRoom().end()); rooms.push_back(Innopolis.getDirectorCabinet());break;
+                case 1:rooms = vector<Room*>(Innopolis.getClassRoom().begin(),Innopolis.getClassRoom().end());break;
+                case 2:rooms = vector<Room*>(Innopolis.getLectureRoom().begin(),Innopolis.getLectureRoom().end());break;
+                case 3:rooms = vector<Room*>(Innopolis.getConferenceRoom().begin(),Innopolis.getConferenceRoom().end());break;
+                case 4:rooms = vector<Room*>(Innopolis.getLivingRoom().begin(),Innopolis.getLivingRoom().end());break;
+            }
+            int i=0;
+            for(auto r: rooms)
+                cout<<" "<<i++<<") "<<r->getInfo()<<endl;
+            cout<<LINE<<endl;
+            cout<<"return back. Press ENTER"<<endl;
+            cin.get();
+            getline(cin,input);
+            continue;
+        }
+
         cout<<"You can read the list in detail. \n\tPlease enter the position name {(0)director; (1)admin; (2)labEmployee; (3)professor; (4)student}"<<endl;
         cout<<'>';cin>>input;
         int position = -1;
-        int command = -1;
-        if((input.find_first_not_of( "0123456789" ) == std::string::npos)) command = stoi(input);
-        if(input == "director" or command == 0)
+        if((input.find_first_not_of( "0123456789" ) == std::string::npos)) position = stoi(input);
+        if(input == "director")
             position = 0;
-        if(input == "admin" or command == 1)
+        if(input == "admin")
             position = 1;
-        if(input == "labEmployee" or command == 2)
+        if(input == "labEmployee")
             position = 2;
-        if(input == "professor" or command == 3)
+        if(input == "professor")
             position = 3;
-        if(input == "student" or command == 4)
+        if(input == "student")
             position = 4;
-        if(position == -1) continue;
+        if(position< 0 or position > 4) continue;
         vector<UniversityPeople*> peoples;
         switch(position){
             case 0:peoples.push_back(Innopolis.getDirector());break;
@@ -260,16 +305,74 @@ int main()
                 if(command == 0) break;
                 if(command == 1) {
                     cout<<" "<<person->getFullInfo()<<endl;
+                    cout<<"return back. Press ENTER"<<endl;
+                    cin.get();
+                    getline(cin,input);
                     continue;
                 }
                 if(command == 2) {
                     cout<<"\tMy movements history: "<<endl;
                     cout<<" "<<person->getMovementHistory()<<endl;
+                    cout<<"return back. Press ENTER"<<endl;
+                    cin.get();
+                    getline(cin,input);
                     continue;
                 }
                 if(command != 3) continue;
-                cout<<" tryOpenRoom"<<endl;
+                cout<<LINE<<endl;
+                cout<<"You can try to open one of the university rooms. Your access level: "<<person->getAccessLevel()<<endl;
+                cout<<"\tPlease enter the room type {(0)cabinet = "<<Cabinet::getNeededLevel()<<"; (1)class = "<<ClassRoom::getNeededLevel()<<"; (2)lecture = "<<LectureRoom::getNeededLevel()<<"; (3)conference = "<<ConferenceRoom::getNeededLevel()<<"}"<<endl;
+                cout<<'>';cin>>input;
+                int type = -1;
+                if((input.find_first_not_of( "0123456789" ) == std::string::npos)) type = stoi(input);
+                if(input == "cabinet")
+                    type = 0;
+                if(input == "class")
+                    type = 1;
+                if(input == "lecture")
+                    type = 2;
+                if(input == "conference")
+                    type = 3;
+                if(type< 0 or type > 3) continue;
+                vector<UniversityRoom*> rooms;
+                switch(type){
+                    case 0:rooms = vector<UniversityRoom*>(Innopolis.getCabinetRoom().begin(),Innopolis.getCabinetRoom().end()); rooms.push_back(Innopolis.getDirectorCabinet());break;
+                    case 1:rooms = vector<UniversityRoom*>(Innopolis.getClassRoom().begin(),Innopolis.getClassRoom().end());break;
+                    case 2:rooms = vector<UniversityRoom*>(Innopolis.getLectureRoom().begin(),Innopolis.getLectureRoom().end());break;
+                    case 3:rooms = vector<UniversityRoom*>(Innopolis.getConferenceRoom().begin(),Innopolis.getConferenceRoom().end());break;
+                }
+                while(true) { // trying open room
+                    system("cls");
+                    switch(type){
+                        case 0:cout<<"Cabinets:";break;
+                        case 1:cout<<"Class rooms:";break;
+                        case 2:cout<<"Lecture rooms:";break;
+                        case 3:cout<<"Conference rooms:";break;
+                    }
+                    cout<<endl;
 
+                    int i=0;
+                    for(auto r: rooms)
+                        cout<<" "<<i++<<") "<<r->getInfo()<<endl;
+                    cout<<LINE<<endl;
+                    cout<<"Choose the number of the room you want to open or go back.\n\tPlease enter the room's number in this list; To go back enter \"back\" or \"-\""<<endl;
+                    cout<<'>';cin>>input;
+                    if(input == "back" or input == "-"){break;}
+                    if((input.find_first_not_of( "0123456789" ) != std::string::npos)) continue;
+                    int room_num= stoi(input);
+                    if(room_num <=0 || room_num > rooms.size()) continue;
+                    bool open = person->tryToEnter(rooms[room_num-1]);
+                    cout<<LINE<<endl;
+                    if(open)
+                        cout<<"You were able to open the door"<<endl;
+                    else
+                        cout<<"You do not have permission to open this room"<<endl;
+                    cout<<"return back. Press ENTER"<<endl;
+                    cin.get();
+                    getline(cin,input);
+
+                    break;
+                }
             }
         }
     }

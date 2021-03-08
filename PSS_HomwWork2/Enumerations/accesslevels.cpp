@@ -1,6 +1,6 @@
 #include "accesslevels.h"
 
-std::string getAccesLevelName(AccessLevel l) {
+std::string getAccessLevelName(AccessLevel l) {
     switch (l) {
         case AccessLevel::no_level:return"no_level";
         case AccessLevel::green   :return"green";

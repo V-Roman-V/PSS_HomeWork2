@@ -15,7 +15,7 @@ UniversityRoom::RoomType Cabinet::getRoomType() const
 std::string Cabinet::getInfo()
 {
     std::stringstream info;
-    info<<Room::getInfo();
+    info<<UniversityRoom::getInfo();
     info<<"\tWorkers("<<getCountWorkers()<<"): "<<std::endl;
     for(auto worker:workers)
         info<<"\t\t"<<worker->getName()<<std::endl;
@@ -36,6 +36,11 @@ void Cabinet::addWorker(LabEmployee *p)
 int Cabinet::getCountWorkers()
 {
     return workers.size();
+}
+
+std::string Cabinet::getNeededLevel()
+{
+    return getAccessLevelName(AccessLevel::red);
 }
 
 AccessLevel Cabinet::neededAccessLevel()const

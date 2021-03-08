@@ -12,6 +12,10 @@ public:
 
     virtual RoomType getRoomType() const override;
     virtual AccessLevel neededAccessLevel() const override;
+    static std::string getNeededLevel();
+
+    virtual void addWorker(Director* d)override;
+
 };
 
 #endif // DIRECTORCABINET_H

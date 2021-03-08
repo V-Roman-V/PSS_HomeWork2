@@ -52,11 +52,14 @@ public:
     std::vector<Student *>& getStudents();
 
     DirectorCabinet *getDirectorCabinet();
-    std::vector<UniversityRoom *>& getUniversityRoom();
+    std::vector<ClassRoom *>& getClassRoom();
+    std::vector<ConferenceRoom *>& getConferenceRoom();
+    std::vector<LectureRoom *>& getLectureRoom();
     std::vector<Cabinet *>& getCabinetRoom();
     std::vector<LivingRoom *>& getLivingRoom();
 
     std::string getName() const;
+
 
 private:
     std::string name;
@@ -70,7 +73,9 @@ private:
     std::vector<Student*> students;
 
     DirectorCabinet* director_cabinet;
-    std::vector<UniversityRoom* > university_room;
+    std::vector<ClassRoom* > class_room;
+    std::vector<ConferenceRoom* > conference_room;
+    std::vector<LectureRoom* > lecture_room;
     std::vector<Cabinet* > cabinet_room;
     std::vector<LivingRoom* > living_room;
 

@@ -38,6 +38,8 @@ public:
 
     std::string getMovementHistory() const;
 
+    std::string getAccessLevel() const;
+
     void changeAccessLevel(AccessLevel level);
 protected:
     std::vector<UniversityRoom*> special_access;

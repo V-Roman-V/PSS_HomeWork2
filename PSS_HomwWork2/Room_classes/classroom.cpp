@@ -15,3 +15,8 @@ AccessLevel ClassRoom::neededAccessLevel()const
 {
     return AccessLevel::green;
 }
+
+std::string ClassRoom::getNeededLevel()
+{
+    return getAccessLevelName(AccessLevel::green);
+}

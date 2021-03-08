@@ -15,3 +15,8 @@ AccessLevel LectureRoom::neededAccessLevel() const
 {
     return AccessLevel::yellow;
 }
+
+std::string LectureRoom::getNeededLevel()
+{
+    return getAccessLevelName(AccessLevel::yellow);
+}
