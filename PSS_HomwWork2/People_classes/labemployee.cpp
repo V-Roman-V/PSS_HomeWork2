@@ -15,6 +15,7 @@ Position LabEmployee::getPosition() const
 void LabEmployee::setCabinet(Cabinet *value)
 {
     cabinet = value;
+    addSpecialAccessRoom(cabinet);
 }
 
 std::string LabEmployee::getFullInfo()const
