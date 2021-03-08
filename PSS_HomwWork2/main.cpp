@@ -314,9 +314,8 @@ int main()
                         position = 3;
                     if(position< 0 or position > 3) {giveAccessPhase = -1;continue;}
                     vector<UniversityPeople*> peoples;
-                    bool isAdmin = false;
                     switch(position){
-                        case 0:peoples = vector<UniversityPeople*>(Innopolis.getAdmins().begin(),Innopolis.getAdmins().end()); isAdmin = true; break;
+                        case 0:peoples = vector<UniversityPeople*>(Innopolis.getAdmins().begin(),Innopolis.getAdmins().end()); break;
                         case 1:peoples = vector<UniversityPeople*>(Innopolis.getLabEmployees().begin(),Innopolis.getLabEmployees().end()); break;
                         case 2:peoples = vector<UniversityPeople*>(Innopolis.getProfessors().begin(),Innopolis.getProfessors().end());break;
                         case 3:peoples = vector<UniversityPeople*>(Innopolis.getStudents().begin(),Innopolis.getStudents().end());break;
