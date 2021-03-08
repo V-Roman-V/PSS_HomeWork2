@@ -293,7 +293,7 @@ int main()
             while(true){
                 system("cls");
                 cout<<"You are login to the system as "<<person->getName() <<((isAdmin)?" (Administrator)":"")<<endl;
-                cout<<"You can log out, display information about yourself, see the history of your movements, and try to enter the room."<<endl;
+                cout<<"You can log out, display information about yourself, see the history of your movements,"<<(isAdmin?"":" and")<<" try to enter the room"<<(isAdmin?", and give access to people.":".")<<endl;
                 cout<<"\tPlease enter the command  {(0)logOut; (1)myInfo; (2)myMovementsHistory; (3)tryOpenRoom"<<((isAdmin)?"; (4)giveAccess":"")<<"}"<<endl;
                 //----- give access phase
                 if(giveAccessPhase == 0){ // chosen person
