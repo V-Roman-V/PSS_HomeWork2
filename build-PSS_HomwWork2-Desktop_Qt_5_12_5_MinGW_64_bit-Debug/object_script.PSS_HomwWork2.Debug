@@ -20,4 +20,5 @@ debug/livingroom.o
 debug/room.o
 debug/universityroom.o
 debug/university.o
+debug/universityfiller.o
 debug/main.o

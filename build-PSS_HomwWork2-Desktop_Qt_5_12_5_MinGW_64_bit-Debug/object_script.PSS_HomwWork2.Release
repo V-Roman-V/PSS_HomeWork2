@@ -20,4 +20,5 @@ release/livingroom.o
 release/room.o
 release/universityroom.o
 release/university.o
+release/universityfiller.o
 release/main.o

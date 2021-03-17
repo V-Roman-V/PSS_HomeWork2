@@ -29,6 +29,7 @@ SOURCES += \
         Room_classes/room.cpp \
         Room_classes/universityroom.cpp \
         University_class/university.cpp \
+        University_class/universityfiller.cpp \
         main.cpp
 
 HEADERS += \
@@ -53,4 +54,5 @@ HEADERS += \
     Room_classes/livingroom.h \
     Room_classes/room.h \
     Room_classes/universityroom.h \
-    University_class/university.h
+    University_class/university.h \
+    University_class/universityfiller.h

@@ -1,0 +1,546 @@
+Director:
+	Position: director
+	Acces level: black
+	Personal id: 0
+	name: Donald Park
+	gender: male
+	age: 32
+	passport: 4767 235646
+	phone number: 89534210987
+	nationality: American
+	Special room access (0):
+	Director cabinet: University, 1 floor, n:100
+Admins(2):
+	Position: admin
+	Acces level: red
+	Personal id: 1
+	name: Anna Tobolenko
+	gender: female
+	age: 28
+	passport: 4448 624472
+	phone number: 89534210987
+	nationality: Russian
+	Special room access (0):
+
+	Position: admin
+	Acces level: red
+	Personal id: 2
+	name: Joshua Ward
+	gender: female
+	age: 43
+	passport: 4411 874046
+	phone number: 89737740370
+	Special room access (0):
+
+Lab employess(4):
+	Position: lab employee
+	Acces level: yellow
+	Personal id: 3
+	name: Thomas Peters
+	gender: male
+	age: 29
+	passport: 2753 965453
+	phone number: 89450675783
+	Special room access (1):
+		University, 2 floor, n:202
+	Cabinet: University, 2 floor, n:202
+
+	Position: lab employee
+	Acces level: yellow
+	Personal id: 4
+	name: Dorothy Martin
+	gender: female
+	age: 38
+	passport: 9070 277855
+	phone number: 89509515404
+	Special room access (1):
+		University, 2 floor, n:202
+	Cabinet: University, 2 floor, n:202
+
+	Position: lab employee
+	Acces level: yellow
+	Personal id: 5
+	name: Sandra Jackson
+	gender: female
+	age: 42
+	passport: 8137 864967
+	phone number: 89666619052
+	Special room access (1):
+		University, 2 floor, n:202
+	Cabinet: University, 2 floor, n:202
+
+	Position: lab employee
+	Acces level: yellow
+	Personal id: 6
+	name: Elsie Martin
+	gender: female
+	age: 41
+	passport: 6743 271356
+	phone number: 89435103564
+	Special room access (1):
+		University, 2 floor, n:203
+	Cabinet: University, 2 floor, n:203
+
+Professors(8):
+	Position: professor
+	Acces level: red
+	Personal id: 7
+	name: Mark Walker
+	gender: male
+	age: 36
+	passport: 4080 116914
+	phone number: 89615820797
+	Special room access (0):
+	Teaching course:  Introduction to Programming
+	Cabinet: University, 1 floor, n:107
+
+	Position: professor
+	Acces level: red
+	Personal id: 8
+	name: Christina Phelps
+	gender: female
+	age: 20
+	passport: 5381 567944
+	phone number: 89197187404
+	Special room access (0):
+	Teaching course: Analytical Geometry and Linear Algebra
+	Cabinet: University, 1 floor, n:107
+
+	Position: professor
+	Acces level: red
+	Personal id: 9
+	name: Nathan Matthews
+	gender: male
+	age: 45
+	passport: 6536 376762
+	phone number: 89970183458
+	Special room access (0):
+	Teaching course: Data Structures and Algorithm
+	Cabinet: University, 1 floor, n:107
+
+	Position: professor
+	Acces level: red
+	Personal id: 10
+	name: Mary Simon
+	gender: female
+	age: 36
+	passport: 4866 251679
+	phone number: 89655181512
+	Special room access (0):
+	Teaching course: Foreign Language
+	Cabinet: University, 2 floor, n:200
+
+	Position: professor
+	Acces level: red
+	Personal id: 11
+	name: Roger Gomez
+	gender: male
+	age: 29
+	passport: 5081 229953
+	phone number: 89697934426
+	Special room access (0):
+	Teaching course: Mathematical Analysis
+	Cabinet: University, 2 floor, n:200
+
+	Position: professor
+	Acces level: red
+	Personal id: 12
+	name: Sean Scott
+	gender: female
+	age: 41
+	passport: 2583 847687
+	phone number: 89457865391
+	Special room access (0):
+	Teaching course: Theoretical Computer Science
+	Cabinet: University, 2 floor, n:200
+
+	Position: professor
+	Acces level: red
+	Personal id: 13
+	name: Fred Carpenter
+	gender: male
+	age: 35
+	passport: 9770 998956
+	phone number: 89488052220
+	Special room access (0):
+	Teaching course: Operating Systems
+	Cabinet: University, 2 floor, n:200
+
+	Position: professor
+	Acces level: red
+	Personal id: 14
+	name: Ellen Williams
+	gender: male
+	age: 20
+	passport: 3489 747787
+	phone number: 89109154576
+	Special room access (0):
+	Teaching course:  Introduction to Programming
+	Cabinet: University, 2 floor, n:201
+
+Students(20):
+	Position: student
+	Acces level: green
+	Personal id: 15
+	name: Joseph Anderson
+	gender: male
+	age: 21
+	passport: 2897 187812
+	phone number: 89893904895
+	Special room access (0):
+	Living room: Campuse 1, 1 floor, n:0
+
+	Position: student
+	Acces level: green
+	Personal id: 16
+	name: Ernest Parsons
+	gender: male
+	age: 39
+	passport: 4018 105427
+	phone number: 89267961696
+	Special room access (0):
+	Living room: Campuse 1, 1 floor, n:0
+
+	Position: student
+	Acces level: green
+	Personal id: 17
+	name: Nancy Craig
+	gender: female
+	age: 29
+	passport: 3481 492314
+	phone number: 89169867431
+	Special room access (0):
+	Living room: Campuse 1, 1 floor, n:0
+
+	Position: student
+	Acces level: green
+	Personal id: 18
+	name: Maxine Harris
+	gender: female
+	age: 37
+	passport: 2634 779067
+	phone number: 89498756356
+	Special room access (0):
+	Living room: Campuse 1, 1 floor, n:0
+
+	Position: student
+	Acces level: green
+	Personal id: 19
+	name: Kim Hicks
+	gender: male
+	age: 22
+	passport: 7388 501398
+	phone number: 89836836824
+	Special room access (0):
+	Living room: Campuse 1, 1 floor, n:0
+
+	Position: student
+	Acces level: green
+	Personal id: 20
+	name: Jason Hall
+	gender: male
+	age: 44
+	passport: 2904 721759
+	phone number: 89974068516
+	Special room access (0):
+	Living room: Campuse 1, 1 floor, n:1
+
+	Position: student
+	Acces level: green
+	Personal id: 21
+	name: Jeffrey Harper
+	gender: male
+	age: 23
+	passport: 6004 410834
+	phone number: 89755496281
+	Special room access (0):
+	Living room: Campuse 1, 1 floor, n:1
+
+	Position: student
+	Acces level: green
+	Personal id: 22
+	name: Deborah Campbell
+	gender: female
+	age: 40
+	passport: 2988 495253
+	phone number: 89682938977
+	Special room access (0):
+	Living room: Campuse 1, 1 floor, n:2
+
+	Position: student
+	Acces level: green
+	Personal id: 23
+	name: Barbara Campbell
+	gender: female
+	age: 18
+	passport: 4567 587021
+	phone number: 89972283996
+	Special room access (0):
+	Living room: Campuse 1, 1 floor, n:2
+
+	Position: student
+	Acces level: green
+	Personal id: 24
+	name: Julie Ellis
+	gender: female
+	age: 45
+	passport: 1212 599757
+	phone number: 89963568003
+	Special room access (0):
+	Living room: Campuse 1, 1 floor, n:2
+
+	Position: student
+	Acces level: green
+	Personal id: 25
+	name: Bonnie Campbell
+	gender: male
+	age: 41
+	passport: 8991 420520
+	phone number: 89811331829
+	Special room access (0):
+	Living room: Campuse 1, 1 floor, n:2
+
+	Position: student
+	Acces level: green
+	Personal id: 26
+	name: Barbara Potter
+	gender: female
+	age: 22
+	passport: 6211 582480
+	phone number: 89272528273
+	Special room access (0):
+	Living room: Campuse 1, 1 floor, n:2
+
+	Position: student
+	Acces level: green
+	Personal id: 27
+	name: Lori Doyle
+	gender: female
+	age: 23
+	passport: 6459 669162
+	phone number: 89278870768
+	Special room access (0):
+	Living room: Campuse 1, 1 floor, n:3
+
+	Position: student
+	Acces level: green
+	Personal id: 28
+	name: Lillian Cobb
+	gender: female
+	age: 36
+	passport: 5521 215472
+	phone number: 89535672776
+	Special room access (0):
+	Living room: Campuse 1, 1 floor, n:3
+
+	Position: student
+	Acces level: green
+	Personal id: 29
+	name: Jim Curry
+	gender: male
+	age: 34
+	passport: 5722 436229
+	phone number: 89830621873
+	Special room access (0):
+	Living room: Campuse 1, 1 floor, n:3
+
+	Position: student
+	Acces level: green
+	Personal id: 30
+	name: Hector Wright
+	gender: male
+	age: 17
+	passport: 7847 800610
+	phone number: 89676888438
+	Special room access (0):
+	Living room: Campuse 1, 1 floor, n:4
+
+	Position: student
+	Acces level: green
+	Personal id: 31
+	name: Anthony Keller
+	gender: male
+	age: 41
+	passport: 4430 883896
+	phone number: 89908016105
+	Special room access (0):
+	Living room: Campuse 1, 1 floor, n:4
+
+	Position: student
+	Acces level: green
+	Personal id: 32
+	name: Harry Carson
+	gender: male
+	age: 40
+	passport: 6266 189346
+	phone number: 89189050684
+	Special room access (0):
+	Living room: Campuse 1, 1 floor, n:5
+
+	Position: student
+	Acces level: green
+	Personal id: 33
+	name: Ron Carter
+	gender: male
+	age: 44
+	passport: 2526 910844
+	phone number: 89322981910
+	Special room access (0):
+	Living room: Campuse 1, 1 floor, n:5
+
+	Position: student
+	Acces level: green
+	Personal id: 34
+	name: James Powers
+	gender: male
+	age: 20
+	passport: 2916 233191
+	phone number: 89732110104
+	Special room access (0):
+	Living room: Campuse 1, 1 floor, n:5
+
+___________________________________
+Director:
+	Personal id: 0
+	name: Donald Park
+	age: 32
+Admins(2):
+	Personal id: 1
+	name: Anna Tobolenko
+	age: 28
+
+	Personal id: 2
+	name: Joshua Ward
+	age: 43
+
+Lab employess(4):
+	Personal id: 3
+	name: Thomas Peters
+	age: 29
+
+	Personal id: 4
+	name: Dorothy Martin
+	age: 38
+
+	Personal id: 5
+	name: Sandra Jackson
+	age: 42
+
+	Personal id: 6
+	name: Elsie Martin
+	age: 41
+
+Professors(8):
+	Personal id: 7
+	name: Mark Walker
+	age: 36
+
+	Personal id: 8
+	name: Christina Phelps
+	age: 20
+
+	Personal id: 9
+	name: Nathan Matthews
+	age: 45
+
+	Personal id: 10
+	name: Mary Simon
+	age: 36
+
+	Personal id: 11
+	name: Roger Gomez
+	age: 29
+
+	Personal id: 12
+	name: Sean Scott
+	age: 41
+
+	Personal id: 13
+	name: Fred Carpenter
+	age: 35
+
+	Personal id: 14
+	name: Ellen Williams
+	age: 20
+
+Students(20):
+	Personal id: 15
+	name: Joseph Anderson
+	age: 21
+
+	Personal id: 16
+	name: Ernest Parsons
+	age: 39
+
+	Personal id: 17
+	name: Nancy Craig
+	age: 29
+
+	Personal id: 18
+	name: Maxine Harris
+	age: 37
+
+	Personal id: 19
+	name: Kim Hicks
+	age: 22
+
+	Personal id: 20
+	name: Jason Hall
+	age: 44
+
+	Personal id: 21
+	name: Jeffrey Harper
+	age: 23
+
+	Personal id: 22
+	name: Deborah Campbell
+	age: 40
+
+	Personal id: 23
+	name: Barbara Campbell
+	age: 18
+
+	Personal id: 24
+	name: Julie Ellis
+	age: 45
+
+	Personal id: 25
+	name: Bonnie Campbell
+	age: 41
+
+	Personal id: 26
+	name: Barbara Potter
+	age: 22
+
+	Personal id: 27
+	name: Lori Doyle
+	age: 23
+
+	Personal id: 28
+	name: Lillian Cobb
+	age: 36
+
+	Personal id: 29
+	name: Jim Curry
+	age: 34
+
+	Personal id: 30
+	name: Hector Wright
+	age: 17
+
+	Personal id: 31
+	name: Anthony Keller
+	age: 41
+
+	Personal id: 32
+	name: Harry Carson
+	age: 40
+
+	Personal id: 33
+	name: Ron Carter
+	age: 44
+
+	Personal id: 34
+	name: James Powers
+	age: 20
+
