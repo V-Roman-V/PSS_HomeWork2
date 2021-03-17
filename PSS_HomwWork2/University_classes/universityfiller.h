@@ -3,7 +3,7 @@
 
 #include <queue>
 #include <vector>
-#include <University_class/university.h>
+#include "University_classes/university.h"
 #include "Additional_classes/peoplegenerator.h"
 
 template<class T>

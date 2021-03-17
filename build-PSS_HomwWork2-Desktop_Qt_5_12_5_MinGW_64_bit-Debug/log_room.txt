@@ -87,7 +87,7 @@ Lecture rooms (6):
 	Room type: lecture room
 	Needed acces level: yellow
 	Room location: University, 1 floor, n:101
-	Room capacity: 120
+	Room capacity: 180
 
 	Room type: lecture room
 	Needed acces level: yellow
@@ -97,116 +97,116 @@ Lecture rooms (6):
 	Room type: lecture room
 	Needed acces level: yellow
 	Room location: University, 1 floor, n:103
-	Room capacity: 120
+	Room capacity: 180
 
 	Room type: lecture room
 	Needed acces level: yellow
 	Room location: University, 1 floor, n:104
-	Room capacity: 120
+	Room capacity: 180
 
 	Room type: lecture room
 	Needed acces level: yellow
 	Room location: University, 1 floor, n:105
-	Room capacity: 120
+	Room capacity: 180
 
 	Room type: lecture room
 	Needed acces level: yellow
 	Room location: University, 1 floor, n:106
-	Room capacity: 120
+	Room capacity: 180
 
 Cabinets (6):
 	Room type: cabinet
 	Needed acces level: red
 	Room location: University, 1 floor, n:107
-	Room capacity: 3
-	Workers(3): 
-		Mark Walker
-		Christina Phelps
-		Nathan Matthews
+	Room capacity: 5
+	Workers(5): 
+		Steven McDonald
+		Bobbie Thompson
+		Steven Becker
+		Alice Wright
+		Marie Gardner
 
 	Room type: cabinet
 	Needed acces level: red
 	Room location: University, 2 floor, n:200
-	Room capacity: 4
-	Workers(4): 
-		Mary Simon
-		Roger Gomez
-		Sean Scott
-		Fred Carpenter
+	Room capacity: 5
+	Workers(3): 
+		Robert Morrison
+		William Griffin
+		Martin Spencer
 
 	Room type: cabinet
 	Needed acces level: red
 	Room location: University, 2 floor, n:201
 	Room capacity: 4
-	Workers(1): 
-		Ellen Williams
+	Workers(4): 
+		Harry Marshall
+		David Bradley
+		Valerie Matthews
+		Rebecca Rogers
 
 	Room type: cabinet
 	Needed acces level: red
 	Room location: University, 2 floor, n:202
-	Room capacity: 3
-	Workers(3): 
-		Thomas Peters
-		Dorothy Martin
-		Sandra Jackson
+	Room capacity: 5
+	Workers(0): 
 
 	Room type: cabinet
 	Needed acces level: red
 	Room location: University, 2 floor, n:203
 	Room capacity: 4
-	Workers(1): 
-		Elsie Martin
+	Workers(0): 
 
 	Room type: cabinet
 	Needed acces level: red
 	Room location: University, 2 floor, n:204
-	Room capacity: 5
+	Room capacity: 4
 	Workers(0): 
 
 Living rooms(12):
 	Room location: Campuse 1, 1 floor, n:0
-	Room capacity: 5
-	Workers(5): 
-		Joseph Anderson
-		Ernest Parsons
-		Nancy Craig
-		Maxine Harris
-		Kim Hicks
+	Room capacity: 2
+	Workers(2): 
+		Michelle Lewis
+		Kyle Phillips
 
 	Room location: Campuse 1, 1 floor, n:1
-	Room capacity: 2
-	Workers(2): 
-		Jason Hall
-		Jeffrey Harper
+	Room capacity: 4
+	Workers(4): 
+		Rick Martin
+		Joshua Ward
+		Thomas Peters
+		Dorothy Martin
 
 	Room location: Campuse 1, 1 floor, n:2
-	Room capacity: 5
-	Workers(5): 
-		Deborah Campbell
-		Barbara Campbell
-		Julie Ellis
-		Bonnie Campbell
-		Barbara Potter
-
-	Room location: Campuse 1, 1 floor, n:3
 	Room capacity: 3
 	Workers(3): 
-		Lori Doyle
-		Lillian Cobb
-		Jim Curry
+		Sandra Jackson
+		Elsie Martin
+		Mark Walker
+
+	Room location: Campuse 1, 1 floor, n:3
+	Room capacity: 4
+	Workers(4): 
+		Christina Phelps
+		Nathan Matthews
+		Mary Simon
+		Roger Gomez
 
 	Room location: Campuse 1, 1 floor, n:4
-	Room capacity: 2
-	Workers(2): 
-		Hector Wright
-		Anthony Keller
+	Room capacity: 5
+	Workers(5): 
+		Sean Scott
+		Fred Carpenter
+		Ellen Williams
+		Joseph Anderson
+		Ernest Parsons
 
 	Room location: Campuse 1, 1 floor, n:5
-	Room capacity: 5
-	Workers(3): 
-		Harry Carson
-		Ron Carter
-		James Powers
+	Room capacity: 2
+	Workers(2): 
+		Nancy Craig
+		Maxine Harris
 
 	Room location: Campuse 2, 1 floor, n:0
 	Room capacity: 3
@@ -217,18 +217,18 @@ Living rooms(12):
 	Workers(0): 
 
 	Room location: Campuse 2, 1 floor, n:2
-	Room capacity: 5
+	Room capacity: 4
 	Workers(0): 
 
 	Room location: Campuse 2, 1 floor, n:3
-	Room capacity: 4
+	Room capacity: 3
 	Workers(0): 
 
 	Room location: Campuse 2, 1 floor, n:4
-	Room capacity: 5
+	Room capacity: 4
 	Workers(0): 
 
 	Room location: Campuse 2, 1 floor, n:5
-	Room capacity: 4
+	Room capacity: 5
 	Workers(0): 
 

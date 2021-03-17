@@ -28,8 +28,10 @@ SOURCES += \
         Room_classes/livingroom.cpp \
         Room_classes/room.cpp \
         Room_classes/universityroom.cpp \
-        University_class/university.cpp \
-        University_class/universityfiller.cpp \
+        University_classes/university.cpp \
+        University_classes/universityfiller.cpp \
+        UserInterface_classes/GUI/userinterfacegui.cpp \
+        UserInterface_classes/Terminal/userinterfaceterminal.cpp \
         main.cpp
 
 HEADERS += \
@@ -54,5 +56,7 @@ HEADERS += \
     Room_classes/livingroom.h \
     Room_classes/room.h \
     Room_classes/universityroom.h \
-    University_class/university.h \
-    University_class/universityfiller.h
+    University_classes/university.h \
+    University_classes/universityfiller.h \
+    UserInterface_classes/GUI/userinterfacegui.h \
+    UserInterface_classes/Terminal/userinterfaceterminal.h
