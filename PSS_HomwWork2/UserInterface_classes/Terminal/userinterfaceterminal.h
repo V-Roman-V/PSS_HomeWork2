@@ -21,6 +21,9 @@ private:
     static inline void getInput(std::string& input);
     static inline void waitENTER();
     static inline bool isNumber(std::string& num);
+
+    template <class T>
+    static int calculateInput(std::string input, std::initializer_list<T> list );
 };
 
 #endif // USERINTERFACETERMINAL_H

@@ -20,30 +20,14 @@ void UserInterfaceTerminal::start(University& University)
         getInput(input);
         if(input == "-" or input == "exit") break;
 
-        int sphere = -1;
-        if((isNumber(input))) sphere = stoi(input);
-        if(input == "People")
-            sphere = 0;
-        if(input == "Room")
-            sphere = 1;
-        if(sphere< 0 or sphere > 1) continue;
+        int sphere = calculateInput(input,{"People","Room"});
+        if( sphere == -1) continue;
         printSeparator();
         if(sphere == 1){ //rooms
             cout<<"You can read the list in detail. \n\tPlease enter the room type {(0)cabinet; (1)class; (2)lecture; (3)conference; (4)living}"<<endl;
             getInput(input);
-            int type = -1;
-            if((isNumber(input))) type = stoi(input);
-            if(input == "cabinet")
-                type = 0;
-            if(input == "class")
-                type = 1;
-            if(input == "lecture")
-                type = 2;
-            if(input == "conference")
-                type = 3;
-            if(input == "living")
-                type = 4;
-            if(type< 0 or type > 4) continue;
+            int type = calculateInput(input,{"cabinet","class","lecture","conference","living"});
+            if( type == -1) continue;
             vector<Room*> rooms;
             switch(type){
                 case 0:rooms = vector<Room*>(University.getCabinetRoom().begin(),University.getCabinetRoom().end()); rooms.push_back(University.getDirectorCabinet());break;
@@ -62,19 +46,8 @@ void UserInterfaceTerminal::start(University& University)
 
         cout<<"You can read the list in detail. \n\tPlease enter the position name {(0)director; (1)admin; (2)labEmployee; (3)professor; (4)student}"<<endl;
         getInput(input);
-        int position = -1;
-        if((isNumber(input))) position = stoi(input);
-        if(input == "director")
-            position = 0;
-        if(input == "admin")
-            position = 1;
-        if(input == "labEmployee")
-            position = 2;
-        if(input == "professor")
-            position = 3;
-        if(input == "student")
-            position = 4;
-        if(position< 0 or position > 4) continue;
+        int position = calculateInput(input,{"director","admin","labEmployee","professor","student"});
+        if(position == -1) continue;
         vector<UniversityPeople*> peoples;
         bool isAdmin = false;
         switch(position){
@@ -157,17 +130,9 @@ void UserInterfaceTerminal::start(University& University)
                     cout<<"Choose the person you want to give access."<<endl;
                     cout<<"\tPlease enter the position name {(0)admin; (1)labEmployee; (2)professor; (3)student}"<<endl;
                     getInput(input);
-                    int position = -1;
-                    if((isNumber(input))) position = stoi(input);
-                    if(input == "admin")
-                        position = 0;
-                    if(input == "labEmployee")
-                        position = 1;
-                    if(input == "professor")
-                        position = 2;
-                    if(input == "student")
-                        position = 3;
-                    if(position< 0 or position > 3) {giveAccessPhase = -1;continue;}
+                    int position = calculateInput(input,{"admin","labEmployee","professor","student"});
+                    if( position == -1) {giveAccessPhase = -1;continue;}
+
                     vector<UniversityPeople*> peoples;
                     switch(position){
                         case 0:peoples = vector<UniversityPeople*>(University.getAdmins().begin(),University.getAdmins().end()); break;
@@ -212,31 +177,16 @@ void UserInterfaceTerminal::start(University& University)
                     cout<<"\tPlease enter the type {(0)room; (1)accessLevel; (-)back}"<<endl;
                     getInput(input);
                     if(input == "back" or input == "-"){giveAccessPhase = -1;continue;}
-                    int Atype = -1;
-                    if((isNumber(input))) Atype = stoi(input);
-                    if(input == "room")
-                        Atype = 0;
-                    if(input == "accessLevel")
-                        Atype = 1;
-                    if(Atype<0 or 1<Atype)continue;
+                    int Atype = calculateInput(input,{"room","accessLevel"});
+                    if( Atype == -1) continue;
                     if(Atype == 1){
                         printSeparator();
                         cout<<"Choose the level you want to give the person."<<endl;
                         cout<<"\tPlease enter the level {(0)noLevel; (1)green; (2)yellow; (3)red; (4)black}"<<endl;
                         getInput(input);
-                        int access = -1;
-                        if((isNumber(input))) access = stoi(input);
-                        if(input == "noLevel")
-                            access = 0;
-                        if(input == "green")
-                            access = 1;
-                        if(input == "yellow")
-                            access = 2;
-                        if(input == "red")
-                            access = 3;
-                        if(input == "black")
-                            access = 4;
-                        if(access<0 or 4<access)continue;
+                        int access = calculateInput(input,{"noLevel","green","yellow","red","black"});
+                        if( access == -1) continue;
+
                         switch (access) {
                             case 0:selected_level = AccessLevel::no_level;break;
                             case 1:selected_level = AccessLevel::green;break;
@@ -252,17 +202,8 @@ void UserInterfaceTerminal::start(University& University)
                     cout<<"Choose the room type you want to give access to the person."<<endl;
                     cout<<"\tPlease enter the room type {(0)cabinet; (1)class; (2)lecture; (3)conference}"<<endl;
                     getInput(input);
-                    int type = -1;
-                    if((isNumber(input))) type = stoi(input);
-                    if(input == "cabinet")
-                        type = 0;
-                    if(input == "class")
-                        type = 1;
-                    if(input == "lecture")
-                        type = 2;
-                    if(input == "conference")
-                        type = 3;
-                    if(type< 0 or type > 3) continue;
+                    int type = calculateInput(input,{"cabinet","class","lecture","conference"});
+                    if( type == -1) continue;
                     vector<UniversityRoom*> rooms;
                     switch(type){
                         case 0:rooms = vector<UniversityRoom*>(University.getCabinetRoom().begin(),University.getCabinetRoom().end()); rooms.push_back(University.getDirectorCabinet());break;
@@ -305,14 +246,9 @@ void UserInterfaceTerminal::start(University& University)
                     printSeparator();
                     cout<<"Confirm your choice or cancel it\n\tPlease enter the {(0)confirm; (1)cancel}"<<endl;
                     getInput(input);
-                    int confirm = -1;
-                    if(isNumber(input)) confirm = stoi(input);
-                    if(input == "confirm")
-                        confirm = 0;
-                    if(input == "cancel")
-                        confirm = 1;
-                    if(confirm < 0 or 1< confirm) continue;
-                    if(confirm == 0){
+                    int confirm = calculateInput(input,{"confirm","cancel"});
+                    if( confirm == -1) continue;
+                    if( confirm == 0){
                         Admin* admin = static_cast<Admin*>(person);
                         admin->giveAccess(selected_person,selected_level);
                         cout<<"The level was successfully assigned"<<endl;
@@ -333,13 +269,8 @@ void UserInterfaceTerminal::start(University& University)
                     printSeparator();
                     cout<<"Confirm your choice or cancel it\n\tPlease enter the {(0)confirm; (1)cancel}"<<endl;
                     getInput(input);
-                    int confirm = -1;
-                    if((isNumber(input))) confirm = stoi(input);
-                    if(input == "confirm")
-                        confirm = 0;
-                    if(input == "cancel")
-                        confirm = 1;
-                    if(confirm < 0 or 1< confirm) continue;
+                    int confirm = calculateInput(input,{"confirm","cancel"});
+                    if( confirm == -1) continue;
                     if(confirm == 0){
                         Admin* admin = static_cast<Admin*>(person);
                         admin->giveAccess(selected_person,selected_room);
@@ -354,19 +285,9 @@ void UserInterfaceTerminal::start(University& University)
                 }
                 //----- chosen commands
                 getInput(input);
-                int command = -1;
-                if((isNumber(input))) command = stoi(input);
-                if(input == "logOut")
-                    command = 0;
-                if(input == "myInfo")
-                    command = 1;
-                if(input == "myMovementsHistory")
-                    command = 2;
-                if(input == "tryOpenRoom")
-                    command = 3;
-                if(input == "giveAccess")
-                    command = 4;
-                if(command < 0 or ((isAdmin)?4:3) < command) continue;
+                int command = calculateInput(input,{"logOut","myInfo","myMovementsHistory","tryOpenRoom","giveAccess"});
+                if( command == -1) continue;
+                if( command == 4 && !isAdmin) continue;
 
                 if(command == 0) break;
                 if(command == 1) {
@@ -385,17 +306,8 @@ void UserInterfaceTerminal::start(University& University)
                     cout<<"You can try to open one of the university rooms. Your access level: "<<person->getAccessLevel()<<endl;
                     cout<<"\tPlease enter the room type {(0)cabinet = "<<Cabinet::getNeededLevel()<<"; (1)class = "<<ClassRoom::getNeededLevel()<<"; (2)lecture = "<<LectureRoom::getNeededLevel()<<"; (3)conference = "<<ConferenceRoom::getNeededLevel()<<"}"<<endl;
                     getInput(input);
-                    int type = -1;
-                    if((isNumber(input))) type = stoi(input);
-                    if(input == "cabinet")
-                        type = 0;
-                    if(input == "class")
-                        type = 1;
-                    if(input == "lecture")
-                        type = 2;
-                    if(input == "conference")
-                        type = 3;
-                    if(type< 0 or type > 3) continue;
+                    int type = calculateInput(input,{"cabinet","class","lecture","conference"});
+                    if( type == -1) continue;
                     vector<UniversityRoom*> rooms;
                     switch(type){
                         case 0:rooms = vector<UniversityRoom*>(University.getCabinetRoom().begin(),University.getCabinetRoom().end()); rooms.push_back(University.getDirectorCabinet());break;
@@ -462,4 +374,20 @@ void UserInterfaceTerminal::waitENTER()
 bool UserInterfaceTerminal::isNumber(string &num)
 {
     return (num.find_first_not_of( "0123456789" ) == std::string::npos);
+}
+
+template<class T>
+int UserInterfaceTerminal::calculateInput(string input, std::initializer_list<T> list)
+{
+    int i=0;
+    if((isNumber(input))){
+        i = stoi(input);
+        if( i >= list.size()) return -1;
+        return i;
+    }
+    for(const auto& str: list)
+        if(input == str)
+            return i;
+        else i++;
+    return -1;
 }
