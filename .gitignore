@@ -1,0 +1,7 @@
+*.o
+Makefile*
+*.Debug
+*.Release
+/build-PSS*Debug
+/build-PSS*Debug/debug
+moc_*

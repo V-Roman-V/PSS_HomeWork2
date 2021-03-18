@@ -22,6 +22,8 @@ debug/room.o
 debug/universityroom.o
 debug/university.o
 debug/universityfiller.o
+debug/mainwindow.o
 debug/userinterfacegui.o
 debug/userinterfaceterminal.o
 debug/main.o
+debug/moc_mainwindow.o

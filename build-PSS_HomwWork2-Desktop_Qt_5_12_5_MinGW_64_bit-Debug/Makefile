@@ -226,13 +226,21 @@ Makefile: ../PSS_HomwWork2/PSS_HomwWork2.pro ../../../Qt/5.12.5/mingw73_64/mkspe
 		../../../Qt/5.12.5/mingw73_64/mkspecs/features/qml_debug.prf \
 		../../../Qt/5.12.5/mingw73_64/mkspecs/features/precompile_header.prf \
 		../../../Qt/5.12.5/mingw73_64/mkspecs/features/warn_on.prf \
+		../../../Qt/5.12.5/mingw73_64/mkspecs/features/qt.prf \
+		../../../Qt/5.12.5/mingw73_64/mkspecs/features/resources.prf \
+		../../../Qt/5.12.5/mingw73_64/mkspecs/features/moc.prf \
+		../../../Qt/5.12.5/mingw73_64/mkspecs/features/win32/opengl.prf \
+		../../../Qt/5.12.5/mingw73_64/mkspecs/features/uic.prf \
 		../../../Qt/5.12.5/mingw73_64/mkspecs/features/qmake_use.prf \
 		../../../Qt/5.12.5/mingw73_64/mkspecs/features/file_copies.prf \
 		../../../Qt/5.12.5/mingw73_64/mkspecs/features/testcase_targets.prf \
 		../../../Qt/5.12.5/mingw73_64/mkspecs/features/exceptions.prf \
 		../../../Qt/5.12.5/mingw73_64/mkspecs/features/yacc.prf \
 		../../../Qt/5.12.5/mingw73_64/mkspecs/features/lex.prf \
-		../PSS_HomwWork2/PSS_HomwWork2.pro
+		../PSS_HomwWork2/PSS_HomwWork2.pro \
+		../../../Qt/5.12.5/mingw73_64/lib/Qt5Widgets.prl \
+		../../../Qt/5.12.5/mingw73_64/lib/Qt5Gui.prl \
+		../../../Qt/5.12.5/mingw73_64/lib/Qt5Core.prl
 	$(QMAKE) -o Makefile ..\PSS_HomwWork2\PSS_HomwWork2.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
 ../../../Qt/5.12.5/mingw73_64/mkspecs/features/spec_pre.prf:
 ../../../Qt/5.12.5/mingw73_64/mkspecs/qdevice.pri:
@@ -397,6 +405,11 @@ Makefile: ../PSS_HomwWork2/PSS_HomwWork2.pro ../../../Qt/5.12.5/mingw73_64/mkspe
 ../../../Qt/5.12.5/mingw73_64/mkspecs/features/qml_debug.prf:
 ../../../Qt/5.12.5/mingw73_64/mkspecs/features/precompile_header.prf:
 ../../../Qt/5.12.5/mingw73_64/mkspecs/features/warn_on.prf:
+../../../Qt/5.12.5/mingw73_64/mkspecs/features/qt.prf:
+../../../Qt/5.12.5/mingw73_64/mkspecs/features/resources.prf:
+../../../Qt/5.12.5/mingw73_64/mkspecs/features/moc.prf:
+../../../Qt/5.12.5/mingw73_64/mkspecs/features/win32/opengl.prf:
+../../../Qt/5.12.5/mingw73_64/mkspecs/features/uic.prf:
 ../../../Qt/5.12.5/mingw73_64/mkspecs/features/qmake_use.prf:
 ../../../Qt/5.12.5/mingw73_64/mkspecs/features/file_copies.prf:
 ../../../Qt/5.12.5/mingw73_64/mkspecs/features/testcase_targets.prf:
@@ -404,6 +417,9 @@ Makefile: ../PSS_HomwWork2/PSS_HomwWork2.pro ../../../Qt/5.12.5/mingw73_64/mkspe
 ../../../Qt/5.12.5/mingw73_64/mkspecs/features/yacc.prf:
 ../../../Qt/5.12.5/mingw73_64/mkspecs/features/lex.prf:
 ../PSS_HomwWork2/PSS_HomwWork2.pro:
+../../../Qt/5.12.5/mingw73_64/lib/Qt5Widgets.prl:
+../../../Qt/5.12.5/mingw73_64/lib/Qt5Gui.prl:
+../../../Qt/5.12.5/mingw73_64/lib/Qt5Core.prl:
 qmake: FORCE
 	@$(QMAKE) -o Makefile ..\PSS_HomwWork2\PSS_HomwWork2.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
 
@@ -415,6 +431,18 @@ clean: debug-clean release-clean  FORCE
 distclean: debug-distclean release-distclean  FORCE
 	-$(DEL_FILE) Makefile
 	-$(DEL_FILE) .qmake.stash
+
+debug-mocclean:
+	$(MAKE) -f $(MAKEFILE).Debug mocclean
+release-mocclean:
+	$(MAKE) -f $(MAKEFILE).Release mocclean
+mocclean: debug-mocclean release-mocclean
+
+debug-mocables:
+	$(MAKE) -f $(MAKEFILE).Debug mocables
+release-mocables:
+	$(MAKE) -f $(MAKEFILE).Release mocables
+mocables: debug-mocables release-mocables
 
 check: first
 

@@ -1,9 +1,13 @@
-TEMPLATE = app
-CONFIG += console c++11
-CONFIG -= app_bundle
-CONFIG -= qt
+QT    += core gui
 
-#QMAKE_CXXFLAGS += -std=c++0x
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+
+CONFIG += console c++11
+
+TEMPLATE = app
+
+#DEFINES += QT_DEPRECATED_WARNINGS
+
 QMAKE_CXXFLAGS += -Wall
 
 SOURCES += \
@@ -31,6 +35,7 @@ SOURCES += \
         Room_classes/universityroom.cpp \
         University_classes/university.cpp \
         University_classes/universityfiller.cpp \
+        UserInterface_classes/GUI/mainwindow.cpp \
         UserInterface_classes/GUI/userinterfacegui.cpp \
         UserInterface_classes/Terminal/userinterfaceterminal.cpp \
         main.cpp
@@ -60,5 +65,14 @@ HEADERS += \
     Room_classes/universityroom.h \
     University_classes/university.h \
     University_classes/universityfiller.h \
+    UserInterface_classes/GUI/mainwindow.h \
     UserInterface_classes/GUI/userinterfacegui.h \
     UserInterface_classes/Terminal/userinterfaceterminal.h
+
+FORMS += \
+    UserInterface_classes/GUI/mainwindow.ui
+
+# Default rules for deployment.
+qnx: target.path = /tmp/$${TARGET}/bin
+else: unix:!android: target.path = /opt/$${TARGET}/bin
+!isEmpty(target.path): INSTALLS += target

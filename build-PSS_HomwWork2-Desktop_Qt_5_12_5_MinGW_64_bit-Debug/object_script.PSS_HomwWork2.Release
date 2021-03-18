@@ -22,6 +22,8 @@ release/room.o
 release/universityroom.o
 release/university.o
 release/universityfiller.o
+release/mainwindow.o
 release/userinterfacegui.o
 release/userinterfaceterminal.o
 release/main.o
+release/moc_mainwindow.o

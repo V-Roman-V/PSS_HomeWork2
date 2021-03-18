@@ -5,6 +5,7 @@
 
 enum class AccessLevel {
     no_level,// default
+    blue,    // guest
     green,   // students
     yellow,  // lab_Employess
     red,     // professors and admins

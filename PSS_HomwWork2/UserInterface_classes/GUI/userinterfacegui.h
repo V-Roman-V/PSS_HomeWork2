@@ -1,11 +1,13 @@
 #ifndef USERINTERFACEGUI_H
 #define USERINTERFACEGUI_H
 
-#include "University_classes/university.h"
+#include <QApplication>
+#include "UserInterface_classes/GUI/mainwindow.h"
 
-struct UserInterfaceGUI
+class UserInterfaceGUI
 {
-    void start(University* university);
+public:
+    static int start(int argc, char *argv[]);
 };
 
 #endif // USERINTERFACEGUI_H
