@@ -3,20 +3,12 @@
 const std::string UserInterfaceTerminal::LINE = "---------------------------------------------------------";
 
 using namespace std;
-void UserInterfaceTerminal::start(University& University)
+void UserInterfaceTerminal::start(University& university)
 {
     string input;
     while(true){ // position selection
-        system("cls");
-        cout<<"Welcome to "<<University.getName()<<endl;
-        printSeparator();
-        cout<<"Our university has:"<<endl;
-        cout<<"\t"<<left<<setw(20)<<"1 director"                                                   <<"|\t"<<University.getCabinetRoom().size()<<" cabinets and 1 director's cabinet"<<endl;
-        cout<<"\t"<<left<<setw(20)<<to_string(University.getAdmins().size())+" admins"              <<"|\t"<<University.getClassRoom().size()<<" class rooms"<<endl;
-        cout<<"\t"<<left<<setw(20)<<to_string(University.getLabEmployees().size())+" lab employees" <<"|\t"<<University.getLectureRoom().size()<<" lecture rooms"<<endl;
-        cout<<"\t"<<left<<setw(20)<<to_string(University.getProfessors().size())+" professors"      <<"|\t"<<University.getConferenceRoom().size()<<" conference rooms"<<endl;
-        cout<<"\t"<<left<<setw(20)<<to_string(University.getStudents().size())+" students"          <<"|\t"<<University.getLivingRoom().size()<<" living rooms"<<endl<<endl;
-        cout<<"Choose what you want to find out information about.\n\tPlease enter the {(0)People; (1)Room; (-)exit }"<<endl;
+        clear();
+        printWelcomeText(university);
         getInput(input);
         if(input == "-" or input == "exit") break;
 
@@ -30,11 +22,11 @@ void UserInterfaceTerminal::start(University& University)
             if( type == -1) continue;
             vector<Room*> rooms;
             switch(type){
-                case 0:rooms = vector<Room*>(University.getCabinetRoom().begin(),University.getCabinetRoom().end()); rooms.push_back(University.getDirectorCabinet());break;
-                case 1:rooms = vector<Room*>(University.getClassRoom().begin(),University.getClassRoom().end());break;
-                case 2:rooms = vector<Room*>(University.getLectureRoom().begin(),University.getLectureRoom().end());break;
-                case 3:rooms = vector<Room*>(University.getConferenceRoom().begin(),University.getConferenceRoom().end());break;
-                case 4:rooms = vector<Room*>(University.getLivingRoom().begin(),University.getLivingRoom().end());break;
+                case 0:rooms = vector<Room*>(university.getCabinetRoom().begin(),university.getCabinetRoom().end()); rooms.push_back(university.getDirectorCabinet());break;
+                case 1:rooms = vector<Room*>(university.getClassRoom().begin(),university.getClassRoom().end());break;
+                case 2:rooms = vector<Room*>(university.getLectureRoom().begin(),university.getLectureRoom().end());break;
+                case 3:rooms = vector<Room*>(university.getConferenceRoom().begin(),university.getConferenceRoom().end());break;
+                case 4:rooms = vector<Room*>(university.getLivingRoom().begin(),university.getLivingRoom().end());break;
             }
             int i=1;
             for(auto r: rooms)
@@ -51,17 +43,17 @@ void UserInterfaceTerminal::start(University& University)
         vector<UniversityPeople*> peoples;
         bool isAdmin = false;
         switch(position){
-            case 0:peoples.push_back(University.getDirector());break;
-            case 1:peoples = vector<UniversityPeople*>(University.getAdmins().begin(),University.getAdmins().end()); isAdmin = true; break;
-            case 2:peoples = vector<UniversityPeople*>(University.getLabEmployees().begin(),University.getLabEmployees().end()); break;
-            case 3:peoples = vector<UniversityPeople*>(University.getProfessors().begin(),University.getProfessors().end());break;
-            case 4:peoples = vector<UniversityPeople*>(University.getStudents().begin(),University.getStudents().end());break;
+            case 0:peoples.push_back(university.getDirector());break;
+            case 1:peoples = vector<UniversityPeople*>(university.getAdmins().begin(),university.getAdmins().end()); isAdmin = true; break;
+            case 2:peoples = vector<UniversityPeople*>(university.getLabEmployees().begin(),university.getLabEmployees().end()); break;
+            case 3:peoples = vector<UniversityPeople*>(university.getProfessors().begin(),university.getProfessors().end());break;
+            case 4:peoples = vector<UniversityPeople*>(university.getStudents().begin(),university.getStudents().end());break;
         }
 
         bool incorrect_pass = false;
         int chosen_person = 0;
         while(true){ // Person selection
-            system("cls");
+            clear();
             switch(position){
                 case 0:cout<<"Director ";break;
                 case 1:cout<<"Admins ";break;
@@ -69,7 +61,7 @@ void UserInterfaceTerminal::start(University& University)
                 case 3:cout<<"Professors ";break;
                 case 4:cout<<"Students ";break;
             }
-            cout<<"in "<<University.getName()<<":"<<endl<<endl;
+            cout<<"in "<<university.getName()<<":"<<endl<<endl;
             int i=1;
             for(auto p: peoples)
                 cout<<" "<<i++<<") "<<p->getCommonInfo()<<endl;
@@ -119,7 +111,7 @@ void UserInterfaceTerminal::start(University& University)
             UniversityRoom*   selected_room = nullptr;
             AccessLevel       selected_level = AccessLevel::no_level;
             while(true){
-                system("cls");
+                clear();
                 cout<<"You are login to the system as "<<person->getName() <<((isAdmin)?" (Administrator)":"")<<endl;
                 cout<<"You can log out, display information about yourself, see the history of your movements,"<<(isAdmin?"":" and")<<" try to enter the room"<<(isAdmin?", and give access to people.":".")<<endl;
                 cout<<"\tPlease enter the command  {(0)logOut; (1)myInfo; (2)myMovementsHistory; (3)tryOpenRoom"<<((isAdmin)?"; (4)giveAccess":"")<<"}"<<endl;
@@ -135,13 +127,13 @@ void UserInterfaceTerminal::start(University& University)
 
                     vector<UniversityPeople*> peoples;
                     switch(position){
-                        case 0:peoples = vector<UniversityPeople*>(University.getAdmins().begin(),University.getAdmins().end()); break;
-                        case 1:peoples = vector<UniversityPeople*>(University.getLabEmployees().begin(),University.getLabEmployees().end()); break;
-                        case 2:peoples = vector<UniversityPeople*>(University.getProfessors().begin(),University.getProfessors().end());break;
-                        case 3:peoples = vector<UniversityPeople*>(University.getStudents().begin(),University.getStudents().end());break;
+                        case 0:peoples = vector<UniversityPeople*>(university.getAdmins().begin(),university.getAdmins().end()); break;
+                        case 1:peoples = vector<UniversityPeople*>(university.getLabEmployees().begin(),university.getLabEmployees().end()); break;
+                        case 2:peoples = vector<UniversityPeople*>(university.getProfessors().begin(),university.getProfessors().end());break;
+                        case 3:peoples = vector<UniversityPeople*>(university.getStudents().begin(),university.getStudents().end());break;
                     }
                     while(true){ // Person selection to give access
-                        system("cls");
+                        clear();
                         switch(position){
                             case 0:cout<<"Admins:";break;
                             case 1:cout<<"Lab employees:";break;
@@ -158,7 +150,7 @@ void UserInterfaceTerminal::start(University& University)
                         if(input == "back" or input == "-"){giveAccessPhase = -1;break;}
                         if(!isNumber(input)) continue;
 
-                        int personal_num = stoi(input);
+                        unsigned int personal_num = stoi(input);
                         if(personal_num <=0 || personal_num > peoples.size()) continue;
                         chosen_person = personal_num;
 
@@ -206,13 +198,13 @@ void UserInterfaceTerminal::start(University& University)
                     if( type == -1) continue;
                     vector<UniversityRoom*> rooms;
                     switch(type){
-                        case 0:rooms = vector<UniversityRoom*>(University.getCabinetRoom().begin(),University.getCabinetRoom().end()); rooms.push_back(University.getDirectorCabinet());break;
-                        case 1:rooms = vector<UniversityRoom*>(University.getClassRoom().begin(),University.getClassRoom().end());break;
-                        case 2:rooms = vector<UniversityRoom*>(University.getLectureRoom().begin(),University.getLectureRoom().end());break;
-                        case 3:rooms = vector<UniversityRoom*>(University.getConferenceRoom().begin(),University.getConferenceRoom().end());break;
+                        case 0:rooms = vector<UniversityRoom*>(university.getCabinetRoom().begin(),university.getCabinetRoom().end()); rooms.push_back(university.getDirectorCabinet());break;
+                        case 1:rooms = vector<UniversityRoom*>(university.getClassRoom().begin(),university.getClassRoom().end());break;
+                        case 2:rooms = vector<UniversityRoom*>(university.getLectureRoom().begin(),university.getLectureRoom().end());break;
+                        case 3:rooms = vector<UniversityRoom*>(university.getConferenceRoom().begin(),university.getConferenceRoom().end());break;
                     }
                     while(true) {
-                        system("cls");
+                        clear();
                         switch(type){
                             case 0:cout<<"Cabinets:";break;
                             case 1:cout<<"Class rooms:";break;
@@ -229,7 +221,7 @@ void UserInterfaceTerminal::start(University& University)
                         getInput(input);
                         if(input == "back" or input == "-"){break;}
                         if(!isNumber(input)) continue;
-                        int room_num= stoi(input);
+                        unsigned int room_num= stoi(input);
                         if(room_num <=0 || room_num > rooms.size()) continue;
                         selected_room =  rooms[room_num-1];
                         giveAccessPhase = 3;
@@ -240,7 +232,7 @@ void UserInterfaceTerminal::start(University& University)
                 if(giveAccessPhase == 2){
                     cout<<">4"<<endl;
                     printSeparator();
-                    cout<<"Selected person: "<<selected_person->getCommonInfo()<<endl;
+                    cout<<"Selected person:\n"<<selected_person->getCommonInfo()<<endl;
                     printSeparator();
                     cout<<"Selected new access level: "<<getAccessLevelName(selected_level)<<endl;
                     printSeparator();
@@ -310,13 +302,13 @@ void UserInterfaceTerminal::start(University& University)
                     if( type == -1) continue;
                     vector<UniversityRoom*> rooms;
                     switch(type){
-                        case 0:rooms = vector<UniversityRoom*>(University.getCabinetRoom().begin(),University.getCabinetRoom().end()); rooms.push_back(University.getDirectorCabinet());break;
-                        case 1:rooms = vector<UniversityRoom*>(University.getClassRoom().begin(),University.getClassRoom().end());break;
-                        case 2:rooms = vector<UniversityRoom*>(University.getLectureRoom().begin(),University.getLectureRoom().end());break;
-                        case 3:rooms = vector<UniversityRoom*>(University.getConferenceRoom().begin(),University.getConferenceRoom().end());break;
+                        case 0:rooms = vector<UniversityRoom*>(university.getCabinetRoom().begin(),university.getCabinetRoom().end()); rooms.push_back(university.getDirectorCabinet());break;
+                        case 1:rooms = vector<UniversityRoom*>(university.getClassRoom().begin(),university.getClassRoom().end());break;
+                        case 2:rooms = vector<UniversityRoom*>(university.getLectureRoom().begin(),university.getLectureRoom().end());break;
+                        case 3:rooms = vector<UniversityRoom*>(university.getConferenceRoom().begin(),university.getConferenceRoom().end());break;
                     }
                     while(true) { // trying open room
-                        system("cls");
+                        clear();
                         switch(type){
                             case 0:cout<<"Cabinets:";break;
                             case 1:cout<<"Class rooms:";break;
@@ -353,6 +345,20 @@ void UserInterfaceTerminal::start(University& University)
     }
 }
 
+void UserInterfaceTerminal::printWelcomeText(University &university)
+{
+    cout<<"Welcome to "<<university.getName()<<endl;
+    printSeparator();
+    cout<<"Our university has:"<<endl;
+    cout<<"\t"<<left<<setw(20)<<"1 director"                                                    <<"|\t"<<university.getCabinetRoom().size()<<" cabinets and 1 director's cabinet"<<endl;
+    cout<<"\t"<<left<<setw(20)<<to_string(university.getAdmins().size())+" admins"              <<"|\t"<<university.getClassRoom().size()<<" class rooms"<<endl;
+    cout<<"\t"<<left<<setw(20)<<to_string(university.getLabEmployees().size())+" lab employees" <<"|\t"<<university.getLectureRoom().size()<<" lecture rooms"<<endl;
+    cout<<"\t"<<left<<setw(20)<<to_string(university.getProfessors().size())+" professors"      <<"|\t"<<university.getConferenceRoom().size()<<" conference rooms"<<endl;
+    cout<<"\t"<<left<<setw(20)<<to_string(university.getStudents().size())+" students"          <<"|\t"<<university.getLivingRoom().size()<<" living rooms"<<endl<<endl;
+    cout<<"Choose what you want to find out information about.\n\tPlease enter the {(0)People; (1)Room; (-)exit }"<<endl;
+
+}
+
 void UserInterfaceTerminal::printSeparator()
 {
     cout<<LINE<<endl;
@@ -371,15 +377,20 @@ void UserInterfaceTerminal::waitENTER()
     getline(cin,s);
 }
 
-bool UserInterfaceTerminal::isNumber(string &num)
+bool UserInterfaceTerminal::isNumber(const string &num)
 {
     return (num.find_first_not_of( "0123456789" ) == std::string::npos);
+}
+
+void UserInterfaceTerminal::clear()
+{
+    system("cls");
 }
 
 template<class T>
 int UserInterfaceTerminal::calculateInput(string input, std::initializer_list<T> list)
 {
-    int i=0;
+    unsigned int i=0;
     if((isNumber(input))){
         i = stoi(input);
         if( i >= list.size()) return -1;
