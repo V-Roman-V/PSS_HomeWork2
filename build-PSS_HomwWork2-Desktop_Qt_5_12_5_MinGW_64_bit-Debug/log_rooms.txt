@@ -87,7 +87,7 @@ Lecture rooms (6):
 	Room type: lecture room
 	Needed acces level: yellow
 	Room location: University, 1 floor, n:101
-	Room capacity: 180
+	Room capacity: 120
 
 	Room type: lecture room
 	Needed acces level: yellow
@@ -97,17 +97,17 @@ Lecture rooms (6):
 	Room type: lecture room
 	Needed acces level: yellow
 	Room location: University, 1 floor, n:103
-	Room capacity: 180
+	Room capacity: 120
 
 	Room type: lecture room
 	Needed acces level: yellow
 	Room location: University, 1 floor, n:104
-	Room capacity: 180
+	Room capacity: 120
 
 	Room type: lecture room
 	Needed acces level: yellow
 	Room location: University, 1 floor, n:105
-	Room capacity: 180
+	Room capacity: 120
 
 	Room type: lecture room
 	Needed acces level: yellow
@@ -118,117 +118,117 @@ Cabinets (6):
 	Room type: cabinet
 	Needed acces level: red
 	Room location: University, 1 floor, n:107
-	Room capacity: 5
-	Workers(5): 
-		Steven McDonald
-		Bobbie Thompson
-		Steven Becker
-		Alice Wright
-		Marie Gardner
+	Room capacity: 3
+	Workers(3): 
+		Mark Walker
+		Christina Phelps
+		Nathan Matthews
 
 	Room type: cabinet
 	Needed acces level: red
 	Room location: University, 2 floor, n:200
-	Room capacity: 5
-	Workers(3): 
-		Robert Morrison
-		William Griffin
-		Martin Spencer
+	Room capacity: 4
+	Workers(4): 
+		Mary Simon
+		Roger Gomez
+		Sean Scott
+		Fred Carpenter
 
 	Room type: cabinet
 	Needed acces level: red
 	Room location: University, 2 floor, n:201
 	Room capacity: 4
-	Workers(4): 
-		Harry Marshall
-		David Bradley
-		Valerie Matthews
-		Rebecca Rogers
+	Workers(1): 
+		Ellen Williams
 
 	Room type: cabinet
 	Needed acces level: red
 	Room location: University, 2 floor, n:202
 	Room capacity: 5
-	Workers(0): 
+	Workers(4): 
+		Thomas Peters
+		Dorothy Martin
+		Sandra Jackson
+		Elsie Martin
 
 	Room type: cabinet
 	Needed acces level: red
 	Room location: University, 2 floor, n:203
-	Room capacity: 4
+	Room capacity: 3
 	Workers(0): 
 
 	Room type: cabinet
 	Needed acces level: red
 	Room location: University, 2 floor, n:204
-	Room capacity: 4
+	Room capacity: 3
 	Workers(0): 
 
 Living rooms(12):
 	Room location: Campuse 1, 1 floor, n:0
-	Room capacity: 2
-	Workers(2): 
-		Michelle Lewis
-		Kyle Phillips
-
-	Room location: Campuse 1, 1 floor, n:1
 	Room capacity: 4
 	Workers(4): 
-		Rick Martin
-		Joshua Ward
-		Thomas Peters
-		Dorothy Martin
-
-	Room location: Campuse 1, 1 floor, n:2
-	Room capacity: 3
-	Workers(3): 
-		Sandra Jackson
-		Elsie Martin
-		Mark Walker
-
-	Room location: Campuse 1, 1 floor, n:3
-	Room capacity: 4
-	Workers(4): 
-		Christina Phelps
-		Nathan Matthews
-		Mary Simon
-		Roger Gomez
-
-	Room location: Campuse 1, 1 floor, n:4
-	Room capacity: 5
-	Workers(5): 
-		Sean Scott
-		Fred Carpenter
-		Ellen Williams
 		Joseph Anderson
 		Ernest Parsons
-
-	Room location: Campuse 1, 1 floor, n:5
-	Room capacity: 2
-	Workers(2): 
 		Nancy Craig
 		Maxine Harris
 
-	Room location: Campuse 2, 1 floor, n:0
+	Room location: Campuse 1, 1 floor, n:1
 	Room capacity: 3
+	Workers(3): 
+		Kim Hicks
+		Jason Hall
+		Jeffrey Harper
+
+	Room location: Campuse 1, 1 floor, n:2
+	Room capacity: 5
+	Workers(5): 
+		Deborah Campbell
+		Barbara Campbell
+		Julie Ellis
+		Bonnie Campbell
+		Barbara Potter
+
+	Room location: Campuse 1, 1 floor, n:3
+	Room capacity: 5
+	Workers(5): 
+		Lori Doyle
+		Lillian Cobb
+		Jim Curry
+		Hector Wright
+		Anthony Keller
+
+	Room location: Campuse 1, 1 floor, n:4
+	Room capacity: 2
+	Workers(2): 
+		Harry Carson
+		Ron Carter
+
+	Room location: Campuse 1, 1 floor, n:5
+	Room capacity: 4
+	Workers(1): 
+		James Powers
+
+	Room location: Campuse 2, 1 floor, n:0
+	Room capacity: 5
 	Workers(0): 
 
 	Room location: Campuse 2, 1 floor, n:1
-	Room capacity: 2
-	Workers(0): 
-
-	Room location: Campuse 2, 1 floor, n:2
-	Room capacity: 4
-	Workers(0): 
-
-	Room location: Campuse 2, 1 floor, n:3
 	Room capacity: 3
 	Workers(0): 
 
+	Room location: Campuse 2, 1 floor, n:2
+	Room capacity: 2
+	Workers(0): 
+
+	Room location: Campuse 2, 1 floor, n:3
+	Room capacity: 5
+	Workers(0): 
+
 	Room location: Campuse 2, 1 floor, n:4
-	Room capacity: 4
+	Room capacity: 2
 	Workers(0): 
 
 	Room location: Campuse 2, 1 floor, n:5
-	Room capacity: 5
+	Room capacity: 2
 	Workers(0): 
 

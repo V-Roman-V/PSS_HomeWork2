@@ -13,6 +13,7 @@ SOURCES += \
         Additional_classes/personalcard.cpp \
         Additional_classes/roomlocation.cpp \
         Enumerations/accesslevels.cpp \
+        Logger_classes/logger.cpp \
         People_classes/admin.cpp \
         People_classes/director.cpp \
         People_classes/labemployee.cpp \
@@ -41,6 +42,7 @@ HEADERS += \
     Additional_classes/personalcard.h \
     Additional_classes/roomlocation.h \
     Enumerations/accesslevels.h \
+    Logger_classes/logger.h \
     People_classes/admin.h \
     People_classes/director.h \
     People_classes/labemployee.h \

@@ -2,6 +2,7 @@
 #define USERINTERFACETERMINAL_H
 
 #include "University_classes/university.h"
+#include "Logger_classes/logger.h"
 
 #include <iostream>
 #include <cstdlib>
@@ -17,6 +18,7 @@ public:
     static const std::string LINE;
 
 private:
+    static Logger logger;
     static inline void printWelcomeText(University& university);
 
     static inline void printSeparator();
@@ -25,8 +27,7 @@ private:
     static inline bool isNumber(const std::string& num);
     static inline void clear();
 
-    template <class T>
-    static int calculateInput(std::string input, std::initializer_list<T> list );
+    static int calculateInput(std::string input, std::vector<std::string> list );
 };
 
 #endif // USERINTERFACETERMINAL_H
