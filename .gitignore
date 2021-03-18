@@ -3,5 +3,5 @@ Makefile*
 *.Debug
 *.Release
 /build-PSS*Debug
-/build-PSS*Debug/debug
+/build-PSS*Release/debug
 moc_*
