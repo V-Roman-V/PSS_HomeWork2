@@ -9,10 +9,21 @@ void UserInterfaceTerminal::start(University& university)
     logger.updatePeople(university.getFullListPeoples());
     logger.updateRoom  (university.getListRooms());
 
-    vector<string> allroomTypes = {"cabinet","class","lecture","conference","living"};
-    vector<string> uniRoomTypes = {"cabinet","class","lecture","conference"};
-    vector<string> peopleTypes = {"director","admin","labEmployee","professor","student"};
-    vector<string> peopleTypesWODir = {"admin","labEmployee","professor","student"};
+    static const vector<string> twoTypes = {"People","Room"};
+
+    static const vector<string> allroomTypes = {"cabinet","class","lecture","conference","living"};
+    static const vector<string> uniRoomTypes = {"cabinet","class","lecture","conference"};
+    static const vector<string> uniRoomTypesWA = {"cabinet = "+Cabinet::getNeededLevel(),"class = "+ClassRoom::getNeededLevel(),"lecture = "+LectureRoom::getNeededLevel(),"conference = "+ConferenceRoom::getNeededLevel()};
+
+    static const vector<string> peopleTypes = {"director","admin","labEmployee","professor","student"};
+    static const vector<string> peopleTypesWODir = {"admin","labEmployee","professor","student"};
+
+    static const vector<string> accessLevels = {"noLevel", "green", "yellow", "red", "black"};
+
+    static const vector<string> consent = {"confirm", "cancel"};
+
+    static const vector<string> allComands = {"logOut","myInfo","myMovementsHistory","tryOpenRoom","giveAccess"};
+    static const vector<string> userCommands ={"logOut","myInfo","myMovementsHistory","tryOpenRoom"};
 
     string input;
     while(true){ // position selection
@@ -21,11 +32,11 @@ void UserInterfaceTerminal::start(University& university)
         getInput(input);
         if(input == "-" or input == "exit") break;
 
-        int sphere = calculateInput(input,{"People","Room"});
+        int sphere = calculateInput(input,twoTypes);
         if( sphere == -1) continue;
         printSeparator();
         if(sphere == 1){ //rooms
-            cout<<"You can read the list in detail. \n\tPlease enter the room type {(0)cabinet; (1)class; (2)lecture; (3)conference; (4)living}"<<endl;
+            cout<<"You can read the list in detail. \n\tPlease enter the room type "<<getListOptions(allroomTypes)<<endl;
             getInput(input);
             int type = calculateInput(input, allroomTypes);
             if( type == -1) continue;
@@ -46,7 +57,7 @@ void UserInterfaceTerminal::start(University& university)
             continue;
         }
 
-        cout<<"You can read the list in detail. \n\tPlease enter the position name {(0)director; (1)admin; (2)labEmployee; (3)professor; (4)student}"<<endl;
+        cout<<"You can read the list in detail. \n\tPlease enter the position name "<<getListOptions(peopleTypes)<<endl;
         getInput(input);
         int position = calculateInput(input,peopleTypes);
         if(position == -1) continue;
@@ -123,13 +134,13 @@ void UserInterfaceTerminal::start(University& university)
                 clear();
                 cout<<"You are login to the system as "<<person->getName() <<((isAdmin)?" (Administrator)":"")<<endl;
                 cout<<"You can log out, display information about yourself, see the history of your movements,"<<(isAdmin?"":" and")<<" try to enter the room"<<(isAdmin?", and give access to people.":".")<<endl;
-                cout<<"\tPlease enter the command  {(0)logOut; (1)myInfo; (2)myMovementsHistory; (3)tryOpenRoom"<<((isAdmin)?"; (4)giveAccess":"")<<"}"<<endl;
+                cout<<"\tPlease enter the command "<<getListOptions(isAdmin?allComands:userCommands)<<endl;
                 //----- give access phase
                 if(giveAccessPhase == 0){ // chosen person
                     cout<<">4"<<endl;
                     printSeparator();
                     cout<<"Choose the person you want to give access."<<endl;
-                    cout<<"\tPlease enter the position name {(0)admin; (1)labEmployee; (2)professor; (3)student}"<<endl;
+                    cout<<"\tPlease enter the position name "<<getListOptions(peopleTypesWODir)<<endl;
                     getInput(input);
                     int position = calculateInput(input, peopleTypesWODir);
                     if( position == -1) {giveAccessPhase = -1;continue;}
@@ -169,7 +180,7 @@ void UserInterfaceTerminal::start(University& university)
                     cout<<"Selected person: "<<selected_person->getCommonInfo()<<endl;
                     printSeparator();
                     cout<<"Choose what you want to give the person."<<endl;
-                    cout<<"\tPlease enter the type {(0)room; (1)accessLevel; (-)back}"<<endl;
+                    cout<<"\tPlease enter the type "<<getListOptions({"room", "accessLevel", "back"})<<endl;
                     getInput(input);
                     if(input == "back" or input == "-"){giveAccessPhase = -1;continue;}
                     int Atype = calculateInput(input,{"room","accessLevel"});
@@ -177,9 +188,9 @@ void UserInterfaceTerminal::start(University& university)
                     if(Atype == 1){
                         printSeparator();
                         cout<<"Choose the level you want to give the person."<<endl;
-                        cout<<"\tPlease enter the level {(0)noLevel; (1)green; (2)yellow; (3)red; (4)black}"<<endl;
+                        cout<<"\tPlease enter the level "<<getListOptions(accessLevels)<<endl;
                         getInput(input);
-                        int access = calculateInput(input,{"noLevel","green","yellow","red","black"});
+                        int access = calculateInput(input,accessLevels);
                         if( access == -1) continue;
 
                         switch (access) {
@@ -195,7 +206,7 @@ void UserInterfaceTerminal::start(University& university)
                     if(Atype != 0)continue;
                     printSeparator();
                     cout<<"Choose the room type you want to give access to the person."<<endl;
-                    cout<<"\tPlease enter the room type {(0)cabinet; (1)class; (2)lecture; (3)conference}"<<endl;
+                    cout<<"\tPlease enter the room type "<<getListOptions(uniRoomTypes)<<endl;
                     getInput(input);
                     int type = calculateInput(input,uniRoomTypes);
                     if( type == -1) continue;
@@ -234,9 +245,9 @@ void UserInterfaceTerminal::start(University& university)
                     printSeparator();
                     cout<<"Selected new access level: "<<getAccessLevelName(selected_level)<<endl;
                     printSeparator();
-                    cout<<"Confirm your choice or cancel it\n\tPlease enter the {(0)confirm; (1)cancel}"<<endl;
+                    cout<<"Confirm your choice or cancel it\n\tPlease enter the "<<getListOptions(consent)<<endl;
                     getInput(input);
-                    int confirm = calculateInput(input,{"confirm","cancel"});
+                    int confirm = calculateInput(input,consent);
                     if( confirm == -1) continue;
                     if( confirm == 0){
                         Admin* admin = static_cast<Admin*>(person);
@@ -259,9 +270,9 @@ void UserInterfaceTerminal::start(University& university)
                     printSeparator();
                     cout<<"Selected room: "<<endl<<selected_room->getInfo()<<endl;
                     printSeparator();
-                    cout<<"Confirm your choice or cancel it\n\tPlease enter the {(0)confirm; (1)cancel}"<<endl;
+                    cout<<"Confirm your choice or cancel it\n\tPlease enter the "<<getListOptions(consent)<<endl;
                     getInput(input);
-                    int confirm = calculateInput(input,{"confirm","cancel"});
+                    int confirm = calculateInput(input,consent);
                     if( confirm == -1) continue;
                     if(confirm == 0){
                         Admin* admin = static_cast<Admin*>(person);
@@ -279,7 +290,7 @@ void UserInterfaceTerminal::start(University& university)
                 }
                 //----- chosen commands
                 getInput(input);
-                int command = calculateInput(input,{"logOut","myInfo","myMovementsHistory","tryOpenRoom","giveAccess"});
+                int command = calculateInput(input, allComands);
                 if( command == -1) continue;
                 if( command == 4 && !isAdmin) continue;
 
@@ -303,7 +314,7 @@ void UserInterfaceTerminal::start(University& university)
                 if(command == 3){
                     printSeparator();
                     cout<<"You can try to open one of the university rooms. Your access level: "<<person->getAccessLevel()<<endl;
-                    cout<<"\tPlease enter the room type {(0)cabinet = "<<Cabinet::getNeededLevel()<<"; (1)class = "<<ClassRoom::getNeededLevel()<<"; (2)lecture = "<<LectureRoom::getNeededLevel()<<"; (3)conference = "<<ConferenceRoom::getNeededLevel()<<"}"<<endl;
+                    cout<<"\tPlease enter the room type "<<getListOptions(uniRoomTypesWA)<<endl;
                     getInput(input);
                     int type = calculateInput(input, uniRoomTypes);
                     if( type == -1) continue;
@@ -359,7 +370,7 @@ void UserInterfaceTerminal::printWelcomeText(University &university)
     cout<<"\t"<<left<<setw(20)<<to_string(university.getLabEmployees().size())+" lab employees" <<"|\t"<<university.getLectureRoom().size()<<" lecture rooms"<<endl;
     cout<<"\t"<<left<<setw(20)<<to_string(university.getProfessors().size())+" professors"      <<"|\t"<<university.getConferenceRoom().size()<<" conference rooms"<<endl;
     cout<<"\t"<<left<<setw(20)<<to_string(university.getStudents().size())+" students"          <<"|\t"<<university.getLivingRoom().size()<<" living rooms"<<endl<<endl;
-    cout<<"Choose what you want to find out information about.\n\tPlease enter the {(0)People; (1)Room; (-)exit }"<<endl;
+    cout<<"Choose what you want to find out information about.\n\tPlease enter the "<<getListOptions({"People", "Room", "exit" })<<endl;
 
 }
 
@@ -389,6 +400,14 @@ bool UserInterfaceTerminal::isNumber(const string &num)
 void UserInterfaceTerminal::clear()
 {
     system("cls");
+}
+
+string UserInterfaceTerminal::getListOptions(std::vector<string> list)
+{
+    string out ="{";
+    for(unsigned int i=0;i<list.size();i++)
+        out += "(" + ((list[i]=="exit")?"-":to_string(i)) + ")" + list[i] + ((i+1==list.size())?"}":"; ");
+    return out;
 }
 
 int UserInterfaceTerminal::calculateInput(string input, vector<string> list)

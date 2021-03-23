@@ -1,0 +1,401 @@
+Director:
+	Position: director
+	Acces level: black
+	Personal id: 0
+	name: Donald Park
+	gender: male
+	age: 32
+	passport: 4767 235646
+	phone number: 89534210987
+	nationality: American
+	Special room access (0):
+	Director cabinet: University, 1 floor, n:100
+Admins(2):
+	Position: admin
+	Acces level: red
+	Personal id: 1
+	name: Anna Tobolenko
+	gender: female
+	age: 28
+	passport: 4448 624472
+	phone number: 89534210987
+	nationality: Russian
+	Special room access (0):
+
+	Position: admin
+	Acces level: red
+	Personal id: 2
+	name: Harry Carson
+	gender: male
+	age: 43
+	passport: 5671 801447
+	phone number: 89766651051
+	Special room access (0):
+
+Lab employess(4):
+	Position: lab employee
+	Acces level: yellow
+	Personal id: 3
+	name: Ron Carter
+	gender: male
+	age: 36
+	passport: 4901 167494
+	phone number: 89804885407
+	Special room access (1):
+		University, 2 floor, n:202
+	Cabinet: University, 2 floor, n:202
+
+	Position: lab employee
+	Acces level: yellow
+	Personal id: 4
+	name: James Powers
+	gender: male
+	age: 30
+	passport: 1554 350475
+	phone number: 89642767708
+	Special room access (1):
+		University, 2 floor, n:202
+	Cabinet: University, 2 floor, n:202
+
+	Position: lab employee
+	Acces level: yellow
+	Personal id: 5
+	name: Leroy Clark
+	gender: male
+	age: 38
+	passport: 4798 705892
+	phone number: 89861795945
+	Special room access (1):
+		University, 2 floor, n:202
+	Cabinet: University, 2 floor, n:202
+
+	Position: lab employee
+	Acces level: yellow
+	Personal id: 6
+	name: Robert Shaw
+	gender: male
+	age: 25
+	passport: 6206 915190
+	phone number: 89453368498
+	Special room access (1):
+		University, 2 floor, n:202
+	Cabinet: University, 2 floor, n:202
+
+Professors(8):
+	Position: professor
+	Acces level: red
+	Personal id: 7
+	name: Harry Marshall
+	gender: male
+	age: 32
+	passport: 7508 244255
+	phone number: 89668343017
+	Special room access (0):
+	Teaching course:  Introduction to Programming
+	Cabinet: University, 1 floor, n:107
+
+	Position: professor
+	Acces level: red
+	Personal id: 8
+	name: David Bradley
+	gender: male
+	age: 44
+	passport: 8105 475419
+	phone number: 89210296830
+	Special room access (0):
+	Teaching course: Analytical Geometry and Linear Algebra
+	Cabinet: University, 1 floor, n:107
+
+	Position: professor
+	Acces level: red
+	Personal id: 9
+	name: Valerie Matthews
+	gender: female
+	age: 28
+	passport: 5386 795671
+	phone number: 89669662357
+	Special room access (0):
+	Teaching course: Data Structures and Algorithm
+	Cabinet: University, 1 floor, n:107
+
+	Position: professor
+	Acces level: red
+	Personal id: 10
+	name: Rebecca Rogers
+	gender: female
+	age: 19
+	passport: 1940 311313
+	phone number: 89263328603
+	Special room access (0):
+	Teaching course: Foreign Language
+	Cabinet: University, 2 floor, n:200
+
+	Position: professor
+	Acces level: red
+	Personal id: 11
+	name: Steven McDonald
+	gender: male
+	age: 26
+	passport: 2688 980588
+	phone number: 89582849742
+	Special room access (0):
+	Teaching course: Mathematical Analysis
+	Cabinet: University, 2 floor, n:200
+
+	Position: professor
+	Acces level: red
+	Personal id: 12
+	name: Bobbie Thompson
+	gender: male
+	age: 22
+	passport: 2023 293642
+	phone number: 89312011071
+	Special room access (0):
+	Teaching course: Theoretical Computer Science
+	Cabinet: University, 2 floor, n:200
+
+	Position: professor
+	Acces level: red
+	Personal id: 13
+	name: Steven Becker
+	gender: male
+	age: 37
+	passport: 1673 593609
+	phone number: 89290279657
+	Special room access (0):
+	Teaching course: Operating Systems
+	Cabinet: University, 2 floor, n:201
+
+	Position: professor
+	Acces level: red
+	Personal id: 14
+	name: Alice Wright
+	gender: female
+	age: 25
+	passport: 2744 429736
+	phone number: 89930556815
+	Special room access (0):
+	Teaching course:  Introduction to Programming
+	Cabinet: University, 2 floor, n:201
+
+Students(20):
+	Position: student
+	Acces level: green
+	Personal id: 15
+	name: Marie Gardner
+	gender: female
+	age: 36
+	passport: 3212 272800
+	phone number: 89472998147
+	Special room access (0):
+	Living room: Campuse 1, 1 floor, n:0
+
+	Position: student
+	Acces level: green
+	Personal id: 16
+	name: Robert Morrison
+	gender: male
+	age: 44
+	passport: 8979 883195
+	phone number: 89312582115
+	Special room access (0):
+	Living room: Campuse 1, 1 floor, n:0
+
+	Position: student
+	Acces level: green
+	Personal id: 17
+	name: William Griffin
+	gender: male
+	age: 36
+	passport: 8577 324438
+	phone number: 89447307422
+	Special room access (0):
+	Living room: Campuse 1, 1 floor, n:0
+
+	Position: student
+	Acces level: green
+	Personal id: 18
+	name: Martin Spencer
+	gender: male
+	age: 27
+	passport: 1762 942386
+	phone number: 89575236721
+	Special room access (0):
+	Living room: Campuse 1, 1 floor, n:1
+
+	Position: student
+	Acces level: green
+	Personal id: 19
+	name: Michelle Lewis
+	gender: male
+	age: 29
+	passport: 2921 609312
+	phone number: 89487612732
+	Special room access (0):
+	Living room: Campuse 1, 1 floor, n:1
+
+	Position: student
+	Acces level: green
+	Personal id: 20
+	name: Kyle Phillips
+	gender: male
+	age: 24
+	passport: 7391 283988
+	phone number: 89821468215
+	Special room access (0):
+	Living room: Campuse 1, 1 floor, n:1
+
+	Position: student
+	Acces level: green
+	Personal id: 21
+	name: Rick Martin
+	gender: male
+	age: 27
+	passport: 2121 406924
+	phone number: 89648080533
+	Special room access (0):
+	Living room: Campuse 1, 1 floor, n:2
+
+	Position: student
+	Acces level: green
+	Personal id: 22
+	name: Joshua Ward
+	gender: female
+	age: 28
+	passport: 2640 790646
+	phone number: 89581378512
+	Special room access (0):
+	Living room: Campuse 1, 1 floor, n:2
+
+	Position: student
+	Acces level: green
+	Personal id: 23
+	name: Thomas Peters
+	gender: male
+	age: 37
+	passport: 3166 886612
+	phone number: 89881900355
+	Special room access (0):
+	Living room: Campuse 1, 1 floor, n:2
+
+	Position: student
+	Acces level: green
+	Personal id: 24
+	name: Dorothy Martin
+	gender: female
+	age: 28
+	passport: 1208 528838
+	phone number: 89234246203
+	Special room access (0):
+	Living room: Campuse 1, 1 floor, n:3
+
+	Position: student
+	Acces level: green
+	Personal id: 25
+	name: Sandra Jackson
+	gender: female
+	age: 42
+	passport: 6639 936610
+	phone number: 89465160801
+	Special room access (0):
+	Living room: Campuse 1, 1 floor, n:3
+
+	Position: student
+	Acces level: green
+	Personal id: 26
+	name: Elsie Martin
+	gender: female
+	age: 17
+	passport: 1066 298727
+	phone number: 89434693178
+	Special room access (0):
+	Living room: Campuse 1, 1 floor, n:3
+
+	Position: student
+	Acces level: green
+	Personal id: 27
+	name: Mark Walker
+	gender: male
+	age: 17
+	passport: 2628 929427
+	phone number: 89567581013
+	Special room access (0):
+	Living room: Campuse 1, 1 floor, n:4
+
+	Position: student
+	Acces level: green
+	Personal id: 28
+	name: Christina Phelps
+	gender: female
+	age: 21
+	passport: 7955 393036
+	phone number: 89451671901
+	Special room access (0):
+	Living room: Campuse 1, 1 floor, n:4
+
+	Position: student
+	Acces level: green
+	Personal id: 29
+	name: Nathan Matthews
+	gender: male
+	age: 43
+	passport: 3361 591217
+	phone number: 89888698493
+	Special room access (0):
+	Living room: Campuse 1, 1 floor, n:4
+
+	Position: student
+	Acces level: green
+	Personal id: 30
+	name: Mary Simon
+	gender: female
+	age: 34
+	passport: 2099 263654
+	phone number: 89292226940
+	Special room access (0):
+	Living room: Campuse 1, 1 floor, n:4
+
+	Position: student
+	Acces level: green
+	Personal id: 31
+	name: Roger Gomez
+	gender: male
+	age: 19
+	passport: 8111 520248
+	phone number: 89257003358
+	Special room access (0):
+	Living room: Campuse 1, 1 floor, n:4
+
+	Position: student
+	Acces level: green
+	Personal id: 32
+	name: Sean Scott
+	gender: female
+	age: 29
+	passport: 2860 826038
+	phone number: 89847725496
+	Special room access (0):
+	Living room: Campuse 1, 1 floor, n:5
+
+	Position: student
+	Acces level: green
+	Personal id: 33
+	name: Fred Carpenter
+	gender: male
+	age: 30
+	passport: 7158 176818
+	phone number: 89493424287
+	Special room access (0):
+	Living room: Campuse 1, 1 floor, n:5
+
+	Position: student
+	Acces level: green
+	Personal id: 34
+	name: Ellen Williams
+	gender: male
+	age: 32
+	passport: 5094 817681
+	phone number: 89653706130
+	Special room access (0):
+	Living room: Campuse 1, 1 floor, n:5
+

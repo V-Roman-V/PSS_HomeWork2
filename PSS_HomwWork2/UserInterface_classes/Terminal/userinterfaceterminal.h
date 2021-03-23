@@ -27,6 +27,8 @@ private:
     static inline bool isNumber(const std::string& num);
     static inline void clear();
 
+    static std::string getListOptions(std::vector<std::string> list);
+
     static int calculateInput(std::string input, std::vector<std::string> list );
 };
 

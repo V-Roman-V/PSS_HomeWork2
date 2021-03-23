@@ -10,8 +10,8 @@ int main(int argc, char *argv[])
 
     UniversityFiller::fillStartingData(Innopolis);
 
-//    UserInterfaceTerminal::start(Innopolis);
-    UserInterfaceGUI::start(argc,argv);
+    UserInterfaceTerminal::start(Innopolis);
+//    UserInterfaceGUI::start(argc,argv);
 
     return 0;
 }

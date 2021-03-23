@@ -1,0 +1,234 @@
+Director cabinet:
+	Room type: director cabinet
+	Needed acces level: black
+	Room location: University, 1 floor, n:100
+	Room capacity: 1
+	Workers(1): 
+		Donald Park
+
+Class rooms (9):
+	Room type: class room
+	Needed acces level: green
+	Room location: University, 3 floor, n:301
+	Room capacity: 25
+
+	Room type: class room
+	Needed acces level: green
+	Room location: University, 3 floor, n:302
+	Room capacity: 25
+
+	Room type: class room
+	Needed acces level: green
+	Room location: University, 3 floor, n:303
+	Room capacity: 25
+
+	Room type: class room
+	Needed acces level: green
+	Room location: University, 3 floor, n:304
+	Room capacity: 25
+
+	Room type: class room
+	Needed acces level: green
+	Room location: University, 3 floor, n:305
+	Room capacity: 25
+
+	Room type: class room
+	Needed acces level: green
+	Room location: University, 3 floor, n:306
+	Room capacity: 25
+
+	Room type: class room
+	Needed acces level: green
+	Room location: University, 3 floor, n:307
+	Room capacity: 25
+
+	Room type: class room
+	Needed acces level: green
+	Room location: University, 3 floor, n:308
+	Room capacity: 25
+
+	Room type: class room
+	Needed acces level: green
+	Room location: University, 3 floor, n:309
+	Room capacity: 25
+
+Conference rooms (6):
+	Room type: conference room
+	Needed acces level: red
+	Room location: University, 2 floor, n:205
+	Room capacity: 12
+
+	Room type: conference room
+	Needed acces level: red
+	Room location: University, 2 floor, n:206
+	Room capacity: 12
+
+	Room type: conference room
+	Needed acces level: red
+	Room location: University, 2 floor, n:207
+	Room capacity: 12
+
+	Room type: conference room
+	Needed acces level: red
+	Room location: University, 2 floor, n:208
+	Room capacity: 12
+
+	Room type: conference room
+	Needed acces level: red
+	Room location: University, 2 floor, n:209
+	Room capacity: 12
+
+	Room type: conference room
+	Needed acces level: red
+	Room location: University, 3 floor, n:300
+	Room capacity: 12
+
+Lecture rooms (6):
+	Room type: lecture room
+	Needed acces level: yellow
+	Room location: University, 1 floor, n:101
+	Room capacity: 120
+
+	Room type: lecture room
+	Needed acces level: yellow
+	Room location: University, 1 floor, n:102
+	Room capacity: 180
+
+	Room type: lecture room
+	Needed acces level: yellow
+	Room location: University, 1 floor, n:103
+	Room capacity: 180
+
+	Room type: lecture room
+	Needed acces level: yellow
+	Room location: University, 1 floor, n:104
+	Room capacity: 180
+
+	Room type: lecture room
+	Needed acces level: yellow
+	Room location: University, 1 floor, n:105
+	Room capacity: 180
+
+	Room type: lecture room
+	Needed acces level: yellow
+	Room location: University, 1 floor, n:106
+	Room capacity: 180
+
+Cabinets (6):
+	Room type: cabinet
+	Needed acces level: red
+	Room location: University, 1 floor, n:107
+	Room capacity: 3
+	Workers(3): 
+		Harry Marshall
+		David Bradley
+		Valerie Matthews
+
+	Room type: cabinet
+	Needed acces level: red
+	Room location: University, 2 floor, n:200
+	Room capacity: 3
+	Workers(3): 
+		Rebecca Rogers
+		Steven McDonald
+		Bobbie Thompson
+
+	Room type: cabinet
+	Needed acces level: red
+	Room location: University, 2 floor, n:201
+	Room capacity: 5
+	Workers(2): 
+		Steven Becker
+		Alice Wright
+
+	Room type: cabinet
+	Needed acces level: red
+	Room location: University, 2 floor, n:202
+	Room capacity: 4
+	Workers(4): 
+		Ron Carter
+		James Powers
+		Leroy Clark
+		Robert Shaw
+
+	Room type: cabinet
+	Needed acces level: red
+	Room location: University, 2 floor, n:203
+	Room capacity: 5
+	Workers(0): 
+
+	Room type: cabinet
+	Needed acces level: red
+	Room location: University, 2 floor, n:204
+	Room capacity: 4
+	Workers(0): 
+
+Living rooms(12):
+	Room location: Campuse 1, 1 floor, n:0
+	Room capacity: 3
+	Workers(3): 
+		Marie Gardner
+		Robert Morrison
+		William Griffin
+
+	Room location: Campuse 1, 1 floor, n:1
+	Room capacity: 3
+	Workers(3): 
+		Martin Spencer
+		Michelle Lewis
+		Kyle Phillips
+
+	Room location: Campuse 1, 1 floor, n:2
+	Room capacity: 3
+	Workers(3): 
+		Rick Martin
+		Joshua Ward
+		Thomas Peters
+
+	Room location: Campuse 1, 1 floor, n:3
+	Room capacity: 3
+	Workers(3): 
+		Dorothy Martin
+		Sandra Jackson
+		Elsie Martin
+
+	Room location: Campuse 1, 1 floor, n:4
+	Room capacity: 5
+	Workers(5): 
+		Mark Walker
+		Christina Phelps
+		Nathan Matthews
+		Mary Simon
+		Roger Gomez
+
+	Room location: Campuse 1, 1 floor, n:5
+	Room capacity: 4
+	Workers(3): 
+		Sean Scott
+		Fred Carpenter
+		Ellen Williams
+
+	Room location: Campuse 2, 1 floor, n:0
+	Room capacity: 3
+	Workers(0): 
+
+	Room location: Campuse 2, 1 floor, n:1
+	Room capacity: 3
+	Workers(0): 
+
+	Room location: Campuse 2, 1 floor, n:2
+	Room capacity: 5
+	Workers(0): 
+
+	Room location: Campuse 2, 1 floor, n:3
+	Room capacity: 4
+	Workers(0): 
+
+	Room location: Campuse 2, 1 floor, n:4
+	Room capacity: 2
+	Workers(0): 
+
+	Room location: Campuse 2, 1 floor, n:5
+	Room capacity: 3
+	Workers(0): 
+
