@@ -4,4 +4,5 @@ Makefile*
 *.Release
 /build-PSS*Debug
 /build-PSS*Release/debug
+.qmake*
 moc_*
