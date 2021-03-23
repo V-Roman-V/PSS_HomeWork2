@@ -45,12 +45,14 @@ public:
     void setDirectorCabinet(const RoomLocation& location);
     std::string getListRooms();
 
+    void getPeopleByType(UniversityPeople::Position type, std::vector<UniversityPeople *>& people);
     Director *getDirector();
     std::vector<Admin *>& getAdmins();
     std::vector<LabEmployee *>& getLabEmployees();
     std::vector<Professor *>& getProfessors();
     std::vector<Student *>& getStudents();
 
+    void getRoomByType(UniversityRoom::RoomType type, std::vector<Room *>& rooms);
     DirectorCabinet *getDirectorCabinet();
     std::vector<ClassRoom *>& getClassRoom();
     std::vector<ConferenceRoom *>& getConferenceRoom();
@@ -60,6 +62,10 @@ public:
 
     std::string getName() const;
 
+    std::vector<RoomType> getAllRoomType();
+    std::vector<Position> getAllPositions();
+    std::vector<AccessLevel> getAllAccessLevels();
+    std::vector<std::string> getAllRoomAccess();
 
 private:
     std::string name;

@@ -12,6 +12,8 @@ public:
 
     virtual Position getPosition() const override;
 
+    virtual bool isAdmin() const override;
+
     void giveAccess(UniversityPeople* people, UniversityRoom* room);
     void giveAccess(UniversityPeople* people, AccessLevel level);
 

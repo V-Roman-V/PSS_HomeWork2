@@ -183,7 +183,19 @@ std::string University::getListRooms()
     return info.str();
 }
 
-Director *University::getDirector()
+void University::getPeopleByType(UniversityPeople::Position type, std::vector<UniversityPeople *> &people)
+{
+    switch(type){
+        case Position::director:     people.push_back(director); break;
+        case Position::admin:        people = std::vector<UniversityPeople*>(admins.begin(),admins.end());break;
+        case Position::lab_employee: people = std::vector<UniversityPeople*>(lab_employees.begin(),lab_employees.end());break;
+        case Position::professor:    people = std::vector<UniversityPeople*>(professors.begin(),professors.end());break;
+        case Position::student:      people = std::vector<UniversityPeople*>(students.begin(),students.end());break;
+    }
+}
+
+
+Director* University::getDirector()
 {
     return director;
 }
@@ -208,6 +220,18 @@ std::vector<Student *>& University::getStudents()
     return students;
 }
 
+void University::getRoomByType(UniversityRoom::RoomType type, std::vector<Room *> &rooms)
+{
+    switch(type){
+        case RoomType::cabinet:           rooms = std::vector<Room*>(cabinet_room.begin(),cabinet_room.end()); [[clang::fallthrough]];
+        case RoomType::director_cabinet:  rooms.push_back(static_cast<Room*>(director_cabinet));break;
+        case RoomType::class_room:        rooms = std::vector<Room*>(class_room.begin(),class_room.end());break;
+        case RoomType::conference_room:   rooms = std::vector<Room*>(conference_room.begin(),conference_room.end());break;
+        case RoomType::lecture_room:      rooms = std::vector<Room*>(lecture_room.begin(),lecture_room.end());break;
+        case RoomType::living_room:       rooms = std::vector<Room*>(living_room.begin(),living_room.end());break;
+    }
+}
+
 DirectorCabinet *University::getDirectorCabinet()
 {
     return director_cabinet;
@@ -226,6 +250,49 @@ std::vector<LivingRoom *>& University::getLivingRoom()
 std::string University::getName() const
 {
     return name;
+}
+
+std::vector<RoomType> University::getAllRoomType(){
+    std::vector<RoomType> pos;
+    pos.push_back(RoomType::cabinet);
+    pos.push_back(RoomType::class_room);
+    pos.push_back(RoomType::lecture_room);
+    pos.push_back(RoomType::conference_room);
+    pos.push_back(RoomType::living_room);
+    return pos;
+}
+
+std::vector<Position> University::getAllPositions()
+{
+    std::vector<Position> pos;
+    pos.push_back(Position::director);
+    pos.push_back(Position::admin);
+    pos.push_back(Position::lab_employee);
+    pos.push_back(Position::professor);
+    pos.push_back(Position::student);
+    return pos;
+}
+
+std::vector<AccessLevel> University::getAllAccessLevels()
+{
+    std::vector<AccessLevel> type;
+    type.push_back(AccessLevel::no_level);
+    type.push_back(AccessLevel::blue);
+    type.push_back(AccessLevel::green);
+    type.push_back(AccessLevel::yellow);
+    type.push_back(AccessLevel::red);
+    type.push_back(AccessLevel::black);
+    return type;
+}
+
+std::vector<std::string> University::getAllRoomAccess()
+{
+    std::vector<std::string> acc;
+    acc.push_back(UniversityRoom::getRoomTypeName(RoomType::cabinet) + " = " + Cabinet::getNeededLevel());
+    acc.push_back(UniversityRoom::getRoomTypeName(RoomType::class_room) + " = " + ClassRoom::getNeededLevel());
+    acc.push_back(UniversityRoom::getRoomTypeName(RoomType::lecture_room) + " = " + LectureRoom::getNeededLevel());
+    acc.push_back(UniversityRoom::getRoomTypeName(RoomType::conference_room) + " = " + ConferenceRoom::getNeededLevel());
+    return acc;
 }
 
 std::vector<ClassRoom *>& University::getClassRoom()

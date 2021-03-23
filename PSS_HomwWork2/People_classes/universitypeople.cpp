@@ -30,6 +30,11 @@ std::string UniversityPeople::getFullInfo()const
     return info.str();
 }
 
+bool UniversityPeople::isAdmin() const
+{
+    return false;
+}
+
 bool UniversityPeople::tryToEnter(UniversityRoom* room)
 {
     for(auto sa:special_access)
@@ -71,12 +76,12 @@ std::string UniversityPeople::getAccessLevel() const
     return getAccessLevelName(card.getAccessLevel());
 }
 
-std::string UniversityPeople::getPozitionName(UniversityPeople::Position p) const
+std::string UniversityPeople::getPozitionName(const UniversityPeople::Position& p)
 {
     switch (p) {
         case UniversityPeople::Position::student      :return"student";
         case UniversityPeople::Position::professor    :return"professor";
-        case UniversityPeople::Position::lab_employee :return"lab employee";
+        case UniversityPeople::Position::lab_employee :return"lab_employee";
         case UniversityPeople::Position::admin        :return"admin";
         case UniversityPeople::Position::director     :return"director";
     }

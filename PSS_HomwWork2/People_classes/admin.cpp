@@ -11,6 +11,11 @@ Position Admin::getPosition() const
     return Position::admin;
 }
 
+bool Admin::isAdmin() const
+{
+    return true;
+}
+
 void Admin::giveAccess(UniversityPeople *people, UniversityRoom *room)
 {
     people->addSpecialAccessRoom(room);

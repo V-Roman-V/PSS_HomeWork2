@@ -6,3 +6,4 @@ Makefile*
 /build-PSS*Release/debug
 .qmake*
 moc_*
+log_*

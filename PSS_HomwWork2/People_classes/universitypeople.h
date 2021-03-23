@@ -20,6 +20,7 @@ public:
         director,
         admin
     };
+    static std::string getPozitionName(const Position& p);
 
     UniversityPeople(const People& p = People());
 
@@ -29,6 +30,8 @@ public:
 
     virtual std::string getCommonInfo() const override;
     virtual std::string getFullInfo() const override;
+
+    virtual bool isAdmin() const;
 
     bool tryToEnter(UniversityRoom* room);
 
@@ -41,10 +44,10 @@ public:
     std::string getAccessLevel() const;
 
     void changeAccessLevel(AccessLevel level);
+
 protected:
     std::vector<UniversityRoom*> special_access;
     PersonalCard card;
-    std::string getPozitionName(Position p)const;
 
 };
 

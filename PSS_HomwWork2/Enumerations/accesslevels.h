@@ -11,6 +11,6 @@ enum class AccessLevel {
     red,     // professors and admins
     black    // only for director
 };
-std::string getAccessLevelName(AccessLevel l);
+std::string getAccessLevelName(const AccessLevel& l);
 
 #endif // ACCESSLEVELS_H

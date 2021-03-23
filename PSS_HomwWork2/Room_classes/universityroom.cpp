@@ -21,14 +21,15 @@ std::string UniversityRoom::getNeededLevel()
     return getAccessLevelName(AccessLevel::no_level);
 }
 
-std::string UniversityRoom::getRoomTypeName(UniversityRoom::RoomType t)
+std::string UniversityRoom::getRoomTypeName(const UniversityRoom::RoomType& t)
 {
     switch (t) {
         case UniversityRoom::RoomType::cabinet         :return"cabinet";
-        case UniversityRoom::RoomType::director_cabinet:return"director cabinet";
-        case UniversityRoom::RoomType::class_room      :return"class room";
-        case UniversityRoom::RoomType::conference_room :return"conference room";
-        case UniversityRoom::RoomType::lecture_room    :return"lecture room";
+        case UniversityRoom::RoomType::director_cabinet:return"director_cabinet";
+        case UniversityRoom::RoomType::class_room      :return"class_room";
+        case UniversityRoom::RoomType::conference_room :return"conference_room";
+        case UniversityRoom::RoomType::lecture_room    :return"lecture_room";
+        case UniversityRoom::RoomType::living_room     :return"living_room";
     }
     return "";
 }
