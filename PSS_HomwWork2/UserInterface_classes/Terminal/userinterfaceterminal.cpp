@@ -22,7 +22,7 @@ void UserInterfaceTerminal::start(University& university)
 
     static const vector<string> consent = {"confirm", "cancel"};
 
-    static const vector<string> allComands = {"logOut","myInfo","myMovementsHistory","tryOpenRoom","giveAccess"};
+    static const vector<string> allComands = {"logOut","myInfo","myMovementsHistory","tryOpenRoom","emergency","giveAccess"};
     static const vector<string> userCommands(allComands.begin(), allComands.end()-1);
 
     string input;
@@ -120,8 +120,10 @@ void UserInterfaceTerminal::start(University& university)
             AccessLevel       selected_level = AccessLevel::no_level;
             while(true){
                 clear();
-                cout<<"You are login to the system as "<<person->getName() <<((isAdmin)?" (Administrator)":"")<<endl;
+                cout<<"You are login to the system as "<<person->getName() <<((isAdmin)?" (you are administrator)":"")<<endl;
                 cout<<"You can log out, display information about yourself, see the history of your movements,"<<(isAdmin?"":" and")<<" try to enter the room"<<(isAdmin?", and give access to people.":".")<<endl;
+                if(university.isEmergency())
+                    cout<<"-------Attention emergency-------"<<endl;
                 cout<<"\tPlease enter the command "<<getListOptions(isAdmin?allComands:userCommands)<<endl;
                 //----- give access phase
                 if(giveAccessPhase == 0){ // chosen person
@@ -261,9 +263,8 @@ void UserInterfaceTerminal::start(University& university)
                 }
                 //----- chosen commands
                 getInput(input);
-                int command = calculateInput(input, allComands);
+                int command = calculateInput(input, isAdmin?allComands:userCommands);
                 if( command == -1) continue;
-                if( command == 4 && !isAdmin) continue;
 
                 if(command == 0) {
                     logger.addActions("Log out");
@@ -282,10 +283,10 @@ void UserInterfaceTerminal::start(University& university)
                     waitENTER();
                     continue;
                 }
-                if(command == 3){
+                if(command == 3) {
                     vector<string> uniRoomTypesWA = university.getAllRoomAccess(); // may update
                     printSeparator();
-                    cout<<"You can try to open one of the university rooms. Your access level: "<<person->getAccessLevel()<<endl;
+                    cout<<"You can try to open one of the university rooms. Your access level: "<<getAccessLevelName(person->getAccessLevel())<<endl;
                     cout<<"\tPlease enter the room type "<<getListOptions(uniRoomTypesWA)<<endl;
                     getInput(input);
                     int type = calculateInput(input, uniRoomTypes);
@@ -320,7 +321,38 @@ void UserInterfaceTerminal::start(University& university)
                     }
                     continue;
                 }
-                if(command != 4) continue;
+                if(command == 4) {
+                    if(university.isEmergency() && person->getAccessLevel()<AccessLevel::red){
+                        cout<<"To turn off the alarm, you must have a red access level or higher"<<endl;
+                        waitENTER();
+                        continue;
+                    }
+                    if(university.isEmergency() && person->getAccessLevel()>=AccessLevel::red){
+                        cout<<"Do you want to turn off the alarm?"<<endl;
+                        printSeparator();
+                        cout<<"Confirm your choice or cancel it\n\tPlease enter the "<<getListOptions(consent)<<endl;
+                        getInput(input);
+                        int confirm = calculateInput(input,consent);
+                        if( confirm != 0) continue;
+                        university.stopEmergency();
+                        cout<<"The alarm has been stopped"<<endl;
+                        logger.addActions("Person "+person->getName()+ " stopped the alarm system");
+                        waitENTER();
+                        continue;
+                    }
+                    cout<<"Do you want to turn on the alarm?"<<endl;
+                    printSeparator();
+                    cout<<"Confirm your choice or cancel it\n\tPlease enter the "<<getListOptions(consent)<<endl;
+                    getInput(input);
+                    int confirm = calculateInput(input,consent);
+                    if( confirm != 0) continue;
+                    university.startEmergency();
+                    cout<<"The alarm was turned on"<<endl;
+                    logger.addActions("Person "+person->getName()+ " started the alarm system");
+                    waitENTER();
+                    continue;
+                }
+                if(command != 5) continue;
                 giveAccessPhase = 0;
             }
         }

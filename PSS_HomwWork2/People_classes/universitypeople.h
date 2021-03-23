@@ -41,7 +41,7 @@ public:
 
     std::string getMovementHistory() const;
 
-    std::string getAccessLevel() const;
+    AccessLevel getAccessLevel() const;
 
     void changeAccessLevel(AccessLevel level);
 

@@ -298,6 +298,8 @@ std::vector<std::string> University::getAllRoomAccess()
 
 void University::startEmergency()
 {
+    emergency = true;
+
     director_cabinet->startEmergency();
 
     for(auto c: cabinet_room)
@@ -315,6 +317,8 @@ void University::startEmergency()
 }
 void University::stopEmergency()
 {
+    emergency = false;
+
     director_cabinet->stopEmergency();
 
     for(auto c: cabinet_room)
