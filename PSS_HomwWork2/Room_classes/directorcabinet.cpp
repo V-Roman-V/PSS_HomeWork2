@@ -3,17 +3,13 @@
 DirectorCabinet::DirectorCabinet(const RoomLocation &l)
     : Cabinet(l)
 {
+    myAccessLevel = AccessLevel::black;
     max_number_of_people = 1;
 }
 
 UniversityRoom::RoomType DirectorCabinet::getRoomType() const
 {
     return RoomType::director_cabinet;
-}
-
-AccessLevel DirectorCabinet::neededAccessLevel()const
-{
-    return AccessLevel::black;
 }
 
 std::string DirectorCabinet::getNeededLevel()

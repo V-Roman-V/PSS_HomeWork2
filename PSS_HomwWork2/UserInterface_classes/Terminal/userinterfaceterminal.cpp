@@ -13,12 +13,12 @@ void UserInterfaceTerminal::start(University& university)
 
     const vector<RoomType> allroomTypes = university.getAllRoomType();
     const vector<RoomType> uniRoomTypes(allroomTypes.begin(), allroomTypes.end()-1);
-    static const vector<string> uniRoomTypesWA = university.getAllRoomAccess();
+    vector<string> uniRoomTypesWA = university.getAllRoomAccess(); // may update
 
     const vector<Position> peopleTypes = university.getAllPositions();
     const vector<Position> peopleTypesWODir(peopleTypes.begin()+1,peopleTypes.end());
 
-    static const vector<AccessLevel> accessLevels = university.getAllAccessLevels();
+    const vector<AccessLevel> accessLevels = university.getAllAccessLevels();
 
     static const vector<string> consent = {"confirm", "cancel"};
 
@@ -283,6 +283,7 @@ void UserInterfaceTerminal::start(University& university)
                     continue;
                 }
                 if(command == 3){
+                    vector<string> uniRoomTypesWA = university.getAllRoomAccess(); // may update
                     printSeparator();
                     cout<<"You can try to open one of the university rooms. Your access level: "<<person->getAccessLevel()<<endl;
                     cout<<"\tPlease enter the room type "<<getListOptions(uniRoomTypesWA)<<endl;

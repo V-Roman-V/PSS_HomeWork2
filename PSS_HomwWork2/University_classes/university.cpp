@@ -223,12 +223,12 @@ std::vector<Student *>& University::getStudents()
 void University::getRoomByType(UniversityRoom::RoomType type, std::vector<Room *> &rooms)
 {
     switch(type){
-        case RoomType::cabinet:           rooms = std::vector<Room*>(cabinet_room.begin(),cabinet_room.end()); [[clang::fallthrough]];
-        case RoomType::director_cabinet:  rooms.push_back(static_cast<Room*>(director_cabinet));break;
-        case RoomType::class_room:        rooms = std::vector<Room*>(class_room.begin(),class_room.end());break;
-        case RoomType::conference_room:   rooms = std::vector<Room*>(conference_room.begin(),conference_room.end());break;
-        case RoomType::lecture_room:      rooms = std::vector<Room*>(lecture_room.begin(),lecture_room.end());break;
-        case RoomType::living_room:       rooms = std::vector<Room*>(living_room.begin(),living_room.end());break;
+        case RoomType::cabinet:          rooms = std::vector<Room*>(cabinet_room.begin(),cabinet_room.end()); [[clang::fallthrough]];
+        case RoomType::director_cabinet: rooms.push_back(static_cast<Room*>(director_cabinet));break;
+        case RoomType::class_room:       rooms = std::vector<Room*>(class_room.begin(),class_room.end());break;
+        case RoomType::conference_room:  rooms = std::vector<Room*>(conference_room.begin(),conference_room.end());break;
+        case RoomType::lecture_room:     rooms = std::vector<Room*>(lecture_room.begin(),lecture_room.end());break;
+        case RoomType::living_room:      rooms = std::vector<Room*>(living_room.begin(),living_room.end());break;
     }
 }
 
@@ -287,12 +287,53 @@ std::vector<AccessLevel> University::getAllAccessLevels()
 
 std::vector<std::string> University::getAllRoomAccess()
 {
+    std::string noLev = getAccessLevelName(AccessLevel::no_level);
     std::vector<std::string> acc;
-    acc.push_back(UniversityRoom::getRoomTypeName(RoomType::cabinet) + " = " + Cabinet::getNeededLevel());
-    acc.push_back(UniversityRoom::getRoomTypeName(RoomType::class_room) + " = " + ClassRoom::getNeededLevel());
-    acc.push_back(UniversityRoom::getRoomTypeName(RoomType::lecture_room) + " = " + LectureRoom::getNeededLevel());
-    acc.push_back(UniversityRoom::getRoomTypeName(RoomType::conference_room) + " = " + ConferenceRoom::getNeededLevel());
+    acc.push_back(UniversityRoom::getRoomTypeName(RoomType::cabinet) + " = " + (emergency?noLev:Cabinet::getNeededLevel()));
+    acc.push_back(UniversityRoom::getRoomTypeName(RoomType::class_room) + " = " + (emergency?noLev:ClassRoom::getNeededLevel()));
+    acc.push_back(UniversityRoom::getRoomTypeName(RoomType::lecture_room) + " = " + (emergency?noLev:LectureRoom::getNeededLevel()));
+    acc.push_back(UniversityRoom::getRoomTypeName(RoomType::conference_room) + " = " + (emergency?noLev:ConferenceRoom::getNeededLevel()));
     return acc;
+}
+
+void University::startEmergency()
+{
+    director_cabinet->startEmergency();
+
+    for(auto c: cabinet_room)
+        c->startEmergency();
+
+    for(auto c: class_room)
+        c->startEmergency();
+
+    for(auto c: conference_room)
+        c->startEmergency();
+
+    for(auto c: lecture_room)
+        c->startEmergency();
+
+}
+void University::stopEmergency()
+{
+    director_cabinet->stopEmergency();
+
+    for(auto c: cabinet_room)
+        c->stopEmergency();
+
+    for(auto c: class_room)
+        c->stopEmergency();
+
+    for(auto c: conference_room)
+        c->stopEmergency();
+
+    for(auto c: lecture_room)
+        c->stopEmergency();
+
+}
+
+bool University::isEmergency()
+{
+    return emergency;
 }
 
 std::vector<ClassRoom *>& University::getClassRoom()

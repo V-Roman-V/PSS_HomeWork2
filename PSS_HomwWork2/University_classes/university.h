@@ -67,6 +67,10 @@ public:
     std::vector<AccessLevel> getAllAccessLevels();
     std::vector<std::string> getAllRoomAccess();
 
+    void startEmergency();
+    void stopEmergency();
+    bool isEmergency();
+
 private:
     std::string name;
     std::vector<LivingRoom*> campuse;
@@ -85,6 +89,7 @@ private:
     std::vector<Cabinet* > cabinet_room;
     std::vector<LivingRoom* > living_room;
 
+    bool emergency = false;
 };
 
 #endif // UNIVERSITY_H

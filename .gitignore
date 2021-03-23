@@ -7,3 +7,4 @@ Makefile*
 .qmake*
 moc_*
 log_*
+log*.txt

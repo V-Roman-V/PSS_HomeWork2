@@ -22,12 +22,17 @@ public:
 
     virtual RoomType getRoomType() const = 0;
 
-    virtual AccessLevel neededAccessLevel() const = 0;
+    AccessLevel neededAccessLevel() const;
 
     static std::string getNeededLevel();
 
     static std::string getRoomTypeName(const RoomType& t);
 
+    void startEmergency();
+    void stopEmergency();
+protected:
+    AccessLevel myAccessLevel = AccessLevel::no_level;
+    bool emergency = false;
 
 };
 

@@ -11,7 +11,6 @@ public:
     DirectorCabinet(const RoomLocation& l = RoomLocation());
 
     virtual RoomType getRoomType() const override;
-    virtual AccessLevel neededAccessLevel() const override;
     static std::string getNeededLevel();
 
     virtual void addWorker(Director* d)override;

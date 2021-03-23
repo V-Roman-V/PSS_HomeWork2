@@ -28,8 +28,6 @@ public:
     int getCountWorkers();
 
     static std::string getNeededLevel();
-
-    virtual AccessLevel neededAccessLevel()const override;
 protected:
     std::vector<UniversityPeople*> workers;
 };

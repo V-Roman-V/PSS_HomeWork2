@@ -4,6 +4,7 @@
 Cabinet::Cabinet(const RoomLocation &l, unsigned short max_people)
     :UniversityRoom(l)
 {
+    myAccessLevel = AccessLevel::red;
     max_number_of_people = max_people;
 }
 
@@ -43,7 +44,3 @@ std::string Cabinet::getNeededLevel()
     return getAccessLevelName(AccessLevel::red);
 }
 
-AccessLevel Cabinet::neededAccessLevel()const
-{
-    return AccessLevel::red;
-}

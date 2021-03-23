@@ -34,7 +34,17 @@ std::string UniversityRoom::getRoomTypeName(const UniversityRoom::RoomType& t)
     return "";
 }
 
+void UniversityRoom::startEmergency()
+{
+    emergency = true;
+}
+
+void UniversityRoom::stopEmergency()
+{
+    emergency = false;
+}
+
 AccessLevel UniversityRoom::neededAccessLevel() const
 {
-    return AccessLevel::no_level;
+    return emergency?AccessLevel::no_level:myAccessLevel;
 }
