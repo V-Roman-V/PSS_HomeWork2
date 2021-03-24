@@ -77,7 +77,7 @@ A program that implements a system of university access using the OOP
  
 ### How to execute the code
   Compiled and ready to run .exe file is located in the directory:
- > build-PSS_HomwWork2-Desktop_Qt_5_12_5_MinGW_64_bit-Debug\debug
+ > build-PSS_HomwWork2-Desktop_Qt_5_12_5_MinGW_64_bit-release\release
   
   The runnability test was done under Windows x64 without Qt, the .exe file ran successfully.
   
