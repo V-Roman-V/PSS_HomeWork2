@@ -3,6 +3,7 @@ A program that implements a system of university access using the OOP
 
 ## Program description
 ### Access levels:
+ Guest: blue
  Student: green  
  Professor: red  
  Lab Employee: yellow + cabinet  
@@ -10,16 +11,16 @@ A program that implements a system of university access using the OOP
  Director: black  
  
  ----------  
+ Conference room : blue  
  Class room: green  
- Cabinet: red  
  Lecture room: yellow  
- Conference room : red  
+ Cabinet: red  
  DirectorCabinet: black  
 
 ### How the program structure is organized:
  There is a class university that contains all the rooms and people inside.
 #### How the people are stored:
- ![people_diagram](https://user-images.githubusercontent.com/48117438/110329998-d9378c00-804f-11eb-909e-2a1712abf0dc.png)
+![image](https://user-images.githubusercontent.com/48117438/112392992-ec737880-8d2c-11eb-9046-afac6f0620fe.png)  
  - people store information related only to the person;
  - University people store information common to all people in the university.
 
@@ -32,6 +33,7 @@ A program that implements a system of university access using the OOP
  ![full_diagram](https://user-images.githubusercontent.com/48117438/110330629-90cc9e00-8050-11eb-84da-1613b0c93a9f.png)
   
 ## Program features
+### first version
 - In the program almost all users are created automatically  and randomly.
 - A person's age is automatically calculated from today's date using their date of birth.
 - People have passports, phone numbers, nationality and more. 
@@ -48,13 +50,30 @@ A program that implements a system of university access using the OOP
 - You can log in as any user in the system, but for the administrator you must enter a password.
 - The list of objects in the beginning is made in two columns, which is not so easy to implement.
 - There are still a lot of different additional things that I implemented, but it's hard to remember all of them.
-        
+### second version
+- Started working towards the modularity of the program. To do this, I took out of the main the filling of the University of the initial information and communication with the user.
+- Started working on a graphical interface for communicating with the user, so far made only the initial background. You can switch to another version instantly, just by commenting out one line in the main, the modularity of the system came in handy.
+- Up to the impossible, I simplified the interface with the user from a programmatic point of view. Now it is almost completely independent of the University, and takes data from it. (This is what I did mostly)
+- I added standalone logger of information and user actions in the terminal.
+- I finally added gitignore and removed all unnecessary files.
+- Introduced an emergency system, anyone can turn it on, but only someone with red or higher access level can turn it off.
+- I added guests to the university, and a system for registering a new guest. (If a guest is under 14 years old, I do not ask for his passport :) )
+### What I plan to do next (Globally)
+- Introduce random emergencies in campuses to make life more fun for students :)
+- Introduce a system of achieves, so that the person who checks my work is not bored, and so that he knows what else can be tested
+- Allow students to mine innopoints (would be especially interesting with a graphical interface, make something like a clicker)
+- During emergencies I will turn on the alarm sound so it won't be boring :)
+- In the first place, I want to make a normal graphical interface, but I can't find the time to design it.
+
 ## How to run the code
- Qt Creator was used as the IDE for this project. If you have it, you will be able to open this project through it.
+ For this project the qmake build system was used.  
+ The ".pro" files are located in the directory:
+ > PSS_HomwWork2
 
 ### Where the source code is located
   main.cpp and other classes are located in the directory:
- > PSS_HomwWork2 
+ > PSS_HomwWork2
+
  
 ### How to execute the code
   Compiled and ready to run .exe file is located in the directory:
@@ -74,10 +93,7 @@ Below I provide a small map to facilitate testing. But the system is easy to und
 ![class diagram](https://user-images.githubusercontent.com/48117438/110346991-b4004900-8062-11eb-9449-1f209ed585fd.png)
 
 ## Postscript
- The task was very fuzzy, so in many cases I showed my vision of university architecture.  
- In my opinion, a complete and programmatically correct solution to this problem is not designed for 2 weeks.  
- I started working on the program back on February 22, but still, I spent the last three days working on the program for 10 hours.  
- All in all the code (.cpp and .h files) weighs exactly 70 813 bytes, which means that I typed out about 70,000 characters. (Неплохо так получилсь)  
+ All in all the code (.cpp and .h files) weighs about 82 661 bytes.
  A huge amount of time was taken up with the user interaction part, I hope it turned out cool and that you will like it.
  
  
