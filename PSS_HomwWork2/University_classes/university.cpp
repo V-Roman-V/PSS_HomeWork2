@@ -26,6 +26,10 @@ University::~University()
         delete s;
     students.clear();
 
+    for(auto g: guest)
+        delete g;
+    guest.clear();
+
     delete director;
     director = nullptr;
 
@@ -52,6 +56,11 @@ University::~University()
 
     delete director_cabinet;
     director_cabinet = nullptr;
+}
+
+void University::addGuest(const People &people)
+{
+    guest.push_back(new Guest(people));
 }
 
 void University::addStudent(const People &people, LivingRoom* lroom, unsigned short course)
@@ -100,6 +109,8 @@ std::string University::getCommonListPeoples()
     info<<"Students("<<students.size()<<"):"<<std::endl;
     for(auto s:students)
         info<<s->getCommonInfo()<<std::endl;
+    for(auto g:guest)
+        info<<g->getCommonInfo()<<std::endl;
     return info.str();
 }
 
@@ -122,6 +133,8 @@ std::string University::getFullListPeoples()
     info<<"Students("<<students.size()<<"):"<<std::endl;
     for(auto s:students)
         info<<s->getFullInfo()<<std::endl;
+    for(auto g:guest)
+        info<<g->getFullInfo()<<std::endl;
     return info.str();
 }
 
@@ -191,6 +204,7 @@ void University::getPeopleByType(UniversityPeople::Position type, std::vector<Un
         case Position::lab_employee: people = std::vector<UniversityPeople*>(lab_employees.begin(),lab_employees.end());break;
         case Position::professor:    people = std::vector<UniversityPeople*>(professors.begin(),professors.end());break;
         case Position::student:      people = std::vector<UniversityPeople*>(students.begin(),students.end());break;
+        case Position::guest:        people = std::vector<UniversityPeople*>(guest.begin(),guest.end());break;
     }
 }
 
@@ -219,6 +233,12 @@ std::vector<Student *>& University::getStudents()
 {
     return students;
 }
+
+std::vector<Guest *>& University::getGuest()
+{
+    return guest;
+}
+
 
 void University::getRoomByType(UniversityRoom::RoomType type, std::vector<Room *> &rooms)
 {
@@ -270,6 +290,7 @@ std::vector<Position> University::getAllPositions()
     pos.push_back(Position::lab_employee);
     pos.push_back(Position::professor);
     pos.push_back(Position::student);
+    pos.push_back(Position::guest);
     return pos;
 }
 

@@ -20,7 +20,7 @@ void UniversityFiller::fillStartingData(University &University)
                      "89534210987",
                      "Russian"
                     );
-    for(int i = 0; i<33; i++)
+    for(int i = 0; i<34; i++)
         peoples.emplace(PeopleGenerator::getRandomPeople());
 
 // ---------------------------------------------------------- Add peoples
@@ -32,10 +32,11 @@ void UniversityFiller::fillStartingData(University &University)
     for(int i=0;i<4;i++)
         University.addEmployess(peoples.pickLast());
 
-
     std::vector<std::string> courses = {" Introduction to Programming", "Analytical Geometry and Linear Algebra", "Data Structures and Algorithm", "Foreign Language", "Mathematical Analysis", "Theoretical Computer Science", "Operating Systems"};
     for(int i=0;i<8;i++)
         University.addProfessor(peoples.pickLast(), nullptr, courses[ i%courses.size()]);
+
+    University.addGuest(peoples.pickLast());
 
     while(!peoples.empty())
         University.addStudent(peoples.pickLast(), nullptr, (rand()%4+1));
@@ -81,8 +82,8 @@ void UniversityFiller::fillStartingData(University &University)
     auto employess = University.getLabEmployees();
 
     auto cabinets = University.getCabinetRoom();
-    int num_cab = 0;
-    for(int i=0;i<professors.size();i++){
+    unsigned int num_cab = 0;
+    for(unsigned int i=0;i<professors.size();i++){
         if(num_cab >= cabinets.size())break;
         if(cabinets[num_cab]->getCountWorkers() < cabinets[num_cab]->getMaxPeople())
             cabinets[num_cab]->addWorker(professors[i]);
@@ -92,7 +93,7 @@ void UniversityFiller::fillStartingData(University &University)
         }
     }
     num_cab++;
-    for(int i=0;i<employess.size();i++){
+    for(unsigned int i=0;i<employess.size();i++){
         if(num_cab >= cabinets.size())break;
         if(cabinets[num_cab]->getCountWorkers() < cabinets[num_cab]->getMaxPeople())
             cabinets[num_cab]->addWorker(employess[i]);
@@ -106,8 +107,8 @@ void UniversityFiller::fillStartingData(University &University)
 {
     auto students = University.getStudents();
     auto living = University.getLivingRoom();
-    int num_liv = 0;
-    for(int i=0;i<students.size();i++){
+    unsigned  int num_liv = 0;
+    for(unsigned int i=0;i<students.size();i++){
         if(num_liv >= living.size())break;
         if(living[num_liv]->getCountResidents() < living[num_liv]->getMaxPeople())
             living[num_liv]->addResidents(students[i]);

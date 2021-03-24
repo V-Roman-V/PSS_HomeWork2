@@ -14,6 +14,7 @@ class UniversityPeople : public People
 {
 public:
     enum class Position{
+        guest,
         student,
         professor,
         lab_employee,

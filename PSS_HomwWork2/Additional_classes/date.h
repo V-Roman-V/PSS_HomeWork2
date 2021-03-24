@@ -13,6 +13,8 @@ public:
 
     void setDate(unsigned short y, unsigned short m, unsigned short d);
 
+    bool isCorrect() const;
+
 private:
     unsigned short year;
     unsigned short month;

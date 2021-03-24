@@ -18,3 +18,8 @@ void Date::setDate(unsigned short y, unsigned short m, unsigned short d)
     month = m;
     day = d;
 }
+
+bool Date::isCorrect() const
+{
+    return (year!=0);
+}

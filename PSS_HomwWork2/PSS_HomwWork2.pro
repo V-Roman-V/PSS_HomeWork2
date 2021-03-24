@@ -20,6 +20,7 @@ SOURCES += \
         Logger_classes/logger.cpp \
         People_classes/admin.cpp \
         People_classes/director.cpp \
+        People_classes/guest.cpp \
         People_classes/labemployee.cpp \
         People_classes/people.cpp \
         People_classes/professor.cpp \
@@ -50,6 +51,7 @@ HEADERS += \
     Logger_classes/logger.h \
     People_classes/admin.h \
     People_classes/director.h \
+    People_classes/guest.h \
     People_classes/labemployee.h \
     People_classes/people.h \
     People_classes/professor.h \

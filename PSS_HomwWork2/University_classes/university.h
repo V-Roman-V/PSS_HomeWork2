@@ -10,6 +10,7 @@
 #include "People_classes/labemployee.h"
 #include "People_classes/professor.h"
 #include "People_classes/student.h"
+#include "People_classes/guest.h"
 
 #include "Additional_classes/roomlocation.h"
 #include "Room_classes/cabinet.h"
@@ -27,6 +28,7 @@ public:
     void operator=(const University&) = delete;
 
     ~University();
+    void addGuest(const People &people);
     void addStudent(const People &people, LivingRoom* lroom, unsigned short course);
     void addEmployess(const People& people);
     void addProfessor(const People& people, Cabinet* cabinet, const std::string& course);
@@ -51,6 +53,7 @@ public:
     std::vector<LabEmployee *>& getLabEmployees();
     std::vector<Professor *>& getProfessors();
     std::vector<Student *>& getStudents();
+    std::vector<Guest *>& getGuest();
 
     void getRoomByType(UniversityRoom::RoomType type, std::vector<Room *>& rooms);
     DirectorCabinet *getDirectorCabinet();
@@ -81,6 +84,7 @@ private:
     std::vector<LabEmployee*> lab_employees;
     std::vector<Professor*> professors;
     std::vector<Student*> students;
+    std::vector<Guest*> guest;
 
     DirectorCabinet* director_cabinet;
     std::vector<ClassRoom* > class_room;

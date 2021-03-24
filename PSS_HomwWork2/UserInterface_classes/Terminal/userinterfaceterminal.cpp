@@ -68,19 +68,101 @@ void UserInterfaceTerminal::start(University& university)
             for(auto p: peoples)
                 cout<<" "<<i++<<") "<<p->getCommonInfo()<<endl;
             printSeparator();
-            cout<<"You can go into detail about a particular person or go back.\n\tPlease enter the person's number in this list; To go back enter \"back\" or \"-\""<<endl;
+            cout<<"You can go into detail about a particular person or go back.\n\tPlease enter the person's number in this list or \"new\" if you want to enter as a guest.; To go back enter \"back\" or \"-\""<<endl;
             if(!incorrect_pass){
                 getInput(input);
                 if(input == "back" or input == "-"){break;}
-                if(!isNumber(input)) continue;
-
-                unsigned int personal_num= stoi(input);
-                if(personal_num <=0 || personal_num > peoples.size()) continue;
-                chosen_person = personal_num;
+                if(!isNumber(input) and input != "new") continue;
+                if(input != "new") {
+                    unsigned int personal_num= stoi(input);
+                    if(personal_num <=0 || personal_num > peoples.size()) continue;
+                    chosen_person = personal_num;
+                } else
+                    chosen_person = 0;
             } else
                 cout<<">"<<chosen_person<<endl;
 
-            UniversityPeople* person = peoples[chosen_person-1];
+            UniversityPeople* person;
+            if ( chosen_person != 0)
+                person = peoples[chosen_person-1];
+            else{
+                string name, surname;
+                People::Gender gender;
+                Date date;
+                printSeparator();
+                cout<<"Write your name:"<<endl;
+                getInput(name);
+                cout<<"Write your surname:"<<endl;
+                getInput(surname);
+                printSeparator();
+                cout<<"Now fill out the information about yourself"<<endl;
+                cout<<"\t Enter your gender "<<getListOptions({"unknown", "male", "female"})<<endl;
+                while(true){
+                    getInput(input);
+                    int answer = calculateInput(input,{"unknown", "male", "female"});
+                    if(answer == -1) {
+                        cout<<"\t Wrong input, enter again your gender "<<getListOptions({"unknown", "male", "female"})<<endl;
+                        continue;
+                    }
+                    switch (answer) {
+                        case 0:gender = People::Gender::unknown;break;
+                        case 1:gender = People::Gender::male;break;
+                        case 2:gender = People::Gender::female;break;
+                    }
+                    break;
+                }
+                cout<<"\t Enter your date of birth in the format dd.mm.yyyy."<<endl;
+                string day, month, year;
+                while(true){
+                    getInput(input);
+                    if(input.size() == 10){
+                        day = input.substr(0,2);
+                        month = input.substr(3,2);
+                        year = input.substr(6,4);
+                        if(isNumber(day) && isNumber(month) && isNumber(year))
+                            break;
+                    }
+                    cout<<"\t Wrong input, enter again your date of birth in the format dd.mm.yyyy."<<endl;
+                }
+                printSeparator();
+                cout<<"Now fill out the passport information."<<endl;
+                cout<<"\t Enter your passport series (4 digits)"<<endl;
+                string series;
+                while(true){
+                    getInput(series);
+                    if(series.size() == 4){
+                        if(isNumber(series))
+                            break;
+                    }
+                    cout<<"\t Wrong input, enter again your passport series (4 digits)"<<endl;
+                }
+                cout<<"\t Enter your passport number (6 digits)"<<endl;
+                string number;
+                while(true){
+                    getInput(number);
+                    if(number.size() == 6){
+                        if(isNumber(number))
+                            break;
+                    }
+                    cout<<"\t Wrong input, enter again your passport number (6 digits)"<<endl;
+                }
+                clear();
+                auto d = static_cast<unsigned short>(stoi(day));
+                auto m = static_cast<unsigned short>(stoi(month));
+                auto y = static_cast<unsigned short>(stoi(year));
+                People P(name, surname,gender,Date(d,m,y),Passport(stoi(series),stoi(number)));
+                cout<<P.getFullInfo()<<endl;
+                printSeparator();
+                cout<<"Do you want to register this guest? "<<getListOptions(consent)<<endl;
+                getInput(input);
+                int confirm = calculateInput(input,consent);
+                if( confirm != 0) continue;
+                university.addGuest(P);
+                person = university.getGuest().back();
+                logger.addActions("New guest "+person->getName()+" added to the University ");
+                clear();
+            }
+
             bool isAdmin = person->isAdmin();
 
             cout<<" "<<person->getFullInfo()<<endl;

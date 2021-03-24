@@ -79,6 +79,7 @@ AccessLevel UniversityPeople::getAccessLevel() const
 std::string UniversityPeople::getPozitionName(const UniversityPeople::Position& p)
 {
     switch (p) {
+        case UniversityPeople::Position::guest        :return"guest";
         case UniversityPeople::Position::student      :return"student";
         case UniversityPeople::Position::professor    :return"professor";
         case UniversityPeople::Position::lab_employee :return"lab_employee";
