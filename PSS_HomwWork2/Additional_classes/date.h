@@ -15,6 +15,7 @@ public:
 
     bool isCorrect() const;
 
+    static Date getNowDate();
 private:
     unsigned short year;
     unsigned short month;

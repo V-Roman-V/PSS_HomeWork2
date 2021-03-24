@@ -124,33 +124,35 @@ void UserInterfaceTerminal::start(University& university)
                     }
                     cout<<"\t Wrong input, enter again your date of birth in the format dd.mm.yyyy."<<endl;
                 }
-                printSeparator();
-                cout<<"Now fill out the passport information."<<endl;
-                cout<<"\t Enter your passport series (4 digits)"<<endl;
-                string series;
-                while(true){
-                    getInput(series);
-                    if(series.size() == 4){
-                        if(isNumber(series))
-                            break;
-                    }
-                    cout<<"\t Wrong input, enter again your passport series (4 digits)"<<endl;
-                }
-                cout<<"\t Enter your passport number (6 digits)"<<endl;
-                string number;
-                while(true){
-                    getInput(number);
-                    if(number.size() == 6){
-                        if(isNumber(number))
-                            break;
-                    }
-                    cout<<"\t Wrong input, enter again your passport number (6 digits)"<<endl;
-                }
-                clear();
                 auto d = static_cast<unsigned short>(stoi(day));
                 auto m = static_cast<unsigned short>(stoi(month));
                 auto y = static_cast<unsigned short>(stoi(year));
-                People P(name, surname,gender,Date(d,m,y),Passport(stoi(series),stoi(number)));
+                Date birth(d,m,y);
+                printSeparator();
+                string series="0", number="0";
+                if(Date::getNowDate().getAgeDiff(birth) >= 14){
+                    cout<<"Now fill out the passport information."<<endl;
+                    cout<<"\t Enter your passport series (4 digits) "<<endl;
+                    while(true){
+                        getInput(series);
+                        if(series.size() == 4){
+                            if(isNumber(series))
+                                break;
+                        }
+                        cout<<"\t Wrong input, enter again your passport series (4 digits)"<<endl;
+                    }
+                    cout<<"\t Enter your passport number (6 digits)"<<endl;
+                    while(true){
+                        getInput(number);
+                        if(number.size() == 6){
+                            if(isNumber(number))
+                                break;
+                        }
+                        cout<<"\t Wrong input, enter again your passport number (6 digits)"<<endl;
+                    }
+                }
+                clear();
+                People P(name, surname,gender,birth,Passport(stoi(series),stoi(number)));
                 cout<<P.getFullInfo()<<endl;
                 printSeparator();
                 cout<<"Do you want to register this guest? "<<getListOptions(consent)<<endl;
