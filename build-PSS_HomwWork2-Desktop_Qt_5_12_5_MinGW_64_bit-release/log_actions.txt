@@ -1,0 +1,9 @@
+0) Read informations about people: admin
+1) Want log in as admin
+2) Entered password is correct
+3) Log in as: 	Personal id: 2
+	name: Joshua Ward
+	age: 41
+
+4) Read full info
+5) Log out

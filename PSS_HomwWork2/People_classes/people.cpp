@@ -25,7 +25,7 @@ std::string People::getFullInfo()const
         case Gender::female:info<<"female";break;
     }
     info <<std::endl;
-    info <<"\tage: "<<getAge()<<std::endl;
+    info <<"\tage: "<<((date_of_birth.isCorrect())?std::to_string(getAge()):"-")<<std::endl;
     if(passport.isCorrect())
         info <<"\tpassport: "<<passport<<std::endl;
     if(phone_number.size() > 5)
@@ -42,8 +42,5 @@ std::string People::getName() const
 
 unsigned short People::getAge() const
 {
-    std::time_t t = std::time(nullptr);   // get time now
-    std::tm* now = std::localtime(&t);
-    Date now_date(now->tm_mday,now->tm_mon+1,(now->tm_year + 1900));
-    return date_of_birth.getAgeDiff(now_date);
+    return date_of_birth.getAgeDiff(Date::getNowDate());
 }

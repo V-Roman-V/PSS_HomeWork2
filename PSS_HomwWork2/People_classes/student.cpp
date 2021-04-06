@@ -32,6 +32,7 @@ std::string Student::getFullInfo()const
 {
     std::stringstream info;
     info<<UniversityPeople::getFullInfo();
+    info<<"\tNumber of course: "<<course_number<<std::endl;
     if(room)
         info<<"\tLiving room: "<<room->getLocation()<<std::endl;
     return info.str();

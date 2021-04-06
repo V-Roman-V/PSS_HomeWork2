@@ -19,7 +19,7 @@ std::string UniversityPeople::getFullInfo()const
 {
     std::stringstream info;
     info<<"\tPosition: "<<getPozitionName(getPosition())<<std::endl;
-    info<<"\tAcces level: "<<getAccessLevel()<<std::endl;
+    info<<"\tAcces level: "<<getAccessLevelName(getAccessLevel())<<std::endl;
     info<<"\tPersonal id: "<<card.getUniqueCode()<<std::endl;
     info<<People::getFullInfo();
     info<<"\tSpecial room access ("<<special_access.size()<<"):"<<std::endl;
@@ -28,6 +28,11 @@ std::string UniversityPeople::getFullInfo()const
 
 
     return info.str();
+}
+
+bool UniversityPeople::isAdmin() const
+{
+    return false;
 }
 
 bool UniversityPeople::tryToEnter(UniversityRoom* room)
@@ -66,17 +71,18 @@ std::string UniversityPeople::getMovementHistory() const
     return text.str();
 }
 
-std::string UniversityPeople::getAccessLevel() const
+AccessLevel UniversityPeople::getAccessLevel() const
 {
-    return getAccessLevelName(card.getAccessLevel());
+    return card.getAccessLevel();
 }
 
-std::string UniversityPeople::getPozitionName(UniversityPeople::Position p) const
+std::string UniversityPeople::getPozitionName(const UniversityPeople::Position& p)
 {
     switch (p) {
+        case UniversityPeople::Position::guest        :return"guest";
         case UniversityPeople::Position::student      :return"student";
         case UniversityPeople::Position::professor    :return"professor";
-        case UniversityPeople::Position::lab_employee :return"lab employee";
+        case UniversityPeople::Position::lab_employee :return"lab_employee";
         case UniversityPeople::Position::admin        :return"admin";
         case UniversityPeople::Position::director     :return"director";
     }

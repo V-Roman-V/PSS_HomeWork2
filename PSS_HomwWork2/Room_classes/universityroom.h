@@ -12,7 +12,8 @@ public:
         director_cabinet,
         class_room,
         conference_room,
-        lecture_room
+        lecture_room,
+        living_room //To generalize interface
     };
 
     UniversityRoom(const RoomLocation& l = RoomLocation(),unsigned short max_people = 25);
@@ -21,12 +22,17 @@ public:
 
     virtual RoomType getRoomType() const = 0;
 
-    virtual AccessLevel neededAccessLevel() const = 0;
+    AccessLevel neededAccessLevel() const;
 
     static std::string getNeededLevel();
-protected:
-    std::string getRoomTypeName(RoomType t);
 
+    static std::string getRoomTypeName(const RoomType& t);
+
+    void startEmergency();
+    void stopEmergency();
+protected:
+    AccessLevel myAccessLevel = AccessLevel::no_level;
+    bool emergency = false;
 
 };
 

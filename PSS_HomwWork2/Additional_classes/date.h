@@ -13,6 +13,9 @@ public:
 
     void setDate(unsigned short y, unsigned short m, unsigned short d);
 
+    bool isCorrect() const;
+
+    static Date getNowDate();
 private:
     unsigned short year;
     unsigned short month;
